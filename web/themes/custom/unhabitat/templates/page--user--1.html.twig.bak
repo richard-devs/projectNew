@@ -1,0 +1,74 @@
+<header class="unh-site-header">
+
+  <div class="unh-topbar">
+    <div class="container unh-header-inner">
+
+      <a class="unh-brand" href="{{ path('<front>') }}">
+        {% if logo %}
+          <img src="{{ logo }}" alt="UN-Habitat">
+        {% else %}
+          <span>UN-Habitat</span>
+        {% endif %}
+      </a>
+
+      {% if page.header %}
+        <div class="unh-account">
+          {{ page.header }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  {% if page.primary_menu %}
+    <nav class="unh-navigation">
+      <div class="container">
+        {{ page.primary_menu }}
+      </div>
+    </nav>
+  {% endif %}
+
+</header>
+
+<main class="unh-main unh-user-page">
+
+  <div class="container">
+
+    <div class="unh-user-content">
+
+      <div class="unh-user-heading">
+        <h1>My account</h1>
+      </div>
+
+      <div class="unh-user-form">
+        {{ page.content }}
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="unh-footer">
+
+  <div class="container">
+
+    <div class="unh-footer-grid">
+      <div>{{ page.footer_first }}</div>
+      <div>{{ page.footer_second }}</div>
+      <div>{{ page.footer_third }}</div>
+      <div>{{ page.footer_fourth }}</div>
+    </div>
+
+    {% if page.footer_fifth %}
+      <div class="unh-footer-bottom">
+        {{ page.footer_fifth }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</footer>
+
+{{ page.page_bottom }}

@@ -1,0 +1,260 @@
+
+<?php
+
+/**
+ * Adds navigation to ICTS Ops task and project detail pages.
+ */
+function unh_inventory_node_view(array &$build, \Drupal\node\NodeInterface $node, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if (!in_array($node->bundle(), ['ops_task', 'ops_project'], TRUE)) {
+    return;
+  }
+
+  $is_task = $node->bundle() === 'ops_task';
+  $list_path = $is_task ? '/ops/tasks' : '/ops/projects';
+
+  $build['ops_detail_navigation'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['ops-detail-tabs'],
+    ],
+    '#weight' => -99,
+    'overview' => [
+      '#type' => 'link',
+      '#title' => 'Overview',
+      '#url' => \Drupal\Core\Url::fromRoute('entity.node.canonical', [
+        'node' => $node->id(),
+      ]),
+      '#attributes' => [
+        'class' => ['ops-detail-tab', 'is-active'],
+      ],
+    ],
+    'activity' => [
+      '#type' => 'link',
+      '#title' => 'Activity / History',
+      '#url' => \Drupal\Core\Url::fromRoute('unh_inventory.ops_activity', [
+        'node' => $node->id(),
+      ]),
+      '#attributes' => [
+        'class' => ['ops-detail-tab'],
+      ],
+    ],
+  ];
+
+  $build['back_to_list'] = [
+    '#type' => 'link',
+    '#title' => $is_task ? '← Back to Tasks' : '← Back to Projects',
+    '#url' => \Drupal\Core\Url::fromUserInput($list_path),
+    '#weight' => -100,
+    '#attributes' => [
+      'class' => [$is_task ? 'back-to-tasks' : 'back-to-projects'],
+    ],
+  ];
+}
+
+
+
+
+
+/**
+ * Automatically records assignments and every changed editable field.
+ */
+function unh_inventory_node_presave(\Drupal\node\NodeInterface $node) {
+  if (!in_array($node->bundle(), ['ops_project', 'ops_task'], TRUE)) {
+    return;
+  }
+
+  $field = $node->bundle() === 'ops_project'
+    ? 'field_project_owner'
+    : 'field_task_assignee';
+
+  $assigned_by = $node->bundle() === 'ops_project'
+    ? 'field_project_assigned_by'
+    : 'field_task_assigned_by';
+
+  if (!$node->isNew() && isset($node->original)) {
+    $old_assignment = $node->original->get($field)->target_id ?? NULL;
+    $new_assignment = $node->get($field)->target_id ?? NULL;
+
+    if ($new_assignment && $new_assignment !== $old_assignment) {
+      $node->set($assigned_by, [
+        'target_id' => \Drupal::currentUser()->id(),
+      ]);
+    }
+  }
+
+  if ($node->isNew() || !isset($node->original)) {
+    return;
+  }
+
+  foreach ($node->getFieldDefinitions() as $field_name => $definition) {
+    if (in_array($field_name, [
+      'nid',
+      'vid',
+      'type',
+      'uuid',
+      'langcode',
+      'revision_timestamp',
+      'revision_uid',
+      'revision_log',
+      'revision_default',
+      'status',
+      'uid',
+      'created',
+      'changed',
+      'path',
+      'promote',
+      'sticky',
+      'default_langcode',
+      'revision_translation_affected',
+      'field_project_assigned_by',
+      'field_task_assigned_by',
+    ], TRUE)) {
+      continue;
+    }
+
+    if (!$node->original->hasField($field_name)) {
+      continue;
+    }
+
+    $old_values = $node->original->get($field_name)->getValue();
+    $new_values = $node->get($field_name)->getValue();
+
+    if ($old_values !== $new_values) {
+      $old_value = unh_inventory_get_field_history_value(
+        $node->original,
+        $field_name
+      );
+
+      $new_value = unh_inventory_get_field_history_value(
+        $node,
+        $field_name
+      );
+
+      unh_inventory_log_activity(
+        $node,
+        'changed',
+        $field_name,
+        $old_value,
+        $new_value
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ *
+ * Logs creation of ICTS Ops projects and tasks.
+ */
+function unh_inventory_node_insert(\Drupal\node\NodeInterface $node) {
+  if (!in_array($node->bundle(), ['ops_project', 'ops_task'], TRUE)) {
+    return;
+  }
+
+  unh_inventory_log_activity(
+    $node,
+    'created',
+    NULL,
+    NULL,
+    NULL
+  );
+}
+
+/**
+ * Returns a human readable field value for activity history.
+ */
+function unh_inventory_get_field_history_value(
+  \Drupal\node\NodeInterface $node,
+  string $field_name
+): ?string {
+  if (!$node->hasField($field_name) || $node->get($field_name)->isEmpty()) {
+    return NULL;
+  }
+
+  $field = $node->get($field_name);
+  $definition = $field->getFieldDefinition();
+  $type = $definition->getType();
+
+  if ($type === 'entity_reference') {
+    $entity = $field->entity;
+    return $entity ? $entity->label() : NULL;
+  }
+
+  $value = $field->value;
+
+  if ($value === NULL || $value === '') {
+    return NULL;
+  }
+
+  if ($type === 'list_string') {
+    $allowed_values = $definition->getSetting('allowed_values') ?: [];
+
+    if (isset($allowed_values[$value])) {
+      return (string) $allowed_values[$value];
+    }
+  }
+
+  if ($type === 'datetime') {
+    try {
+      $date = new \DateTime($value);
+      return $date->format('d M Y, H:i');
+    }
+    catch (\Exception $e) {
+      return $value;
+    }
+  }
+
+  return (string) $value;
+}
+
+/**
+ * Stores an ICTS Ops activity record.
+ */
+function unh_inventory_log_activity(
+  \Drupal\node\NodeInterface $node,
+  string $action,
+  ?string $field_name,
+  ?string $old_value,
+  ?string $new_value
+): void {
+  static $logged = [];
+
+  $key = implode('|', [
+    $node->id(),
+    $action,
+    $field_name ?? '',
+    $old_value ?? '',
+    $new_value ?? '',
+  ]);
+
+  if (isset($logged[$key])) {
+    return;
+  }
+
+  $logged[$key] = TRUE;
+
+  \Drupal::database()->insert('unh_ops_activity')
+    ->fields([
+      'entity_type' => 'node',
+      'entity_id' => $node->id(),
+      'uid' => \Drupal::currentUser()->id(),
+      'created' => \Drupal::time()->getRequestTime(),
+      'action' => $action,
+      'field_name' => $field_name,
+      'old_value' => $old_value,
+      'new_value' => $new_value,
+    ])
+    ->execute();
+}
+
+
+/**
+ * Changes only the View link text on the ICTS Ops Tasks view.
+ */
+
+
+/**
+ * Changes only the View action on the ICTS Ops Tasks view.
+ */
+
+

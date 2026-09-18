@@ -1,0 +1,657 @@
+/*
+ * UN-Habitat
+ * Global site styling
+ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.unh-home,
+.unh-site {
+  width: 100%;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.unh-site-header {
+  width: 100%;
+  background: #ffffff;
+}
+
+.unh-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.unh-header-inner {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.unh-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.unh-brand img {
+  display: block;
+  width: auto;
+  max-width: 230px;
+  max-height: 62px;
+}
+
+.unh-brand span {
+  color: #00689d;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACCOUNT
+   ========================================================= */
+
+.unh-account .block {
+  margin: 0;
+}
+
+.unh-account ul {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unh-account li {
+  margin: 0;
+  padding: 0;
+}
+
+.unh-account a {
+  color: #00689d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.unh-account a:hover {
+  color: #00b2e3;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.unh-navigation {
+  width: 100%;
+  background: #00689d;
+}
+
+.unh-navigation .container {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.unh-navigation ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unh-navigation li {
+  margin: 0;
+  padding: 0;
+}
+
+.unh-navigation a {
+  display: block;
+  padding: 17px 21px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.unh-navigation a:hover,
+.unh-navigation a.is-active,
+.unh-navigation a.active {
+  background: #00b2e3;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HOMEPAGE HERO
+   ========================================================= */
+
+.unh-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #00b2e3;
+  color: #ffffff;
+}
+
+.unh-hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -180px;
+  top: -180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.unh-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.unh-hero .block {
+  max-width: 850px;
+  padding: 70px 0;
+}
+
+.unh-hero h1,
+.unh-hero h2 {
+  margin: 0 0 22px;
+  padding-left: 22px;
+  border-left: 7px solid #fd9d24;
+  color: #ffffff;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.unh-hero p {
+  max-width: 720px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HOMEPAGE SECTIONS
+   ========================================================= */
+
+.unh-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.unh-section-light {
+  background: #f4f8fa;
+}
+
+.unh-section h1,
+.unh-section h2,
+.unh-section h3 {
+  color: #00689d;
+}
+
+.unh-section h2 {
+  margin-bottom: 28px;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.unh-section p {
+  color: #333333;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.unh-section .card {
+  height: 100%;
+  background: #ffffff;
+  border: 0;
+  border-top: 4px solid #00b2e3;
+  border-radius: 0;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.unh-section .card-body {
+  padding: 28px;
+}
+
+
+/* =========================================================
+   NORMAL DRUPAL PAGES
+   ========================================================= */
+
+.unh-main {
+  background: #ffffff;
+  padding: 0 0 40px;
+}
+
+.unh-breadcrumb {
+  padding: 16px 0;
+  background: #f4f8fa;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.unh-breadcrumb .breadcrumb {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.unh-content-layout {
+  display: block;
+  padding-top: 40px;
+}
+
+.unh-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.unh-content h1 {
+  margin: 0 0 28px;
+  color: #00689d;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.unh-content h2 {
+  margin: 32px 0 18px;
+  color: #00689d;
+  font-weight: 700;
+}
+
+.unh-content h3 {
+  color: #00689d;
+  font-weight: 700;
+}
+
+.unh-content p {
+  color: #333333;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.unh-content a {
+  color: #00689d;
+}
+
+.unh-content a:hover {
+  color: #00b2e3;
+}
+
+
+/* =========================================================
+   USER LOGIN
+   ========================================================= */
+
+.unh-content .user-login-form {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #f4f8fa;
+  border-top: 5px solid #00b2e3;
+}
+
+.unh-content .user-login-form label {
+  color: #00689d;
+  font-weight: 600;
+}
+
+.unh-content .form-control {
+  border: 1px solid #ccd6dc;
+  border-radius: 0;
+  min-height: 44px;
+}
+
+.unh-content .form-control:focus {
+  border-color: #00b2e3;
+  box-shadow: 0 0 0 2px rgba(0, 178, 227, 0.15);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.unh-content .button,
+.unh-content .btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: 0;
+  background: #00689d;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.unh-content .button:hover,
+.unh-content .btn:hover {
+  background: #00b2e3;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.unh-sidebar {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f4f8fa;
+}
+
+.unh-sidebar h2 {
+  color: #00689d;
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.unh-footer {
+  width: 100%;
+  margin-top: 0;
+  padding: 55px 0 0;
+  background: #00689d;
+  color: #ffffff;
+}
+
+.unh-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  padding-bottom: 40px;
+}
+
+.unh-footer h2,
+.unh-footer h3,
+.unh-footer h4 {
+  color: #ffffff;
+}
+
+.unh-footer p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.unh-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unh-footer li {
+  margin-bottom: 9px;
+}
+
+.unh-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.unh-footer a:hover {
+  color: #6dbe4b;
+}
+
+.unh-footer-bottom {
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   CONTEXTUAL LINKS
+   ========================================================= */
+
+.unh-home .contextual,
+.unh-site .contextual {
+  z-index: 100;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .unh-header-inner {
+    min-height: 75px;
+    padding: 14px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .unh-brand img {
+    max-width: 190px;
+    max-height: 50px;
+  }
+
+  .unh-account ul {
+    gap: 12px;
+  }
+
+  .unh-account a {
+    font-size: 12px;
+  }
+
+  .unh-navigation .container {
+    min-height: auto;
+  }
+
+  .unh-navigation ul {
+    flex-wrap: wrap;
+  }
+
+  .unh-navigation a {
+    padding: 13px 10px;
+    font-size: 13px;
+  }
+
+  .unh-hero {
+    min-height: 350px;
+  }
+
+  .unh-hero .block {
+    padding: 55px 0;
+  }
+
+  .unh-hero h1,
+  .unh-hero h2 {
+    font-size: 38px;
+  }
+
+  .unh-hero p {
+    font-size: 17px;
+  }
+
+  .unh-section {
+    padding: 55px 0;
+  }
+
+  .unh-section h2 {
+    font-size: 30px;
+  }
+
+  .unh-content-layout {
+    padding-top: 30px;
+  }
+
+  .unh-content h1 {
+    font-size: 34px;
+  }
+
+  .unh-content p {
+    font-size: 16px;
+  }
+
+  .unh-content .user-login-form {
+    padding: 25px;
+  }
+
+  .unh-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   GLOBAL DRUPAL PAGE COLOR OVERRIDES
+   ========================================================= */
+
+body {
+  background: #ffffff;
+  color: #222222;
+}
+
+#page,
+#main-wrapper {
+  background: #ffffff;
+}
+
+a,
+.link {
+  color: #00689d;
+}
+
+a:hover,
+a:focus,
+.link:hover,
+.link:focus {
+  color: #00b2e3;
+}
+
+#navbar-top,
+#navbar-main {
+  background: #00689d;
+}
+
+.nav-link {
+  color: #ffffff;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #00689d;
+  border-color: #00689d;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #00b2e3;
+  border-color: #00b2e3;
+}
+
+.site-footer {
+  background: #00689d;
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   UN-HABITAT USER PAGE
+   Match the main site colours
+   ========================================================= */
+
+.unh-user-page,
+.unh-user-content,
+.unh-user-form {
+  background: #ffffff;
+  color: #222222;
+}
+
+.unh-user-heading,
+.unh-user-heading h1,
+.unh-user-heading h2,
+.unh-user-heading h3 {
+  color: #00689d;
+}
+
+.unh-user-content a,
+.unh-user-content .link {
+  color: #00689d;
+}
+
+.unh-user-content a:hover,
+.unh-user-content a:focus,
+.unh-user-content .link:hover,
+.unh-user-content .link:focus {
+  color: #00b2e3;
+}
+
+.unh-user-form label {
+  color: #222222;
+}
+
+.unh-user-form input,
+.unh-user-form select,
+.unh-user-form textarea {
+  background: #ffffff;
+  color: #222222;
+  border-color: #cccccc;
+}
+
+.unh-user-form .button,
+.unh-user-form .btn,
+.unh-user-form .btn-primary {
+  background-color: #00689d;
+  border-color: #00689d;
+  color: #ffffff;
+}
+
+.unh-user-form .button:hover,
+.unh-user-form .button:focus,
+.unh-user-form .btn:hover,
+.unh-user-form .btn:focus,
+.unh-user-form .btn-primary:hover,
+.unh-user-form .btn-primary:focus {
+  background-color: #00b2e3;
+  border-color: #00b2e3;
+  color: #ffffff;
+}

@@ -1,0 +1,315 @@
+
+
+
+/**
+ * @file
+ * UN-Habitat custom theme styling.
+ */
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   ICTS FEATURED TOP SECTIONS
+   Knowledge Base | ICTS Inventory | Ops Management
+   ========================================================= */
+
+.region-featured-top > .block {
+  margin: 0 0 16px;
+}
+
+.region-featured-top > .block#block-unhabitat-inventory-login,
+.region-featured-top > .block#block-unhabitat-knowledge-base,
+.region-featured-top > .block#block-unhabitat-ops-management {
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================================
+   ICTS SECTION HEADINGS
+   ========================================================= */
+
+#block-unhabitat-inventory-login h2,
+#block-unhabitat-knowledge-base h2,
+#block-unhabitat-ops-management h2 {
+  margin: 0 0 12px;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   SECTION TEXT
+   ========================================================= */
+
+#block-unhabitat-inventory-login p,
+#block-unhabitat-knowledge-base p,
+#block-unhabitat-ops-management p {
+  margin: 0;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   ICTS INVENTORY
+   ========================================================= */
+
+#block-unhabitat-inventory-login .unh-inventory-login {
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#block-unhabitat-inventory-login .unh-inventory-login h2 {
+  margin-top: 0;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   KNOWLEDGE BASE
+   ========================================================= */
+
+.view-icts-knowledge-base {
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.view-icts-knowledge-base .views-exposed-form {
+  background: #ffffff;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.view-icts-knowledge-base .views-exposed-form .form--inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.view-icts-knowledge-base .views-exposed-form .form-item {
+  margin: 0;
+}
+
+.view-icts-knowledge-base .views-exposed-form label {
+  display: none;
+}
+
+.view-icts-knowledge-base .views-exposed-form .description {
+  display: none;
+}
+
+.view-icts-knowledge-base .views-exposed-form select,
+.view-icts-knowledge-base .views-exposed-form input[type="text"] {
+  min-height: 38px;
+  padding: 6px 10px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.view-icts-knowledge-base .views-exposed-form .form-actions {
+  margin: 0;
+  padding: 0;
+}
+
+.view-icts-knowledge-base .views-exposed-form .form-submit {
+  min-height: 38px;
+  margin: 0;
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 4px;
+  background: #00689d;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Knowledge Base heading */
+
+.view-icts-knowledge-base .views-exposed-form::before {
+  content: "Knowledge Base";
+  display: block;
+  border-left: 6px solid #f5a623;
+  padding-left: 20px;
+  margin-bottom: 18px;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Knowledge Base rows */
+
+.view-icts-knowledge-base .views-row {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.view-icts-knowledge-base .views-field-title a {
+  color: #00689d;
+  text-decoration: none;
+}
+
+.view-icts-knowledge-base .views-field-title a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   OPS MANAGEMENT
+   ========================================================= */
+
+.view-icts-ops-management {
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.view-icts-ops-management .views-row {
+  margin: 0;
+  padding: 0;
+}
+
+.view-icts-ops-management .views-field-title {
+  margin: 0;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.view-icts-ops-management .views-field-title a {
+  color: #00689d;
+  text-decoration: none;
+}
+
+.view-icts-ops-management .views-field-title a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BUTTONS / LINKS
+   ========================================================= */
+
+.region-featured-top a {
+  color: #00689d;
+}
+
+.region-featured-top a:hover {
+  color: #004f78;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .region-featured-top > .block#block-unhabitat-inventory-login,
+  .region-featured-top > .block#block-unhabitat-knowledge-base,
+  .region-featured-top > .block#block-unhabitat-ops-management {
+    padding: 14px;
+  }
+
+  #block-unhabitat-inventory-login h2,
+  #block-unhabitat-knowledge-base h2,
+  #block-unhabitat-ops-management h2 {
+    font-size: 24px;
+  }
+
+  .view-icts-knowledge-base .views-exposed-form .form--inline {
+    align-items: stretch;
+  }
+}
+
+
+
+
+/* =========================================================
+   FORCE ICTS OPS MANAGEMENT HEADING TO MATCH INVENTORY
+   ========================================================= */
+
+#block-unhabitat-ops-management h2 {
+  color: #00689d !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 12px !important;
+}
+
+
+
+
+/* =========================================================
+   ICTS OPS MANAGEMENT
+   Match ICTS Inventory appearance
+   ========================================================= */
+
+#block-unhabitat-ops-management {
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #d9e5ea;
+  padding: 24px;
+  border-radius: 4px;
+}
+
+#block-unhabitat-ops-management h2 {
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+#block-unhabitat-ops-management p {
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+#block-unhabitat-ops-management a {
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+#block-unhabitat-ops-management a:hover {
+  color: #00b2e3;
+  text-decoration: underline;
+}
+
+

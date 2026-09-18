@@ -1,0 +1,29 @@
+# DDEV
+.ddev/.global_commands/
+
+# Drupal
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+
+# Composer
+/vendor/
+
+# Node
+/node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database dumps
+*.sql
+*.sql.gz

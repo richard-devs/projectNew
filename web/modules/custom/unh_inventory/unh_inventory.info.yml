@@ -1,0 +1,8 @@
+name: 'UNH Inventory'
+type: module
+description: 'ICTS equipment inventory and assignment management.'
+package: 'UN-Habitat'
+core_version_requirement: ^11
+dependencies:
+  - drupal:block
+  - drupal:user

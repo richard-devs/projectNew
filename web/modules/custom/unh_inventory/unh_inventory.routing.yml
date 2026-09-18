@@ -1,0 +1,41 @@
+unh_inventory.dashboard:
+  path: '/inventory'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\InventoryController::dashboard'
+    _title: 'ICTS Inventory'
+  requirements:
+    _permission: 'access inventory'
+
+unh_inventory.ops_dashboard:
+  path: '/ops/dashboard'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\OpsDashboardController::dashboard'
+    _title: 'ICTS Ops Management'
+  requirements:
+    _permission: 'access content'
+
+unh_inventory.project_add_task:
+  path: '/node/{node}/add-task'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\ProjectTaskController::addTask'
+    _title: 'Add Task'
+  requirements:
+    _permission: 'create ops_task content'
+    node: '\d+'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+unh_inventory.ops_activity:
+  path: '/ops/activity/{node}'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\OpsActivityController::history'
+    _title: 'Activity / History'
+  requirements:
+    _permission: 'access content'
+    node: '\d+'
+  options:
+    parameters:
+      node:
+        type: entity:node

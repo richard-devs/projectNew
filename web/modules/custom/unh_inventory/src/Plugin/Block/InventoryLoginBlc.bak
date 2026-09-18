@@ -1,0 +1,87 @@
+<?php
+
+namespace Drupal\unh_inventory\Plugin\Block;
+
+use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Url;
+
+/**
+ * Provides an ICTS Inventory login block.
+ *
+ * @Block(
+ *   id = "unh_inventory_login",
+ *   admin_label = @Translation("ICTS Inventory Login")
+ * )
+ */
+class InventoryLoginBlock extends BlockBase {
+
+  public function build() {
+    $user = \Drupal::currentUser();
+
+    if ($user->isAuthenticated()) {
+      $url = Url::fromRoute('unh_inventory.dashboard');
+
+      return [
+        '#markup' => '
+          <div class="unh-inventory-login">
+            <h2>ICTS Inventory</h2>
+            <p>Manage assigned ICT equipment and asset records.</p>
+            <a class="button btn btn-primary" href="' . $url->toString() . '">
+              Open Inventory
+            </a>
+          </div>
+        ',
+      ];
+    }
+
+    $login_url = Url::fromRoute('user.login', [], [
+      'query' => [
+        'destination' => '/inventory',
+      ],
+    ]);
+
+    return [
+      '#markup' => '
+        <div class="unh-inventory-login">
+          <h2>ICTS Inventory</h2>
+          <p>Access the ICT equipment inventory and assignment system.</p>
+          <a class="button btn btn-primary" href="' . $login_url->toString() . '">
+            Inventory Login
+          </a>
+        </div>
+      ',
+    ];
+  }
+
+}
+
+
+
+
+   ========================================================= */
+
+#block-unhabitat-ops-management {
+  background: #ffffff !important;
+  color: #222222 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  padding: 24px !important;
+  border: 1px solid #d9e5ea !important;
+  border-radius: 4px !important;
+}
+
+#block-unhabitat-ops-management h2 {
+  color: #00689d !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 8px !important;
+}
+
+#block-unhabitat-ops-management p {
+  color: #222222 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}

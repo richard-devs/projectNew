@@ -1,0 +1,387 @@
+
+```css
+/**
+ * @file
+ * UN-Habitat ICTS homepage styling.
+ */
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   ICTS HOMEPAGE FEATURED REGION
+   ========================================================= */
+
+.region-featured-top {
+  display: block;
+  margin: 0;
+}
+
+
+/* =========================================================
+   SHARED ICTS BLOCK CARD
+   ========================================================= */
+
+.region-featured-top > .block {
+  min-width: 0;
+  margin: 0 0 24px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #d9e5ea;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.region-featured-top > .block:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   INVENTORY
+   ========================================================= */
+
+#block-unhabitat-inventory-login .unh-inventory-login {
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-inventory-login h2 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#block-unhabitat-inventory-login p {
+  margin: 0 0 22px;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#block-unhabitat-inventory-login a.button,
+#block-unhabitat-inventory-login a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #00689d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+#block-unhabitat-inventory-login a.button:hover,
+#block-unhabitat-inventory-login a.btn:hover {
+  background: #004f78;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   KNOWLEDGE BASE
+   ========================================================= */
+
+#block-unhabitat-knowledge-base h2 {
+  margin: 0 0 8px;
+  padding: 0;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#block-unhabitat-knowledge-base .view-icts-knowledge-base::before {
+  content: "Search ICTS knowledge articles, guides and technical documentation.";
+  display: block;
+  margin: 0 0 20px;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   KNOWLEDGE BASE FILTER
+   ========================================================= */
+
+#block-unhabitat-knowledge-base .views-exposed-form {
+  margin: 0 0 20px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form--inline {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.8fr) minmax(180px, 1.5fr) auto;
+  align-items: end;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-item {
+  min-width: 0;
+  margin: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form label {
+  display: block;
+  margin: 0 0 6px;
+  color: #555555;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .description {
+  display: none;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form select,
+#block-unhabitat-knowledge-base .views-exposed-form input[type="text"] {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 11px;
+  background: #ffffff;
+  border: 1px solid #cbd8de;
+  border-radius: 4px;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form select:focus,
+#block-unhabitat-knowledge-base .views-exposed-form input[type="text"]:focus {
+  border-color: #00a3d9;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 163, 217, 0.12);
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-actions {
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-submit {
+  min-height: 42px;
+  margin: 0;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 4px;
+  background: #00689d;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-submit:hover {
+  background: #004f78;
+}
+
+
+/* =========================================================
+   KNOWLEDGE BASE RESULTS
+   ========================================================= */
+
+#block-unhabitat-knowledge-base .views-row {
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px solid #edf1f3;
+}
+
+#block-unhabitat-knowledge-base .views-field-title a {
+  color: #00689d;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#block-unhabitat-knowledge-base .views-field-title a:hover {
+  color: #004f78;
+  text-decoration: underline;
+}
+
+#block-unhabitat-knowledge-base .views-field-field-kb-category {
+  margin-top: 4px;
+  color: #667780;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   OPS MANAGEMENT
+   ========================================================= */
+
+#block-unhabitat-ops-management .unh-ops-management {
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-ops-management .unh-ops-management-header {
+  margin: 0 0 24px;
+}
+
+#block-unhabitat-ops-management h2 {
+  margin: 0 0 8px;
+  padding: 0;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#block-unhabitat-ops-management .unh-ops-management-header p {
+  margin: 0;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   OPS MANAGEMENT CARDS
+   ========================================================= */
+
+#block-unhabitat-ops-management .unh-ops-management-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#block-unhabitat-ops-management .unh-ops-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 105px;
+  padding: 18px;
+  background: #f7fafb;
+  border: 1px solid #e0e9ed;
+  border-radius: 5px;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+#block-unhabitat-ops-management .unh-ops-card:hover {
+  border-color: #00a3d9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+#block-unhabitat-ops-management .unh-ops-card-title {
+  margin-bottom: 7px;
+  color: #00689d;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+#block-unhabitat-ops-management .unh-ops-card-text {
+  color: #555555;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  #block-unhabitat-ops-management .unh-ops-management-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .region-featured-top > .block {
+    padding: 22px;
+  }
+
+  #block-unhabitat-knowledge-base .views-exposed-form .form--inline {
+    grid-template-columns: 1fr;
+  }
+
+  #block-unhabitat-knowledge-base .views-exposed-form .form-actions {
+    width: 100%;
+  }
+
+  #block-unhabitat-knowledge-base .views-exposed-form .form-submit {
+    width: 100%;
+  }
+
+  #block-unhabitat-ops-management .unh-ops-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+```
+
+
+
+
+
+/* Knowledge Base heading visibility */
+#block-unhabitat-knowledge-base > h2 {
+  display: block !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  color: #00689d !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+
+/* =========================================================
+   KNOWLEDGE BASE HEADING
+   Match ICTS Inventory and Ops Management
+   ========================================================= */
+
+#block-unhabitat-knowledge-base::before {
+  content: "Knowledge Base";
+  display: block;
+  margin: 0;
+  padding: 0 0 8px 4px;
+  border-left: 4px solid #f5a623;
+  color: #00689d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}

@@ -1,0 +1,4921 @@
+/**
+ * @file
+ * UN-Habitat ICTS homepage styling.
+ */
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HOMEPAGE LAYOUT
+   ========================================================= */
+
+.region-featured-top {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  grid-template-areas:
+    "inventory hero"
+    "knowledge hero"
+    "ops hero";
+  gap: 24px;
+  align-items: stretch;
+
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* =========================================================
+   SHARED BLOCKS
+   ========================================================= */
+
+.region-featured-top > .block {
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0;
+
+  margin: 0 !important;
+  padding: 28px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #d9e5ea;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+#block-unhabitat-hero {
+  grid-area: hero;
+
+  min-height: 100%;
+  padding: 0 !important;
+
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 8px;
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(0, 45, 70, 0.08),
+      rgba(0, 45, 70, 0.84)
+    ),
+    url("../images/unhabitat-hero.jpg?v=2");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+}
+
+#block-unhabitat-hero .field--name-body {
+  min-height: 100%;
+
+  padding: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#block-unhabitat-hero h2 {
+  margin: 0 0 14px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+#block-unhabitat-hero p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   INVENTORY
+   ========================================================= */
+
+#block-unhabitat-inventory-login {
+  grid-area: inventory;
+}
+
+#block-unhabitat-inventory-login .unh-inventory-login {
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-inventory-login h2 {
+  margin: 0 0 10px;
+
+  color: #00689d;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#block-unhabitat-inventory-login p {
+  margin: 0 0 22px;
+
+  color: #444444;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#block-unhabitat-inventory-login a.button,
+#block-unhabitat-inventory-login a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: #00689d;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+
+  text-decoration: none;
+}
+
+#block-unhabitat-inventory-login a.button:hover,
+#block-unhabitat-inventory-login a.btn:hover {
+  background: #004f78;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   KNOWLEDGE BASE
+   ========================================================= */
+
+#block-unhabitat-knowledge-base {
+  grid-area: knowledge;
+}
+
+#block-unhabitat-knowledge-base::before {
+  content: "Knowledge Base";
+
+  display: block;
+
+  margin: 0 0 16px;
+  padding: 0 0 8px 12px;
+
+  border-left: 4px solid #f5a623;
+
+  color: #00689d;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form {
+  margin: 0 0 20px;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form > div {
+  display: grid;
+
+  grid-template-columns:
+    minmax(130px, 0.8fr)
+    minmax(180px, 1.5fr)
+    auto;
+
+  align-items: end;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-item {
+  min-width: 0;
+  margin: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form label {
+  display: block;
+
+  margin: 0 0 6px;
+
+  color: #555555;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .description {
+  display: none;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form select,
+#block-unhabitat-knowledge-base .views-exposed-form input[type="text"] {
+  width: 100%;
+  min-height: 42px;
+
+  padding: 8px 11px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #cbd8de;
+  border-radius: 4px;
+
+  color: #222222;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form select:focus,
+#block-unhabitat-knowledge-base .views-exposed-form input[type="text"]:focus {
+  border-color: #00a3d9;
+
+  outline: none;
+
+  box-shadow: 0 0 0 2px rgba(0, 163, 217, 0.12);
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-actions {
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-submit {
+  min-height: 42px;
+
+  margin: 0;
+  padding: 0 18px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: #00689d;
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form .form-submit:hover {
+  background: #004f78;
+}
+
+
+/* =========================================================
+   KNOWLEDGE BASE RESULTS
+   ========================================================= */
+
+#block-unhabitat-knowledge-base .views-row {
+  margin: 0;
+  padding: 10px 0;
+
+  border-top: 1px solid #edf1f3;
+}
+
+#block-unhabitat-knowledge-base .views-field-title a {
+  color: #00689d;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+#block-unhabitat-knowledge-base .views-field-title a:hover {
+  color: #004f78;
+  text-decoration: underline;
+}
+
+#block-unhabitat-knowledge-base .views-field-field-kb-category {
+  margin-top: 4px;
+
+  color: #667780;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   OPS MANAGEMENT
+   ========================================================= */
+
+#block-unhabitat-ops-management {
+  grid-area: ops;
+}
+
+#block-unhabitat-ops-management .unh-ops-management {
+  margin: 0;
+  padding: 0;
+}
+
+#block-unhabitat-ops-management .unh-ops-management-header {
+  margin: 0 0 24px;
+}
+
+#block-unhabitat-ops-management h2 {
+  margin: 0 0 8px;
+
+  color: #00689d;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#block-unhabitat-ops-management .unh-ops-management-header p {
+  margin: 0;
+
+  color: #444444;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   OPS MANAGEMENT CARDS
+   ========================================================= */
+
+#block-unhabitat-ops-management .unh-ops-management-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#block-unhabitat-ops-management .unh-ops-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 105px;
+
+  padding: 18px;
+  box-sizing: border-box;
+
+  background: #f7fafb;
+
+  border: 1px solid #e0e9ed;
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+#block-unhabitat-ops-management .unh-ops-card:hover {
+  border-color: #00a3d9;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+
+  transform: translateY(-2px);
+
+  text-decoration: none;
+}
+
+#block-unhabitat-ops-management .unh-ops-card-title {
+  margin-bottom: 7px;
+
+  color: #00689d;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+#block-unhabitat-ops-management .unh-ops-card-text {
+  color: #555555;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .region-featured-top {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "hero"
+      "inventory"
+      "knowledge"
+      "ops";
+  }
+
+  #block-unhabitat-hero {
+    min-height: 360px;
+  }
+
+  #block-unhabitat-hero .field--name-body {
+    min-height: 360px;
+  }
+
+  #block-unhabitat-ops-management .unh-ops-management-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .region-featured-top > .block {
+    padding: 22px;
+  }
+
+  #block-unhabitat-hero .field--name-body {
+    padding: 28px;
+  }
+
+  #block-unhabitat-hero h2 {
+    font-size: 28px;
+  }
+
+  #block-unhabitat-knowledge-base .views-exposed-form > div {
+    grid-template-columns: 1fr;
+  }
+
+  #block-unhabitat-knowledge-base .views-exposed-form .form-actions {
+    width: 100%;
+  }
+
+  #block-unhabitat-knowledge-base .views-exposed-form .form-submit {
+    width: 100%;
+  }
+
+  #block-unhabitat-ops-management .unh-ops-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+
+/* =========================================================
+   ICTS PORTAL VISUAL ENHANCEMENT
+   ========================================================= */
+
+body {
+  background: #f4f7f9;
+}
+
+/* ---------------------------------------------------------
+   FEATURED TOP AREA
+   --------------------------------------------------------- */
+
+.region-featured-top {
+  background: #f4f7f9;
+  padding: 34px 0 48px !important;
+}
+
+/* ---------------------------------------------------------
+   MAIN ICTS CARDS
+   --------------------------------------------------------- */
+
+.region-featured-top > .block {
+  background: #ffffff;
+  border: 1px solid #dce6eb;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 42, 62, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.region-featured-top > .block:hover {
+  transform: translateY(-3px);
+  border-color: #b9d4df;
+  box-shadow: 0 10px 28px rgba(0, 42, 62, 0.11);
+}
+
+/* ---------------------------------------------------------
+   INVENTORY
+   --------------------------------------------------------- */
+
+#block-unhabitat-inventory-login {
+  position: relative;
+  overflow: hidden;
+}
+
+#block-unhabitat-inventory-login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #00689d;
+}
+
+#block-unhabitat-inventory-login h2 {
+  color: #003b5c;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#block-unhabitat-inventory-login p {
+  color: #526873;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* ---------------------------------------------------------
+   KNOWLEDGE BASE
+   --------------------------------------------------------- */
+
+#block-unhabitat-knowledge-base {
+  position: relative;
+  overflow: hidden;
+}
+
+#block-unhabitat-knowledge-base::before {
+  content: "Knowledge Base";
+  display: block;
+  margin: 0 0 20px;
+  padding: 0 0 9px 12px;
+  border-left: 5px solid #f5a623;
+  color: #003b5c;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Knowledge Base search area */
+
+#block-unhabitat-knowledge-base .views-exposed-form {
+  margin-bottom: 4px;
+}
+
+#block-unhabitat-knowledge-base .views-exposed-form > div {
+  gap: 12px;
+  align-items: end;
+}
+
+#block-unhabitat-knowledge-base .form-item,
+#block-unhabitat-knowledge-base .form-actions {
+  margin-bottom: 0 !important;
+}
+
+#block-unhabitat-knowledge-base label {
+  color: #526873;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+#block-unhabitat-knowledge-base select,
+#block-unhabitat-knowledge-base input[type="text"] {
+  min-height: 44px;
+  border: 1px solid #cbd9df;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #243942;
+  box-shadow: none;
+}
+
+#block-unhabitat-knowledge-base select:focus,
+#block-unhabitat-knowledge-base input[type="text"]:focus {
+  border-color: #00689d;
+  box-shadow: 0 0 0 3px rgba(0, 104, 157, 0.10);
+}
+
+#block-unhabitat-knowledge-base .form-submit {
+  min-height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 6px;
+  background: #00689d;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#block-unhabitat-knowledge-base .form-submit:hover {
+  background: #003b5c;
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   OPS MANAGEMENT
+   --------------------------------------------------------- */
+
+#block-unhabitat-ops-management {
+  position: relative;
+  overflow: hidden;
+}
+
+#block-unhabitat-ops-management::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #00a6a6;
+}
+
+#block-unhabitat-ops-management .unh-ops-management-header h2 {
+  color: #003b5c;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header p {
+  color: #526873;
+  line-height: 1.55;
+}
+
+/* Ops cards */
+
+#block-unhabitat-ops-management .unh-ops-card {
+  background: #f7fafb;
+  border: 1px solid #dce6eb;
+  border-radius: 8px;
+  padding: 17px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#block-unhabitat-ops-management .unh-ops-card:hover {
+  background: #ffffff;
+  border-color: #8ebdcb;
+  box-shadow: 0 5px 15px rgba(0, 42, 62, 0.08);
+  transform: translateY(-2px);
+}
+
+#block-unhabitat-ops-management .unh-ops-card-title {
+  color: #003b5c;
+  font-weight: 700;
+}
+
+#block-unhabitat-ops-management .unh-ops-card-text {
+  color: #607680;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+#block-unhabitat-hero {
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 42, 62, 0.14);
+}
+
+#block-unhabitat-hero .field--name-body {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 48, 73, 0.04),
+      rgba(0, 48, 73, 0.88)
+    );
+}
+
+#block-unhabitat-hero h2 {
+  font-size: 36px;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#block-unhabitat-hero p {
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.region-featured-top .btn-primary,
+.region-featured-top .button {
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   SMALL SCREEN
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .region-featured-top {
+    padding: 24px 0 32px !important;
+  }
+
+  .region-featured-top > .block {
+    border-radius: 10px;
+  }
+
+  #block-unhabitat-hero h2 {
+    font-size: 29px;
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+   ICTS SERVICE CARD ENHANCEMENT
+   ========================================================= */
+
+/* Shared service card structure */
+
+#block-unhabitat-inventory-login,
+#block-unhabitat-knowledge-base,
+#block-unhabitat-ops-management {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line */
+
+#block-unhabitat-inventory-login::after,
+#block-unhabitat-knowledge-base::after,
+#block-unhabitat-ops-management::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+/* Inventory */
+
+#block-unhabitat-inventory-login::after {
+  background: #00689d;
+}
+
+#block-unhabitat-inventory-login h2 {
+  font-size: 27px;
+  letter-spacing: -0.2px;
+}
+
+/* Knowledge Base */
+
+#block-unhabitat-knowledge-base::after {
+  background: #f5a623;
+}
+
+#block-unhabitat-knowledge-base::before {
+  border-left-color: #f5a623;
+}
+
+/* Ops Management */
+
+#block-unhabitat-ops-management::after {
+  background: #00a6a6;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header h2 {
+  font-size: 27px;
+  letter-spacing: -0.2px;
+}
+
+/* ---------------------------------------------------------
+   INVENTORY ACTION
+   --------------------------------------------------------- */
+
+#block-unhabitat-inventory-login .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 6px;
+  background: #00689d;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#block-unhabitat-inventory-login .button:hover {
+  background: #003b5c;
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   OPS CARD GRID
+   --------------------------------------------------------- */
+
+#block-unhabitat-ops-management
+  .unh-ops-management-grid {
+  margin-top: 20px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card-title {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card-text {
+  display: block;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------
+   SUBTLE CARD ICON EFFECTS
+   --------------------------------------------------------- */
+
+#block-unhabitat-inventory-login h2::before {
+  content: "▣";
+  display: inline-block;
+  margin-right: 10px;
+  color: #00689d;
+  font-size: 21px;
+}
+
+#block-unhabitat-knowledge-base::marker {
+  content: "";
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header h2::before {
+  content: "◈";
+  display: inline-block;
+  margin-right: 10px;
+  color: #00a6a6;
+  font-size: 21px;
+}
+
+/* ---------------------------------------------------------
+   PAGE BACKGROUND DEPTH
+   --------------------------------------------------------- */
+
+main {
+  background: #f4f7f9;
+}
+
+/* Keep the footer visually separated */
+
+.unh-footer {
+  border-top: 1px solid #d7e2e7;
+}
+
+
+
+
+
+
+/* =========================================================
+   ICTS PORTAL HEADER ENHANCEMENT
+   ========================================================= */
+
+.unh-site-header {
+  position: relative;
+  z-index: 20;
+}
+
+/* Main header */
+
+.unh-topbar {
+  background: #003b5c;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.unh-header-inner {
+  min-height: 76px;
+}
+
+/* Branding */
+
+.unh-branding {
+  display: flex;
+  align-items: center;
+}
+
+.unh-branding img {
+  max-height: 52px;
+  width: auto;
+}
+
+.unh-branding a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Account area */
+
+.unh-account {
+  color: #ffffff;
+}
+
+.unh-account a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.unh-account a:hover {
+  opacity: 0.78;
+}
+
+/* Navigation */
+
+.unh-navigation {
+  background: #ffffff;
+  border-bottom: 1px solid #dce6eb;
+  box-shadow: 0 2px 8px rgba(0, 42, 62, 0.05);
+}
+
+.unh-navigation a {
+  color: #294b59;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.unh-navigation a:hover,
+.unh-navigation a.is-active {
+  color: #00689d;
+}
+
+/* Header spacing */
+
+.unh-navigation .container {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .unh-header-inner {
+    min-height: 64px;
+  }
+
+  .unh-branding img {
+    max-height: 44px;
+  }
+
+}
+
+
+/* =========================================================
+   ICTS SERVICE PANEL POLISH
+   ========================================================= */
+
+/* Inventory panel */
+
+#block-unhabitat-inventory-login .unh-inventory-login {
+  position: relative;
+  padding-left: 4px;
+}
+
+#block-unhabitat-inventory-login h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#block-unhabitat-inventory-login h2::before {
+  content: "";
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 9px;
+  background: #e8f3f8;
+  border: 1px solid #c8e0ea;
+}
+
+#block-unhabitat-inventory-login p {
+  max-width: 600px;
+  font-size: 15px;
+}
+
+/* Knowledge Base panel */
+
+#block-unhabitat-knowledge-base .view-icts-knowledge-base {
+  width: 100%;
+}
+
+#block-unhabitat-knowledge-base .view-filters {
+  padding: 18px;
+  background: #f7fafb;
+  border: 1px solid #e0e9ed;
+  border-radius: 9px;
+}
+
+#block-unhabitat-knowledge-base .form-select {
+  min-width: 220px;
+}
+
+#block-unhabitat-knowledge-base .form-actions {
+  display: flex;
+  align-items: end;
+}
+
+/* Knowledge Base results */
+
+#block-unhabitat-knowledge-base .view-content {
+  margin-top: 18px;
+}
+
+#block-unhabitat-knowledge-base .views-row {
+  padding: 12px 0;
+  border-bottom: 1px solid #e3eaed;
+}
+
+#block-unhabitat-knowledge-base .views-row:last-child {
+  border-bottom: 0;
+}
+
+#block-unhabitat-knowledge-base .views-field-title a {
+  color: #003b5c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#block-unhabitat-knowledge-base .views-field-title a:hover {
+  color: #00689d;
+}
+
+#block-unhabitat-knowledge-base .views-field-field-kb-category {
+  margin-top: 4px;
+  color: #71838b;
+  font-size: 12px;
+}
+
+/* Search button */
+
+#block-unhabitat-knowledge-base .form-submit {
+  white-space: nowrap;
+}
+
+/* Better spacing between service panels */
+
+#block-unhabitat-inventory-login,
+#block-unhabitat-knowledge-base,
+#block-unhabitat-ops-management {
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+
+  #block-unhabitat-inventory-login,
+  #block-unhabitat-knowledge-base,
+  #block-unhabitat-ops-management {
+    padding: 24px;
+  }
+
+  #block-unhabitat-knowledge-base .view-filters {
+    padding: 14px;
+  }
+
+}
+
+
+
+/* =========================================================
+   OPS MANAGEMENT PROFESSIONAL PANEL
+   ========================================================= */
+
+#block-unhabitat-ops-management {
+  background: #ffffff;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header {
+  margin-bottom: 22px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header h2::before {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 11px;
+  border-radius: 9px;
+  background: #e7f6f5;
+  border: 1px solid #c7e8e5;
+  font-size: 20px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-management-header p {
+  max-width: 650px;
+  margin-bottom: 0;
+}
+
+/* Operations cards */
+
+#block-unhabitat-ops-management
+  .unh-ops-management-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 92px;
+  padding: 17px 18px;
+  background: #f8fafb;
+  border: 1px solid #dce6eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card::after {
+  content: "→";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7b929d;
+  font-size: 18px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card:hover::after {
+  color: #00689d;
+  transform: translate(3px, -50%);
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card-title {
+  padding-right: 25px;
+  color: #003b5c;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#block-unhabitat-ops-management
+  .unh-ops-card-text {
+  max-width: 90%;
+  margin-top: 5px;
+  color: #667c85;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+/* Distinguish operational links */
+
+#block-unhabitat-ops-management
+  .unh-ops-card:hover {
+  background: #ffffff;
+  border-color: #a8cbd5;
+  box-shadow: 0 5px 14px rgba(0, 42, 62, 0.08);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  #block-unhabitat-ops-management
+    .unh-ops-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+
+/* =========================================================
+   ICTS PORTAL HERO REFINEMENT
+   ========================================================= */
+
+#block-unhabitat-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+
+#block-unhabitat-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 59, 92, 0.22),
+      rgba(0, 59, 92, 0.82)
+    );
+}
+
+#block-unhabitat-hero .field--name-body {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 42px;
+}
+
+#block-unhabitat-hero h2 {
+  max-width: 560px;
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+}
+
+#block-unhabitat-hero p {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Small portal label */
+
+#block-unhabitat-hero h2::before {
+  content: "ICTS DIGITAL SERVICES";
+  display: block;
+  margin-bottom: 12px;
+  color: #7dd3d3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1;
+}
+
+/* Hero depth */
+
+#block-unhabitat-hero {
+  box-shadow:
+    0 12px 32px rgba(0, 42, 62, 0.16);
+}
+
+/* ---------------------------------------------------------
+   HOMEPAGE SECTION RHYTHM
+   --------------------------------------------------------- */
+
+.unh-home main {
+  background: #f4f7f9;
+}
+
+.unh-home .region-featured-top {
+  position: relative;
+}
+
+/* Slightly stronger service card separation */
+
+#block-unhabitat-inventory-login,
+#block-unhabitat-knowledge-base,
+#block-unhabitat-ops-management {
+  box-shadow:
+    0 5px 18px rgba(0, 42, 62, 0.07);
+}
+
+#block-unhabitat-inventory-login:hover,
+#block-unhabitat-knowledge-base:hover,
+#block-unhabitat-ops-management:hover {
+  box-shadow:
+    0 12px 28px rgba(0, 42, 62, 0.11);
+}
+
+/* ---------------------------------------------------------
+   MOBILE HERO
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  #block-unhabitat-hero {
+    min-height: 360px;
+  }
+
+  #block-unhabitat-hero .field--name-body {
+    min-height: 360px;
+    padding: 30px;
+  }
+
+}
+
+
+
+/* =========================================================
+   ICTS PORTAL NAVIGATION POLISH
+   ========================================================= */
+
+.unh-navigation {
+  background: #ffffff;
+  border-bottom: 1px solid #d8e4e9;
+  box-shadow: 0 3px 10px rgba(0, 42, 62, 0.05);
+}
+
+.unh-navigation .container {
+  min-height: 52px;
+}
+
+.unh-navigation nav ul,
+.unh-navigation .menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unh-navigation nav li,
+.unh-navigation .menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+.unh-navigation nav a,
+.unh-navigation .menu-item a {
+  position: relative;
+  display: block;
+  padding: 16px 17px;
+  color: #36515d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.unh-navigation nav a::after,
+.unh-navigation .menu-item a::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  right: 17px;
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: #00689d;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.unh-navigation nav a:hover,
+.unh-navigation .menu-item a:hover,
+.unh-navigation nav a.is-active,
+.unh-navigation .menu-item a.is-active {
+  color: #00689d;
+  background: #f5f9fb;
+}
+
+.unh-navigation nav a:hover::after,
+.unh-navigation .menu-item a:hover::after,
+.unh-navigation nav a.is-active::after,
+.unh-navigation .menu-item a.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Account links in the dark header */
+
+.unh-account nav ul,
+.unh-account .menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unh-account a {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Mobile navigation */
+
+@media (max-width: 768px) {
+
+  .unh-navigation .container {
+    min-height: auto;
+  }
+
+  .unh-navigation nav ul,
+  .unh-navigation .menu {
+    flex-wrap: wrap;
+  }
+
+  .unh-navigation nav a,
+  .unh-navigation .menu-item a {
+    padding: 12px 10px;
+  }
+
+}
+
+
+ /* =========================================================
+    ICTS PORTAL FOOTER
+    ========================================================= */
+
+.unh-footer {
+  margin-top: 0;
+  padding: 42px 0 0;
+  background: #003b5c;
+  color: rgba(255, 255, 255, 0.82);
+  border-top: 4px solid #00a6a6;
+}
+
+.unh-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  padding-bottom: 32px;
+}
+
+.unh-footer-grid > div {
+  min-width: 0;
+}
+
+.unh-footer h2,
+.unh-footer h3,
+.unh-footer .block-title {
+  margin: 0 0 13px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.unh-footer p {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.unh-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unh-footer li {
+  margin: 0 0 8px;
+}
+
+.unh-footer a {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.unh-footer a:hover {
+  color: #7dd3d3;
+}
+
+.unh-footer-bottom {
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+}
+
+/* ---------------------------------------------------------
+   FOOTER RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .unh-footer {
+    padding-top: 32px;
+  }
+
+  .unh-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .unh-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+   ICTS OPS MANAGEMENT DASHBOARD
+   ========================================================= */
+
+.icts-ops-dashboard {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.icts-ops-dashboard-header {
+  margin-bottom: 30px;
+}
+
+.icts-ops-dashboard-header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #003b5c;
+}
+
+.icts-ops-dashboard-header p {
+  margin: 0;
+  color: #617681;
+  font-size: 16px;
+}
+
+.icts-ops-dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.icts-ops-dashboard-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #dce6eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 42, 62, 0.07);
+}
+
+.icts-ops-dashboard-card-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #294b59;
+}
+
+.icts-ops-dashboard-card-count {
+  margin-bottom: 8px;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 700;
+  color: #00689d;
+}
+
+.icts-ops-dashboard-card-text {
+  margin-bottom: 20px;
+  color: #617681;
+  font-size: 14px;
+}
+
+.icts-ops-dashboard-card a {
+  display: inline-block;
+  color: #00689d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.icts-ops-dashboard-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+  .icts-ops-dashboard {
+    margin: 28px auto;
+    padding: 0 18px;
+  }
+
+  .icts-ops-dashboard-header h1 {
+    font-size: 27px;
+  }
+
+  .icts-ops-dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   ICTS DOCUMENTATION
+   Match Knowledge Base search and category styling
+   ========================================================= */
+
+.view-icts-ops-documentation .views-exposed-form {
+  margin-bottom: 24px;
+}
+
+.view-icts-ops-documentation .views-exposed-form > div {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.view-icts-ops-documentation .views-exposed-form .form-item,
+.view-icts-ops-documentation .views-exposed-form .form-actions {
+  margin-bottom: 0 !important;
+}
+
+.view-icts-ops-documentation .views-exposed-form label {
+  display: block;
+  color: #526873;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.view-icts-ops-documentation .views-exposed-form input[type="text"],
+.view-icts-ops-documentation .views-exposed-form select {
+  min-height: 44px;
+  border: 1px solid #cbd9df;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #243942;
+  box-shadow: none;
+  padding: 8px 12px;
+}
+
+.view-icts-ops-documentation .views-exposed-form input[type="text"] {
+  min-width: 280px;
+}
+
+.view-icts-ops-documentation .views-exposed-form select {
+  min-width: 180px;
+}
+
+.view-icts-ops-documentation .views-exposed-form input[type="text"]:focus,
+.view-icts-ops-documentation .views-exposed-form select:focus {
+  border-color: #00689d;
+  box-shadow: 0 0 0 3px rgba(0, 104, 157, 0.10);
+  outline: none;
+}
+
+.view-icts-ops-documentation .views-exposed-form .form-submit {
+  min-height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 6px;
+  background: #00689d;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.view-icts-ops-documentation .views-exposed-form .form-submit:hover {
+  background: #003b5c;
+}
+
+/* Documentation result */
+
+.view-icts-ops-documentation .views-row {
+  padding: 22px 24px;
+  margin-bottom: 16px;
+  border: 1px solid #dce6ea;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 42, 62, 0.06);
+}
+
+.view-icts-ops-documentation .views-field-title {
+  margin-bottom: 16px;
+}
+
+.view-icts-ops-documentation .views-field-title a,
+.view-icts-ops-documentation .views-field-title {
+  color: #003b5c;
+  font-size: 21px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.view-icts-ops-documentation .views-field-field-doc-category,
+.view-icts-ops-documentation .views-field-field-doc-description,
+.view-icts-ops-documentation .views-field-field-doc-status,
+.view-icts-ops-documentation .views-field-field-doc-updated {
+  margin-bottom: 10px;
+  color: #526873;
+}
+
+.view-icts-ops-documentation .views-field-field-doc-category .views-label,
+.view-icts-ops-documentation .views-field-field-doc-description .views-label,
+.view-icts-ops-documentation .views-field-field-doc-status .views-label,
+.view-icts-ops-documentation .views-field-field-doc-updated .views-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #003b5c;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   ICTS Documentation result layout
+   ========================================================= */
+
+.view-icts-ops-documentation .views-row {
+  padding: 22px 24px;
+  margin-bottom: 16px;
+  border: 1px solid #dce6ea;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 42, 62, 0.06);
+}
+
+.view-icts-ops-documentation .views-field {
+  display: block;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.view-icts-ops-documentation .views-field .views-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #003b5c;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.view-icts-ops-documentation .views-field .field-content {
+  display: block;
+  color: #526873;
+  font-size: 15px;
+}
+
+.view-icts-ops-documentation .views-field-title {
+  margin-bottom: 18px;
+}
+
+.view-icts-ops-documentation .views-field-title .field-content {
+  color: #003b5c;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.view-icts-ops-documentation .views-field-field-doc-description .field-content {
+  line-height: 1.6;
+}
+
+.view-icts-ops-documentation .views-field:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+/* =========================================================
+   ICTS TASKS MODULE
+   Professional operational page styling
+   Scoped only to /ops/tasks
+   ========================================================= */
+
+.path-ops {
+  background: #f4f6f8;
+}
+
+/* Main content area */
+.path-ops main {
+  background: transparent;
+}
+
+.path-ops .region-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+}
+
+/* Page heading */
+.path-ops .page-header {
+  margin: 0 0 24px;
+  padding: 0;
+  border: 0;
+}
+
+.path-ops .page-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #1f2937;
+}
+
+/* View wrapper */
+.path-ops .view-icts-ops-tasks {
+  background: #ffffff;
+  border: 1px solid #e3e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(31, 41, 55, 0.06);
+}
+
+/* View title */
+.path-ops .view-icts-ops-tasks .view-header h2,
+.path-ops .view-icts-ops-tasks h2 {
+  margin: 0 0 18px;
+  color: #1f2937;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Create Task button */
+.path-ops .view-header .button,
+.path-ops .view-header a.button {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 10px 18px;
+  border-radius: 7px;
+  background: #174a7e;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border: 0;
+  transition: all 0.2s ease;
+}
+
+.path-ops .view-header .button:hover,
+.path-ops .view-header a.button:hover {
+  background: #123b65;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Filters */
+.path-ops .views-exposed-form {
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  background: #f7f9fb;
+  border: 1px solid #e5e9ee;
+  border-radius: 9px;
+}
+
+.path-ops .views-exposed-form .form--inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.path-ops .views-exposed-form .form-item {
+  margin: 0;
+}
+
+.path-ops .views-exposed-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.path-ops .views-exposed-form select,
+.path-ops .views-exposed-form input {
+  min-height: 40px;
+  border: 1px solid #d4dae1;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 7px 11px;
+  color: #273444;
+  font-size: 14px;
+}
+
+.path-ops .views-exposed-form input:focus,
+.path-ops .views-exposed-form select:focus {
+  border-color: #174a7e;
+  box-shadow: 0 0 0 2px rgba(23, 74, 126, 0.10);
+  outline: none;
+}
+
+/* Filter button */
+.path-ops .views-exposed-form .form-actions {
+  margin: 0;
+}
+
+.path-ops .views-exposed-form .form-submit {
+  min-height: 40px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: #174a7e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.path-ops .views-exposed-form .form-submit:hover {
+  background: #123b65;
+}
+
+/* Task list */
+.path-ops .view-icts-ops-tasks .view-content {
+  margin-top: 4px;
+}
+
+/* Task rows */
+.path-ops .view-icts-ops-tasks .views-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.8fr) minmax(180px, 1.3fr) 120px 120px 130px 170px;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 16px;
+  margin: 0;
+  border-bottom: 1px solid #e8ebef;
+  background: #ffffff;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.path-ops .view-icts-ops-tasks .views-row:hover {
+  background: #f8fafc;
+  box-shadow: inset 3px 0 0 #174a7e;
+}
+
+/* Task title */
+.path-ops .views-field-title {
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.path-ops .views-field-title a {
+  color: #174a7e;
+  text-decoration: none;
+}
+
+.path-ops .views-field-title a:hover {
+  text-decoration: underline;
+}
+
+/* Project */
+.path-ops .views-field-field-task-project {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+/* Assignee */
+.path-ops .views-field-field-task-assignee {
+  color: #374151;
+  font-size: 14px;
+}
+
+/* Priority */
+.path-ops .views-field-field-task-priority {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Status */
+.path-ops .views-field-field-task-status {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Due date */
+.path-ops .views-field-field-task-due-date {
+  color: #4b5563;
+  font-size: 13px;
+}
+
+/* Field labels */
+.path-ops .views-field .views-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #7a8490;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .path-ops .view-icts-ops-tasks .views-row {
+    grid-template-columns: 1.5fr 1.2fr 1fr 1fr;
+  }
+
+  .path-ops .views-field-field-task-due-date {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .path-ops .region-content {
+    padding: 24px 16px 40px;
+  }
+
+  .path-ops .view-icts-ops-tasks {
+    padding: 16px;
+  }
+
+  .path-ops .views-exposed-form .form--inline {
+    display: block;
+  }
+
+  .path-ops .views-exposed-form .form-item,
+  .path-ops .views-exposed-form .form-actions {
+    margin-bottom: 12px;
+  }
+
+  .path-ops .view-icts-ops-tasks .views-row {
+    display: block;
+    padding: 18px 14px;
+  }
+
+  .path-ops .views-field {
+    margin-bottom: 12px;
+  }
+}
+
+/* =========================================================
+   ICTS PROJECTS MODULE
+   Professional operational page styling
+   Scoped to the Projects View
+   ========================================================= */
+
+.path-ops .view-icts-ops-projects {
+  background: #ffffff;
+  border: 1px solid #e3e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(31, 41, 55, 0.06);
+}
+
+/* Projects heading */
+.path-ops .view-icts-ops-projects .view-header h2,
+.path-ops .view-icts-ops-projects h2 {
+  margin: 0 0 20px;
+  color: #1f2937;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Project rows */
+.path-ops .view-icts-ops-projects .views-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) 140px 120px 120px 160px;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 18px;
+  margin: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e8ebef;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.path-ops .view-icts-ops-projects .views-row:hover {
+  background: #f8fafc;
+  box-shadow: inset 3px 0 0 #174a7e;
+}
+
+/* Project title */
+.path-ops .view-icts-ops-projects .views-field-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #1f2937;
+}
+
+.path-ops .view-icts-ops-projects .views-field-title a {
+  color: #174a7e;
+  text-decoration: none;
+}
+
+.path-ops .view-icts-ops-projects .views-field-title a:hover {
+  text-decoration: underline;
+}
+
+/* Status */
+.path-ops .view-icts-ops-projects .views-field-field-project-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Priority */
+.path-ops .view-icts-ops-projects .views-field-field-project-priority {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* Progress */
+.path-ops .view-icts-ops-projects .views-field-field-project-progress {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* Target date */
+.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* Field labels */
+.path-ops .view-icts-ops-projects .views-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #7a8490;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Projects layout */
+@media (max-width: 1000px) {
+  .path-ops .view-icts-ops-projects .views-row {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .path-ops .view-icts-ops-projects {
+    padding: 16px;
+  }
+
+  .path-ops .view-icts-ops-projects .views-row {
+    display: block;
+    padding: 18px 14px;
+  }
+
+  .path-ops .view-icts-ops-projects .views-field {
+    margin-bottom: 12px;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS ACTIVITY HISTORY
+   ========================================================= */
+
+.ops-activity-heading {
+  margin: 28px 0 22px;
+}
+
+.ops-activity-kicker {
+  margin-bottom: 6px;
+  color: #667085;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.ops-activity-title {
+  margin: 0;
+  color: #182230;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.ops-activity-item {
+  margin: 0 0 16px;
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, .05);
+}
+
+.ops-activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.ops-activity-date {
+  color: #667085;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ops-activity-actor {
+  color: #344054;
+  font-size: 13px;
+}
+
+.ops-activity-message {
+  margin-bottom: 12px;
+  color: #182230;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ops-activity-change-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ops-activity-change-values > div {
+  padding: 11px 13px;
+  background: #f8fafc;
+  border: 1px solid #eaecf0;
+  border-radius: 7px;
+  color: #475467;
+  font-size: 14px;
+}
+
+.ops-activity-change-values strong,
+.ops-activity-assigned-by strong {
+  color: #344054;
+}
+
+.ops-activity-assigned-by {
+  padding-top: 12px;
+  border-top: 1px solid #eef0f3;
+  color: #475467;
+  font-size: 13px;
+}
+
+.ops-activity-empty {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+  color: #667085;
+  text-align: center;
+}
+
+.ops-activity-back {
+  display: inline-flex;
+  margin-top: 8px;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ops-activity-back:hover {
+  color: #182230;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .ops-activity-header {
+    display: block;
+  }
+
+  .ops-activity-actor {
+    margin-top: 5px;
+  }
+
+  .ops-activity-change-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS ACTIVITY / HISTORY
+   ========================================================= */
+
+.ops-activity-heading {
+  margin: 0 0 30px;
+  padding: 28px 32px;
+  background: #f8fafc;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+}
+
+.ops-activity-kicker {
+  margin-bottom: 7px;
+  color: #667085;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.ops-activity-title {
+  margin: 0;
+  color: #101828;
+  font-size: 28px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.ops-activity-item {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 22px 24px 24px 28px;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, .04);
+}
+
+.ops-activity-item::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -6px;
+  width: 11px;
+  height: 11px;
+  background: #344054;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #d0d5dd;
+}
+
+.ops-activity-header {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.ops-activity-date {
+  margin: 0;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ops-activity-actor {
+  color: #667085;
+  font-size: 13px;
+}
+
+.ops-activity-actor strong {
+  color: #344054;
+}
+
+.ops-activity-change {
+  padding: 15px 16px;
+  margin-top: 10px;
+  background: #f8fafc;
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+}
+
+.ops-activity-change:first-child {
+  margin-top: 0;
+}
+
+.ops-activity-message {
+  margin: 0 0 10px;
+  color: #101828;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ops-activity-change-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0;
+}
+
+.ops-activity-change-values > div {
+  min-width: 0;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  border-radius: 6px;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ops-activity-change-values strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #667085;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.ops-activity-assigned-by {
+  grid-column: 1 / -1;
+  padding: 9px 12px !important;
+  background: #ffffff !important;
+  border-top: 1px solid #eef0f3 !important;
+  color: #475467 !important;
+}
+
+.ops-activity-empty {
+  padding: 40px;
+  background: #f8fafc;
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+  color: #667085;
+  text-align: center;
+}
+
+.ops-activity-back {
+  display: inline-block;
+  margin-top: 8px;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.ops-activity-back:hover {
+  color: #101828;
+  text-decoration: underline !important;
+}
+
+@media (max-width: 700px) {
+  .ops-activity-heading {
+    padding: 22px;
+  }
+
+  .ops-activity-title {
+    font-size: 23px;
+  }
+
+  .ops-activity-header {
+    display: block !important;
+  }
+
+  .ops-activity-actor {
+    margin-top: 5px;
+  }
+
+  .ops-activity-change-values {
+    grid-template-columns: 1fr;
+  }
+
+  .ops-activity-assigned-by {
+    grid-column: auto;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS ACTIVITY COLOR REFINEMENT
+   ========================================================= */
+
+.ops-activity-heading {
+  background: linear-gradient(135deg, #eef6ff 0%, #f8fafc 100%);
+  border-color: #d6e4f5;
+}
+
+.ops-activity-kicker {
+  color: #175cd3;
+}
+
+.ops-activity-title {
+  color: #12355b;
+}
+
+.ops-activity-item {
+  background: #ffffff;
+  border-color: #d9e2ec;
+  box-shadow: 0 3px 10px rgba(16, 54, 92, .06);
+}
+
+.ops-activity-item::before {
+  background: #1769aa;
+  box-shadow: 0 0 0 1px #b8d4ed;
+}
+
+.ops-activity-header {
+  border-bottom-color: #dfe8f1;
+}
+
+.ops-activity-date {
+  color: #1769aa;
+}
+
+.ops-activity-actor {
+  color: #667085;
+}
+
+.ops-activity-actor strong {
+  color: #344054;
+}
+
+.ops-activity-change {
+  background: #f5f9fd;
+  border-color: #dce8f3;
+}
+
+.ops-activity-message {
+  color: #12355b;
+}
+
+.ops-activity-change-values > div {
+  background: #ffffff;
+  border-color: #dce5ee;
+  color: #475467;
+}
+
+.ops-activity-change-values > div:first-child {
+  border-left: 3px solid #98a2b3;
+}
+
+.ops-activity-change-values > div:nth-child(2) {
+  border-left: 3px solid #2e90fa;
+}
+
+.ops-activity-change-values strong {
+  color: #667085;
+}
+
+.ops-activity-assigned-by {
+  background: #f8fbff !important;
+  border-top-color: #dfe8f1 !important;
+  color: #475467 !important;
+}
+
+.ops-activity-back {
+  color: #175cd3;
+}
+
+.ops-activity-back:hover {
+  color: #12355b;
+}
+
+
+
+/* =========================================================
+   ICTS OPS ACTIVITY
+   COLOR DECORATION
+   ========================================================= */
+
+.ops-activity-heading {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8f3ff 0%, #f0f9ff 48%, #eefbf7 100%);
+  border: 1px solid #c9def2;
+  box-shadow: 0 8px 24px rgba(30, 80, 130, .08);
+}
+
+.ops-activity-heading::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -70px;
+  top: -90px;
+  background: rgba(45, 170, 150, .12);
+  border-radius: 50%;
+}
+
+.ops-activity-kicker {
+  color: #087443;
+  font-weight: 700;
+}
+
+.ops-activity-title {
+  color: #123b63;
+}
+
+.ops-activity-item {
+  border: 1px solid #d7e2ec;
+  border-left: 4px solid #2383c6;
+  background: #ffffff;
+  box-shadow: 0 5px 16px rgba(25, 55, 85, .07);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.ops-activity-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(25, 55, 85, .11);
+}
+
+.ops-activity-item::before {
+  background: #2383c6;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px #d7edf9;
+}
+
+/* Alternating activity colours */
+
+.ops-activity-item:nth-child(3n + 1) {
+  border-left-color: #2383c6;
+}
+
+.ops-activity-item:nth-child(3n + 1)::before {
+  background: #2383c6;
+  box-shadow: 0 0 0 3px #d7edf9;
+}
+
+.ops-activity-item:nth-child(3n + 2) {
+  border-left-color: #16a085;
+}
+
+.ops-activity-item:nth-child(3n + 2)::before {
+  background: #16a085;
+  box-shadow: 0 0 0 3px #d9f4ed;
+}
+
+.ops-activity-item:nth-child(3n) {
+  border-left-color: #8e5cc7;
+}
+
+.ops-activity-item:nth-child(3n)::before {
+  background: #8e5cc7;
+  box-shadow: 0 0 0 3px #eee3f8;
+}
+
+.ops-activity-date {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #edf6ff;
+  border-radius: 6px;
+  color: #1769aa;
+  font-weight: 700;
+}
+
+.ops-activity-actor {
+  color: #475467;
+}
+
+.ops-activity-change {
+  background: linear-gradient(135deg, #f8fbff 0%, #f7fcfb 100%);
+  border-color: #dce8f1;
+}
+
+.ops-activity-message {
+  color: #123b63;
+}
+
+.ops-activity-change-values > div {
+  background: #ffffff;
+  border-color: #dce5ee;
+}
+
+.ops-activity-change-values > div:first-child {
+  background: #fafafa;
+  border-left: 4px solid #98a2b3;
+}
+
+.ops-activity-change-values > div:nth-child(2) {
+  background: #f0fbf7;
+  border-left: 4px solid #16a085;
+}
+
+.ops-activity-change-values strong {
+  color: #667085;
+}
+
+.ops-activity-assigned-by {
+  background: #f4f0ff !important;
+  border-top-color: #e3d8f2 !important;
+  color: #68459a !important;
+}
+
+.ops-activity-assigned-by strong {
+  color: #68459a;
+}
+
+.ops-activity-back {
+  padding: 8px 14px;
+  background: #edf6ff;
+  border: 1px solid #cfe3f5;
+  border-radius: 7px;
+  color: #1769aa;
+  transition: all .15s ease;
+}
+
+.ops-activity-back:hover {
+  background: #1769aa;
+  border-color: #1769aa;
+  color: #ffffff;
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+   ICTS OPS ACTIVITY PRINT
+   ========================================================= */
+
+.ops-activity-print {
+  display: inline-block;
+  margin: 18px 0 0;
+  padding: 9px 17px;
+  background: #1769aa;
+  border: 1px solid #1769aa;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ops-activity-print:hover {
+  background: #123b63;
+  border-color: #123b63;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+
+  .ops-detail-tabs,
+  .ops-activity-back,
+  .ops-activity-print,
+  .region-header,
+  .region-footer,
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  .ops-activity-heading {
+    padding: 0 0 18px !important;
+    margin-bottom: 20px !important;
+    background: #ffffff !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .ops-activity-heading::after {
+    display: none !important;
+  }
+
+  .ops-activity-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .ops-activity-change {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ops-activity-date {
+    background: #ffffff !important;
+    border: 1px solid #d0d5dd;
+  }
+}
+
+
+/* Print button: separate top position */
+
+.ops-activity-print-top .ops-activity-print:hover {
+  background: #123b63;
+  border-color: #123b63;
+}
+
+@media print {
+  .ops-activity-print-top {
+    display: none !important;
+  }
+}
+
+
+
+/* Activity Print placement */
+
+.ops-activity-print-top {
+  display: block !important;
+  margin: 0 0 18px !important;
+  text-align: left !important;
+}
+
+.ops-activity-print-top .ops-activity-print {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 9px 18px;
+  background: #1769aa;
+  border: 1px solid #1769aa;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+
+/* Activity Print placement */
+
+.ops-activity-print-top {
+  display: block !important;
+  margin: 0 0 18px !important;
+  text-align: left !important;
+}
+
+.ops-activity-print-top .ops-activity-print {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 9px 18px;
+  background: #1769aa;
+  border: 1px solid #1769aa;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ICTS OPS PRINT POSITION */
+.ops-activity-print-top {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: calc(100% - 120px) !important;
+  margin: 0 120px 18px 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ops-activity-print-top .ops-activity-print {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 9px 17px !important;
+  background: #1769aa !important;
+  border: 1px solid #1769aa !important;
+  border-radius: 7px !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+.ops-activity-print-top .ops-activity-print:hover {
+  background: #123b63 !important;
+  border-color: #123b63 !important;
+}
+
+
+/* FORCE ICTS PRINT BUTTON CLICKABLE */
+.ops-activity-print-top {
+  position: relative !important;
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+}
+
+.ops-activity-print-top .ops-activity-print {
+  position: relative !important;
+  z-index: 1001 !important;
+  display: inline-block !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* FINAL ICTS PRINT BUTTON */
+.ops-activity-print-top {
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: calc(100% - 100px) !important;
+  margin: 0 100px 20px 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+.ops-activity-print {
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  padding: 9px 17px !important;
+  background: #1769aa !important;
+  border: 1px solid #1769aa !important;
+  border-radius: 7px !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================================
+   ICTS OPS TASKS
+   Clean professional task page
+   ========================================================= */
+
+.path-ops-tasks {
+  background: #f4f7f9;
+}
+
+.path-ops-tasks main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 28px 50px;
+}
+
+/* Page title */
+.path-ops-tasks h1,
+.path-ops-tasks .page-title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Filters */
+.path-ops-tasks .views-exposed-form {
+  background: #ffffff;
+  border: 1px solid #e2e8ed;
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 3px 12px rgba(30, 50, 70, 0.06);
+}
+
+.path-ops-tasks .views-exposed-form .form--inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.path-ops-tasks .views-exposed-form label {
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.path-ops-tasks .views-exposed-form select,
+.path-ops-tasks .views-exposed-form input {
+  min-height: 42px;
+  border: 1px solid #ccd5dc;
+  border-radius: 7px;
+  padding: 8px 12px;
+  background: #fff;
+}
+
+.path-ops-tasks .views-exposed-form .form-actions {
+  margin-bottom: 0;
+}
+
+.path-ops-tasks .views-exposed-form input[type="submit"] {
+  min-height: 42px;
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Task table */
+.path-ops-tasks .view-icts-ops-tasks {
+  background: #ffffff;
+  border: 1px solid #e1e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(30, 50, 70, 0.07);
+}
+
+.path-ops-tasks .view-icts-ops-tasks table {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table headers */
+.path-ops-tasks .view-icts-ops-tasks thead th {
+  background: #eef3f6;
+  color: #34424d;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 15px 14px;
+  border-bottom: 1px solid #dbe3e8;
+  white-space: nowrap;
+}
+
+/* Table rows */
+.path-ops-tasks .view-icts-ops-tasks tbody td {
+  padding: 15px 14px;
+  border-bottom: 1px solid #edf1f3;
+  vertical-align: middle;
+  color: #34424d;
+}
+
+.path-ops-tasks .view-icts-ops-tasks tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.path-ops-tasks .view-icts-ops-tasks tbody tr:hover {
+  background: #f8fafb;
+}
+
+/* Task name */
+.path-ops-tasks .view-icts-ops-tasks td.views-field-title {
+  font-weight: 600;
+}
+
+/* Action links */
+.path-ops-tasks .view-icts-ops-tasks td a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.path-ops-tasks .view-icts-ops-tasks td a:hover {
+  text-decoration: underline;
+}
+
+/* Give action columns breathing room */
+.path-ops-tasks .view-icts-ops-tasks td.views-field-edit-node,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-delete-node,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-view-node {
+  white-space: nowrap;
+}
+
+/* Responsive table */
+@media (max-width: 1000px) {
+  .path-ops-tasks main {
+    padding: 24px 16px 40px;
+  }
+
+  .path-ops-tasks .view-icts-ops-tasks {
+    overflow-x: auto;
+  }
+
+  .path-ops-tasks .view-icts-ops-tasks table {
+    min-width: 1000px;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS TASKS
+   Softer modern colour treatment
+   ========================================================= */
+
+.path-ops-tasks {
+  background: linear-gradient(135deg, #f7f9fc 0%, #eef5f4 100%);
+}
+
+/* Main content */
+.path-ops-tasks main {
+  background: transparent;
+}
+
+/* Page heading */
+.path-ops-tasks h1,
+.path-ops-tasks .page-title {
+  color: #183b4b;
+  font-weight: 600;
+}
+
+/* Filter area */
+.path-ops-tasks .views-exposed-form {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #dce9e7;
+  box-shadow: 0 6px 20px rgba(35, 73, 82, 0.07);
+}
+
+/* Inputs */
+.path-ops-tasks .views-exposed-form select,
+.path-ops-tasks .views-exposed-form input {
+  background: #fbfdfd;
+  border-color: #cbdeda;
+  color: #29434b;
+}
+
+.path-ops-tasks .views-exposed-form select:focus,
+.path-ops-tasks .views-exposed-form input:focus {
+  border-color: #5b9f91;
+  box-shadow: 0 0 0 3px rgba(91, 159, 145, 0.13);
+  outline: none;
+}
+
+/* Filter button */
+.path-ops-tasks .views-exposed-form input[type="submit"] {
+  background: #397f76;
+  color: #ffffff;
+}
+
+.path-ops-tasks .views-exposed-form input[type="submit"]:hover {
+  background: #2f6d65;
+}
+
+/* Task table container */
+.path-ops-tasks .view-icts-ops-tasks {
+  background: #ffffff;
+  border-color: #dce7e6;
+  box-shadow: 0 8px 24px rgba(35, 73, 82, 0.08);
+}
+
+/* Table heading */
+.path-ops-tasks .view-icts-ops-tasks thead th {
+  background: #e7f0ee;
+  color: #244852;
+  border-bottom-color: #cfdfdc;
+}
+
+/* Alternating rows */
+.path-ops-tasks .view-icts-ops-tasks tbody tr:nth-child(even) {
+  background: #fafcfb;
+}
+
+.path-ops-tasks .view-icts-ops-tasks tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* Hover */
+.path-ops-tasks .view-icts-ops-tasks tbody tr:hover {
+  background: #eef8f5;
+}
+
+/* Main task title */
+.path-ops-tasks .view-icts-ops-tasks td.views-field-title {
+  color: #205c62;
+}
+
+/* Normal text */
+.path-ops-tasks .view-icts-ops-tasks tbody td {
+  color: #43575d;
+}
+
+/* Actions */
+.path-ops-tasks .view-icts-ops-tasks td.views-field-edit-node a,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-delete-node a,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-view-node a {
+  color: #397f76;
+}
+
+.path-ops-tasks .view-icts-ops-tasks td.views-field-edit-node a:hover,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-delete-node a:hover,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-view-node a:hover {
+  color: #214f55;
+}
+
+/* Priority / status cells get subtle emphasis */
+.path-ops-tasks .view-icts-ops-tasks td.views-field-field-task-priority,
+.path-ops-tasks .view-icts-ops-tasks td.views-field-field-task-status {
+  color: #355b61;
+  font-weight: 500;
+}
+
+
+/* OPS TASKS PAGE BACKGROUND ONLY */
+.path-ops-tasks {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(91, 159, 145, 0.10), transparent 32%),
+    radial-gradient(circle at 90% 85%, rgba(54, 112, 132, 0.08), transparent 35%),
+    #f5f8f7;
+}
+
+
+body.path-ops-tasks,
+body.path-ops-tasks .dialog-off-canvas-main-canvas {
+  background: #eef4f3 !important;
+}
+
+body.path-ops-tasks .main-content,
+body.path-ops-tasks main {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   OPS TASKS - PAGE BACKGROUND
+   ========================================================= */
+
+body.path-ops-tasks {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(44, 119, 108, 0.16), transparent 30%),
+    radial-gradient(circle at 100% 20%, rgba(67, 137, 158, 0.14), transparent 32%),
+    radial-gradient(circle at 80% 100%, rgba(44, 119, 108, 0.10), transparent 30%),
+    linear-gradient(135deg, #f7faf9 0%, #edf4f5 50%, #f8faf9 100%) !important;
+  min-height: 100vh;
+}
+
+body.path-ops-tasks .dialog-off-canvas-main-canvas,
+body.path-ops-tasks .page,
+body.path-ops-tasks .main-container {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   ICTS OPS TASKS
+   Background + Typography
+   ========================================================= */
+
+body.path-ops-tasks {
+  background: #edf3f2 !important;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+  color: #263f46;
+}
+
+body.path-ops-tasks .dialog-off-canvas-main-canvas,
+body.path-ops-tasks .page,
+body.path-ops-tasks .main-container,
+body.path-ops-tasks main {
+  background: transparent !important;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Page title */
+body.path-ops-tasks h1,
+body.path-ops-tasks .page-title {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 600;
+  color: #183f49;
+  letter-spacing: -0.4px;
+}
+
+/* Task table typography */
+body.path-ops-tasks table,
+body.path-ops-tasks table th,
+body.path-ops-tasks table td {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+body.path-ops-tasks table th {
+  font-weight: 600;
+}
+
+body.path-ops-tasks table td {
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   ICTS OPS TASKS
+   Modern soft task view
+   ========================================================= */
+
+body.path-ops-tasks {
+  background: #eef4f3 !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  color: #30464c;
+}
+
+body.path-ops-tasks .main-container,
+body.path-ops-tasks main,
+body.path-ops-tasks .region-content {
+  background: transparent !important;
+}
+
+/* Page title */
+body.path-ops-tasks h1 {
+  color: #174b52;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+/* Filters */
+body.path-ops-tasks .views-exposed-form {
+  background: #ffffff;
+  border: 0;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 26px;
+  box-shadow: 0 5px 18px rgba(35, 70, 75, 0.08);
+}
+
+/* View area */
+body.path-ops-tasks .view-icts-ops-tasks {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Individual task rows */
+body.path-ops-tasks .view-icts-ops-tasks .views-row {
+  background: #ffffff;
+  border: 1px solid #dfe9e7;
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-bottom: 18px;
+  box-shadow: 0 5px 18px rgba(35, 70, 75, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Gentle lift on hover */
+body.path-ops-tasks .view-icts-ops-tasks .views-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(35, 70, 75, 0.11);
+}
+
+/* Field labels */
+body.path-ops-tasks .view-icts-ops-tasks .views-field {
+  color: #52676c;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 7px;
+}
+
+/* Task name */
+body.path-ops-tasks .view-icts-ops-tasks .views-field-title {
+  color: #185a62;
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* Values */
+body.path-ops-tasks .view-icts-ops-tasks .views-field-content {
+  color: #334c52;
+}
+
+/* Actions */
+body.path-ops-tasks .view-icts-ops-tasks a {
+  color: #28766f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body.path-ops-tasks .view-icts-ops-tasks a:hover {
+  color: #174f55;
+  text-decoration: underline;
+}
+
+/* Action spacing */
+body.path-ops-tasks .view-icts-ops-tasks .views-field-edit-node,
+body.path-ops-tasks .view-icts-ops-tasks .views-field-delete-node,
+body.path-ops-tasks .view-icts-ops-tasks .views-field-view-node {
+  display: inline-block;
+  margin-right: 18px;
+  margin-top: 8px;
+}
+
+/* Status and priority */
+body.path-ops-tasks .view-icts-ops-tasks .views-field-field-task-status,
+body.path-ops-tasks .view-icts-ops-tasks .views-field-field-task-priority {
+  font-weight: 500;
+}
+
+/* Softer labels */
+body.path-ops-tasks .view-icts-ops-tasks .views-label {
+  color: #718187;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops-tasks .view-icts-ops-tasks .views-row {
+    padding: 18px;
+    border-radius: 13px;
+  }
+
+  body.path-ops-tasks h1 {
+    font-size: 25px;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS TASKS - ACTUAL PAGE STRUCTURE
+   ========================================================= */
+
+body.path-ops {
+  background: #f5f7f6 !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  color: #26383c;
+}
+
+/* Main content */
+body.path-ops .unh-content-layout {
+  background: transparent !important;
+}
+
+/* Filters */
+body.path-ops .views-exposed-form {
+  background: #ffffff !important;
+  padding: 18px 22px !important;
+  margin-bottom: 24px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e4e9e8 !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,.05) !important;
+}
+
+/* Tasks container */
+body.path-ops .view-icts-ops-tasks .view-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+/* Individual task */
+body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  border: 1px solid #e1e7e5 !important;
+  border-radius: 12px !important;
+  padding: 20px 24px !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 10px rgba(30,55,60,.05) !important;
+}
+
+/* Task title */
+body.path-ops .view-icts-ops-tasks .views-field-title {
+  margin-bottom: 14px !important;
+  color: #174f55 !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+}
+
+/* All task fields */
+body.path-ops .view-icts-ops-tasks .views-field {
+  margin-bottom: 6px !important;
+  color: #42565a !important;
+  font-size: 14px !important;
+}
+
+/* Field labels */
+body.path-ops .view-icts-ops-tasks .views-label {
+  color: #718084 !important;
+  font-weight: 600 !important;
+}
+
+/* Field values */
+body.path-ops .view-icts-ops-tasks .field-content {
+  color: #33484c !important;
+}
+
+/* Links */
+body.path-ops .view-icts-ops-tasks a {
+  color: #28736d !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+body.path-ops .view-icts-ops-tasks a:hover {
+  color: #174f55 !important;
+  text-decoration: underline !important;
+}
+
+/* Actions */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node,
+body.path-ops .view-icts-ops-tasks .views-field-view-node {
+  display: inline-block !important;
+  margin-top: 10px !important;
+  margin-right: 20px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Status and priority */
+body.path-ops .view-icts-ops-tasks .views-field-field-task-status,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-priority {
+  font-weight: 500 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+    padding: 17px !important;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS TASKS
+   Clear professional layout
+   ========================================================= */
+
+body.path-ops {
+  background: #f1f4f3 !important;
+  font-family: Arial, sans-serif !important;
+  color: #24383d !important;
+}
+
+/* Filters */
+body.path-ops .views-exposed-form {
+  background: #ffffff !important;
+  border: 1px solid #cbd7d5 !important;
+  border-radius: 10px !important;
+  padding: 18px 22px !important;
+  margin-bottom: 22px !important;
+}
+
+/* Task list */
+body.path-ops .view-icts-ops-tasks .view-content {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+}
+
+/* Task card */
+body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+  position: relative !important;
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-left: 5px solid #28766f !important;
+  border-radius: 10px !important;
+  padding: 18px 22px !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.06) !important;
+}
+
+/* Task title */
+body.path-ops .view-icts-ops-tasks .views-field-title {
+  color: #123f46 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 13px !important;
+}
+
+/* Information fields */
+body.path-ops .view-icts-ops-tasks .views-field {
+  color: #344b50 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 5px !important;
+}
+
+/* Labels */
+body.path-ops .view-icts-ops-tasks .views-label {
+  display: inline-block !important;
+  min-width: 82px !important;
+  color: #5b6d71 !important;
+  font-weight: 700 !important;
+}
+
+/* Values */
+body.path-ops .view-icts-ops-tasks .field-content {
+  color: #243c41 !important;
+  font-weight: 500 !important;
+}
+
+/* Priority */
+body.path-ops .view-icts-ops-tasks .views-field-field-task-priority .field-content {
+  font-weight: 700 !important;
+  color: #8a5a00 !important;
+}
+
+/* Status */
+body.path-ops .view-icts-ops-tasks .views-field-field-task-status .field-content {
+  font-weight: 700 !important;
+  color: #23665f !important;
+}
+
+/* Actions */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node,
+body.path-ops .view-icts-ops-tasks .views-field-view-node {
+  display: inline-block !important;
+  margin-top: 12px !important;
+  margin-right: 22px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Action links */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a,
+body.path-ops .view-icts-ops-tasks .views-field-view-node a {
+  color: #17665f !important;
+  font-weight: 700 !important;
+}
+
+/* Created / assigned information */
+body.path-ops .view-icts-ops-tasks .views-field-uid,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-assigned-by {
+  color: #68787b !important;
+  font-size: 13px !important;
+}
+
+/* Hover */
+body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row:hover {
+  border-left-color: #174f55 !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,.10) !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+    padding: 16px !important;
+  }
+
+  body.path-ops .view-icts-ops-tasks .views-label {
+    min-width: 70px !important;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS TASKS
+   Compact information layout
+   ========================================================= */
+
+/* Keep related task information on the same line */
+body.path-ops .view-icts-ops-tasks .views-field-field-task-assignee,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-priority,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-status,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-due-date {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 28px !important;
+  margin-bottom: 8px !important;
+}
+
+/* Labels and values */
+body.path-ops .view-icts-ops-tasks .views-field-field-task-assignee .views-label,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-priority .views-label,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-status .views-label,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-due-date .views-label {
+  display: inline !important;
+  min-width: 0 !important;
+  margin-right: 4px !important;
+}
+
+/* Strong readable values */
+body.path-ops .view-icts-ops-tasks .views-field-field-task-assignee .field-content,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-priority .field-content,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-status .field-content,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-due-date .field-content {
+  display: inline !important;
+}
+
+/* Action buttons */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node,
+body.path-ops .view-icts-ops-tasks .views-field-view-node {
+  display: inline-block !important;
+  margin: 12px 8px 0 0 !important;
+}
+
+/* Make Edit / Delete / View Logs look like buttons */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a,
+body.path-ops .view-icts-ops-tasks .views-field-view-node a {
+  display: inline-block !important;
+  padding: 7px 14px !important;
+  border-radius: 6px !important;
+  border: 1px solid #28766f !important;
+  background: #28766f !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Button hover */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a:hover,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a:hover,
+body.path-ops .view-icts-ops-tasks .views-field-view-node a:hover {
+  background: #174f55 !important;
+  border-color: #174f55 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Keep Created by / Assigned by on their own quieter line */
+body.path-ops .view-icts-ops-tasks .views-field-uid,
+body.path-ops .view-icts-ops-tasks .views-field-field-task-assigned-by {
+  display: inline-block !important;
+  margin-right: 25px !important;
+  font-size: 13px !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  body.path-ops .view-icts-ops-tasks .views-field-field-task-assignee,
+  body.path-ops .view-icts-ops-tasks .views-field-field-task-priority,
+  body.path-ops .view-icts-ops-tasks .views-field-field-task-status,
+  body.path-ops .view-icts-ops-tasks .views-field-field-task-due-date {
+    display: block !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   OPS TASKS
+   Edit and Delete beside task title
+   ========================================================= */
+
+body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+  position: relative !important;
+}
+
+/* Task title */
+body.path-ops .view-icts-ops-tasks .views-field-title {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 18px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Edit and Delete beside title */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 6px 12px 0 !important;
+}
+
+/* Action buttons */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a {
+  display: inline-block !important;
+  padding: 6px 13px !important;
+  border-radius: 6px !important;
+  background: #28766f !important;
+  border: 1px solid #28766f !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Delete button */
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a {
+  background: #a94b4b !important;
+  border-color: #a94b4b !important;
+}
+
+/* Hover */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a:hover {
+  background: #174f55 !important;
+  border-color: #174f55 !important;
+}
+
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a:hover {
+  background: #7f3333 !important;
+  border-color: #7f3333 !important;
+}
+
+/* View Logs stays below with the other information */
+body.path-ops .view-icts-ops-tasks .views-field-view-node {
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+
+/* =========================================================
+   OPS TASKS
+   Put Edit and Delete at the right of the task title
+   ========================================================= */
+
+body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+  position: relative !important;
+  padding-top: 20px !important;
+  padding-right: 190px !important;
+}
+
+/* Task title stays at the top */
+body.path-ops .view-icts-ops-tasks .views-field-title {
+  display: block !important;
+  margin: 0 0 14px 0 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
+/* Move Edit to the top right */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node {
+  position: absolute !important;
+  top: 18px !important;
+  right: 105px !important;
+  margin: 0 !important;
+}
+
+/* Move Delete beside Edit */
+body.path-ops .view-icts-ops-tasks .views-field-delete-node {
+  position: absolute !important;
+  top: 18px !important;
+  right: 20px !important;
+  margin: 0 !important;
+}
+
+/* Edit/Delete buttons */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a,
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a {
+  display: inline-block !important;
+  padding: 7px 16px !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Edit */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a {
+  background: #28766f !important;
+  border: 1px solid #28766f !important;
+}
+
+/* Delete */
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a {
+  background: #a94b4b !important;
+  border: 1px solid #a94b4b !important;
+}
+
+/* Hover */
+body.path-ops .view-icts-ops-tasks .views-field-edit-node a:hover {
+  background: #174f55 !important;
+}
+
+body.path-ops .view-icts-ops-tasks .views-field-delete-node a:hover {
+  background: #7f3333 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-tasks .icts-ops-task.views-row {
+    padding-right: 20px !important;
+  }
+
+  body.path-ops .view-icts-ops-tasks .views-field-edit-node,
+  body.path-ops .view-icts-ops-tasks .views-field-delete-node {
+    position: static !important;
+    display: inline-block !important;
+    margin: 8px 6px 0 0 !important;
+  }
+}
+
+
+/* =========================================================
+   OPS PROJECTS
+   Match the professional layout used on OPS TASKS
+   ========================================================= */
+
+body.path-ops .view-icts-ops-projects .view-content {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-row {
+  position: relative !important;
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-left: 5px solid #28766f !important;
+  border-radius: 10px !important;
+  padding: 20px 190px 18px 22px !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.06) !important;
+  color: #344b50 !important;
+}
+
+/* Project title */
+body.path-ops .view-icts-ops-projects .views-field-title {
+  display: block !important;
+  margin: 0 0 14px 0 !important;
+  color: #123f46 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
+/* General project fields */
+body.path-ops .view-icts-ops-projects .views-field {
+  color: #344b50 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 6px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-label {
+  display: inline-block !important;
+  min-width: 82px !important;
+  color: #5b6d71 !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .view-icts-ops-projects .field-content {
+  color: #243c41 !important;
+  font-weight: 500 !important;
+}
+
+/* Compact project metadata */
+body.path-ops .view-icts-ops-projects .views-field-field-project-owner,
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 28px !important;
+  margin-bottom: 8px !important;
+}
+
+/* Priority */
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority .field-content {
+  color: #8a5a00 !important;
+  font-weight: 700 !important;
+}
+
+/* Status */
+body.path-ops .view-icts-ops-projects .views-field-field-project-status .field-content {
+  color: #23665f !important;
+  font-weight: 700 !important;
+}
+
+/* Progress */
+body.path-ops .view-icts-ops-projects .views-field-field-project-progress .field-content {
+  font-weight: 700 !important;
+}
+
+/* Edit button */
+body.path-ops .view-icts-ops-projects .views-field-edit-node {
+  position: absolute !important;
+  top: 18px !important;
+  right: 105px !important;
+  margin: 0 !important;
+}
+
+/* Delete button */
+body.path-ops .view-icts-ops-projects .views-field-delete-node {
+  position: absolute !important;
+  top: 18px !important;
+  right: 20px !important;
+  margin: 0 !important;
+}
+
+/* Edit/Delete buttons */
+body.path-ops .view-icts-ops-projects .views-field-edit-node a,
+body.path-ops .view-icts-ops-projects .views-field-delete-node a {
+  display: inline-block !important;
+  padding: 7px 16px !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Edit */
+body.path-ops .view-icts-ops-projects .views-field-edit-node a {
+  background: #28766f !important;
+  border: 1px solid #28766f !important;
+}
+
+/* Delete */
+body.path-ops .view-icts-ops-projects .views-field-delete-node a {
+  background: #a94b4b !important;
+  border: 1px solid #a94b4b !important;
+}
+
+/* Hover */
+body.path-ops .view-icts-ops-projects .views-field-edit-node a:hover {
+  background: #174f55 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-delete-node a:hover {
+  background: #7f3333 !important;
+}
+
+/* View project / activity link */
+body.path-ops .view-icts-ops-projects .views-field-view-node {
+  display: inline-block !important;
+  margin-top: 12px !important;
+  margin-right: 20px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-view-node a {
+  display: inline-block !important;
+  padding: 7px 14px !important;
+  border-radius: 6px !important;
+  border: 1px solid #28766f !important;
+  background: #28766f !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-projects .views-row {
+    padding: 18px 20px !important;
+  }
+
+  body.path-ops .view-icts-ops-projects .views-field-edit-node,
+  body.path-ops .view-icts-ops-projects .views-field-delete-node {
+    position: static !important;
+    display: inline-block !important;
+    margin: 8px 6px 0 0 !important;
+  }
+
+  body.path-ops .view-icts-ops-projects .views-field-field-project-owner,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+    display: block !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   OPS PROJECTS - MATCH TASKS CARD STYLE
+   ========================================================= */
+
+body.path-ops .view-icts-ops-projects .view-content {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+}
+
+body.path-ops .view-icts-ops-projects .icts-ops-project.views-row {
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-left: 5px solid #28766f !important;
+  border-radius: 10px !important;
+  padding: 18px 22px !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.06) !important;
+  color: #344b50 !important;
+}
+
+/* Project title */
+body.path-ops .view-icts-ops-projects .views-field-title {
+  display: block !important;
+  margin: 0 0 14px 0 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title h2 {
+  margin: 0 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title h2 a {
+  color: #123f46 !important;
+  text-decoration: none !important;
+}
+
+/* Project metadata */
+body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 28px !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Labels */
+body.path-ops .view-icts-ops-projects .views-label {
+  color: #5b6d71 !important;
+  font-weight: 700 !important;
+  margin-right: 5px !important;
+}
+
+/* Values */
+body.path-ops .view-icts-ops-projects .field-content {
+  color: #243c41 !important;
+  font-weight: 500 !important;
+}
+
+/* Status */
+body.path-ops .view-icts-ops-projects .views-field-field-project-status .field-content {
+  color: #23665f !important;
+  font-weight: 700 !important;
+}
+
+/* Priority */
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority .field-content {
+  color: #8a5a00 !important;
+  font-weight: 700 !important;
+}
+
+/* Progress */
+body.path-ops .view-icts-ops-projects .views-field-field-project-progress .field-content {
+  font-weight: 700 !important;
+}
+
+/* Target date */
+body.path-ops .view-icts-ops-projects .views-field-field-project-target-date .field-content {
+  font-weight: 500 !important;
+}
+
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+    display: block !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   OPS PROJECTS
+   Final layout matching OPS TASKS
+   ========================================================= */
+
+body.path-ops .view-icts-ops-projects .icts-ops-project.views-row {
+  position: relative !important;
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-left: 5px solid #28766f !important;
+  border-radius: 10px !important;
+  padding: 20px 200px 18px 22px !important;
+  margin-bottom: 12px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.06) !important;
+}
+
+/* Project title */
+body.path-ops .view-icts-ops-projects .views-field-title {
+  display: block !important;
+  margin: 0 0 14px 0 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title h2 {
+  margin: 0 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title a {
+  color: #123f46 !important;
+  text-decoration: none !important;
+}
+
+/* Project information on one line */
+body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 28px 8px 0 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Labels */
+body.path-ops .view-icts-ops-projects .views-label {
+  color: #5b6d71 !important;
+  font-weight: 700 !important;
+  margin-right: 5px !important;
+}
+
+/* Values */
+body.path-ops .view-icts-ops-projects .field-content {
+  color: #243c41 !important;
+  font-weight: 500 !important;
+}
+
+/* Status */
+body.path-ops .view-icts-ops-projects .views-field-field-project-status .field-content {
+  color: #23665f !important;
+  font-weight: 700 !important;
+}
+
+/* Priority */
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority .field-content {
+  color: #8a5a00 !important;
+  font-weight: 700 !important;
+}
+
+/* Edit button */
+body.path-ops .view-icts-ops-projects .views-field-edit-node {
+  position: absolute !important;
+  top: 18px !important;
+  right: 105px !important;
+  margin: 0 !important;
+}
+
+/* Delete button */
+body.path-ops .view-icts-ops-projects .views-field-delete-node {
+  position: absolute !important;
+  top: 18px !important;
+  right: 20px !important;
+  margin: 0 !important;
+}
+
+/* Button links */
+body.path-ops .view-icts-ops-projects .views-field-edit-node a,
+body.path-ops .view-icts-ops-projects .views-field-delete-node a {
+  display: inline-block !important;
+  padding: 7px 16px !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+/* Edit */
+body.path-ops .view-icts-ops-projects .views-field-edit-node a {
+  background: #28766f !important;
+  border: 1px solid #28766f !important;
+}
+
+/* Delete */
+body.path-ops .view-icts-ops-projects .views-field-delete-node a {
+  background: #a94b4b !important;
+  border: 1px solid #a94b4b !important;
+}
+
+/* Hover */
+body.path-ops .view-icts-ops-projects .views-field-edit-node a:hover {
+  background: #174f55 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-delete-node a:hover {
+  background: #7f3333 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-projects .icts-ops-project.views-row {
+    padding: 18px 20px !important;
+  }
+
+  body.path-ops .view-icts-ops-projects .views-field-edit-node,
+  body.path-ops .view-icts-ops-projects .views-field-delete-node {
+    position: static !important;
+    display: inline-block !important;
+    margin: 8px 6px 0 0 !important;
+  }
+
+  body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+  body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+    display: block !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* OPS PROJECTS dashboard back button */
+body.path-ops .view-icts-ops-projects .ops-dashboard-back {
+  display: inline-block !important;
+  margin-bottom: 18px !important;
+  padding: 8px 16px !important;
+  border: 1px solid #28766f !important;
+  border-radius: 6px !important;
+  background: #28766f !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+body.path-ops .view-icts-ops-projects .ops-dashboard-back:hover {
+  background: #174f55 !important;
+  border-color: #174f55 !important;
+}
+
+
+/* Back to ICTS Dashboard on Ops Projects */
+body.path-ops .ops-projects-dashboard-link {
+  margin-bottom: 18px;
+}
+
+body.path-ops .ops-projects-dashboard-link a {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  background: #28766f !important;
+  border: 1px solid #28766f !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+body.path-ops .ops-projects-dashboard-link a:hover {
+  background: #174f55 !important;
+  border-color: #174f55 !important;
+}
+
+
+/* =========================================================
+   ICTS OPS DASHBOARD
+   ========================================================= */
+
+body.path-ops .icts-ops-dashboard {
+  color: #243c41 !important;
+}
+
+body.path-ops .icts-ops-dashboard-header {
+  margin-bottom: 22px !important;
+}
+
+body.path-ops .icts-ops-dashboard-header h1 {
+  margin: 0 0 6px !important;
+  color: #123f46 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .icts-ops-dashboard-header p {
+  margin: 0 !important;
+  color: #5b6d71 !important;
+}
+
+/* Quick actions */
+body.path-ops .icts-ops-dashboard-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+body.path-ops .ops-dashboard-action {
+  display: inline-block !important;
+  padding: 8px 15px !important;
+  border: 1px solid #28766f !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  color: #28766f !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+body.path-ops .ops-dashboard-action.primary,
+body.path-ops .ops-dashboard-action:hover {
+  background: #28766f !important;
+  color: #ffffff !important;
+}
+
+/* Summary cards */
+body.path-ops .icts-ops-dashboard-summary {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 14px !important;
+  margin-bottom: 18px !important;
+}
+
+body.path-ops .icts-ops-dashboard-card {
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-left: 5px solid #28766f !important;
+  border-radius: 10px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.06) !important;
+}
+
+body.path-ops .icts-ops-dashboard-card-title {
+  color: #5b6d71 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .icts-ops-dashboard-card-count {
+  margin: 4px 0 !important;
+  color: #123f46 !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .icts-ops-dashboard-card-text {
+  margin-bottom: 12px !important;
+  color: #5b6d71 !important;
+  font-size: 13px !important;
+}
+
+body.path-ops .icts-ops-dashboard-card a,
+body.path-ops .icts-ops-dashboard-section-heading a {
+  color: #28766f !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Detail sections */
+body.path-ops .icts-ops-dashboard-details {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+body.path-ops .icts-ops-dashboard-section {
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-radius: 10px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.05) !important;
+}
+
+body.path-ops .icts-ops-dashboard-section h2 {
+  margin: 0 0 14px !important;
+  color: #123f46 !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .icts-ops-dashboard-status-list,
+body.path-ops .icts-ops-dashboard-priority-list {
+  display: grid !important;
+  gap: 7px !important;
+}
+
+body.path-ops .icts-ops-dashboard-status-item,
+body.path-ops .icts-ops-dashboard-priority-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 8px 10px !important;
+  background: #f5f8f7 !important;
+  border-radius: 6px !important;
+  color: #344b50 !important;
+  font-size: 13px !important;
+}
+
+body.path-ops .icts-ops-dashboard-status-item strong {
+  color: #123f46 !important;
+}
+
+body.path-ops .icts-ops-dashboard-priority-item > div {
+  display: flex !important;
+  gap: 18px !important;
+}
+
+/* Deadlines */
+body.path-ops .icts-ops-dashboard-deadlines {
+  margin-bottom: 14px !important;
+}
+
+body.path-ops .icts-ops-dashboard-section-heading {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin-bottom: 12px !important;
+}
+
+body.path-ops .icts-ops-dashboard-section-heading h2 {
+  margin: 0 !important;
+}
+
+body.path-ops .ops-dashboard-deadline-list {
+  display: grid !important;
+  gap: 8px !important;
+}
+
+body.path-ops .ops-dashboard-deadline-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 15px !important;
+  padding: 10px 12px !important;
+  border: 1px solid #dce5e3 !important;
+  border-radius: 7px !important;
+}
+
+body.path-ops .ops-dashboard-deadline-title {
+  color: #123f46 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+body.path-ops .ops-dashboard-deadline-date {
+  margin-top: 3px !important;
+  color: #6a797c !important;
+  font-size: 12px !important;
+}
+
+body.path-ops .ops-dashboard-deadline-status {
+  padding: 5px 9px !important;
+  border-radius: 5px !important;
+  background: #eef5f3 !important;
+  color: #23665f !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+body.path-ops .ops-dashboard-empty {
+  margin: 0 !important;
+  color: #6a797c !important;
+}
+
+body.path-ops .icts-ops-dashboard-activity {
+  margin-bottom: 20px !important;
+}
+
+@media (max-width: 800px) {
+  body.path-ops .icts-ops-dashboard-summary,
+  body.path-ops .icts-ops-dashboard-details {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* =========================================================
+   ICTS OPS PROJECTS
+   ========================================================= */
+
+body.path-ops .view-icts-ops-projects .view-content {
+  display: grid !important;
+  gap: 14px !important;
+}
+
+body.path-ops .view-icts-ops-projects .icts-ops-project.views-row {
+  position: relative !important;
+  padding: 20px 190px 18px 20px !important;
+  background: #ffffff !important;
+  border: 1px solid #c8d4d2 !important;
+  border-left: 5px solid #28766f !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.05) !important;
+}
+
+/* Project title */
+body.path-ops .view-icts-ops-projects .views-field-title {
+  display: block !important;
+  margin: 0 0 16px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title h2 {
+  margin: 0 !important;
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title a {
+  color: #123f46 !important;
+  text-decoration: none !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-title a:hover {
+  color: #28766f !important;
+}
+
+/* Project information */
+body.path-ops .view-icts-ops-projects .views-field-field-project-status,
+body.path-ops .view-icts-ops-projects .views-field-field-project-priority,
+body.path-ops .view-icts-ops-projects .views-field-field-project-progress,
+body.path-ops .view-icts-ops-projects .views-field-field-project-target-date {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 24px 8px 0 !important;
+  color: #344b50 !important;
+  font-size: 13px !important;
+  vertical-align: middle !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-label {
+  color: #5b6d71 !important;
+  font-weight: 700 !important;
+}
+
+body.path-ops .view-icts-ops-projects .field-content {
+  color: #243c41 !important;
+}
+
+body.path-ops .view-icts-ops-projects time {
+  color: #243c41 !important;
+}
+
+/* Edit and Delete buttons */
+body.path-ops .view-icts-ops-projects .views-field-edit-node,
+body.path-ops .view-icts-ops-projects .views-field-delete-node {
+  position: absolute !important;
+  top: 20px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-edit-node {
+  right: 105px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-delete-node {
+  right: 20px !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-edit-node a,
+body.path-ops .view-icts-ops-projects .views-field-delete-node a {
+  display: inline-block !important;
+  padding: 7px 15px !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-edit-node a {
+  background: #28766f !important;
+  border: 1px solid #28766f !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-edit-node a:hover {
+  background: #174f55 !important;
+  border-color: #174f55 !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-delete-node a {
+  background: #a94b4b !important;
+  border: 1px solid #a94b4b !important;
+}
+
+body.path-ops .view-icts-ops-projects .views-field-delete-node a:hover {
+  background: #843939 !important;
+  border-color: #843939 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body.path-ops .view-icts-ops-projects .icts-ops-project.views-row {
+    padding: 18px !important;
+  }
+
+  body.path-ops .view-icts-ops-projects .views-field-edit-node,
+  body.path-ops .view-icts-ops-projects .views-field-delete-node {
+    position: static !important;
+    display: inline-block !important;
+    margin: 8px 8px 0 0 !important;
+  }
+}
+
+/* =========================================================
+   ICTS OPS PROJECT FORM
+   ========================================================= */
+
+#node-ops-project-form {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+/* Override Drupal node form two-column layout */
+
+#node-ops-project-form .layout-node-form {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+#node-ops-project-form .layout-region-node-main {
+  display: grid !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 16px !important;
+}
+
+#node-ops-project-form .layout-region-node-secondary {
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 20px !important;
+  margin: 28px 0 0 !important;
+  box-sizing: border-box !important;
+  background: #f7f9f8 !important;
+  border: 1px solid #dce5e3 !important;
+  border-radius: 10px !important;
+  clear: both !important;
+}
+
+/* Title */
+
+#node-ops-project-form .field--name-title {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  margin: 0 0 20px !important;
+}
+
+#node-ops-project-form .field--name-title input {
+  width: 100% !important;
+  min-height: 48px !important;
+  box-sizing: border-box !important;
+  padding: 10px 13px !important;
+  border: 1px solid #c8d4d2 !important;
+  border-radius: 7px !important;
+  background: #ffffff !important;
+  color: #243c41 !important;
+  font-size: 18px !important;
+}
+
+/* Description */
+
+#node-ops-project-form .field--name-field-project-description {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  margin: 0 0 24px !important;
+}
+
+#node-ops-project-form .field--name-field-project-description textarea {
+  width: 100% !important;
+  min-height: 150px !important;
+  box-sizing: border-box !important;
+  padding: 12px 13px !important;
+  border: 1px solid #c8d4d2 !important;
+  border-radius: 7px !important;
+  background: #ffffff !important;
+}
+
+/* Owner | Status | Priority */
+
+#node-ops-project-form .field--name-field-project-owner {
+  grid-column: 1 !important;
+}
+
+#node-ops-project-form .field--name-field-project-status {
+  grid-column: 2 !important;
+}
+
+#node-ops-project-form .field--name-field-project-priority {
+  grid-column: 3 !important;
+}
+
+/* Start date | Target completion | Progress */
+
+#node-ops-project-form .field--name-field-project-start-date {
+  grid-column: 1 !important;
+}
+
+#node-ops-project-form .field--name-field-project-target-date {
+  grid-column: 2 !important;
+}
+
+#node-ops-project-form .field--name-field-project-progress {
+  grid-column: 3 !important;
+}
+
+/* Project fields */
+
+#node-ops-project-form .field--name-field-project-owner,
+#node-ops-project-form .field--name-field-project-status,
+#node-ops-project-form .field--name-field-project-priority,
+#node-ops-project-form .field--name-field-project-start-date,
+#node-ops-project-form .field--name-field-project-target-date,
+#node-ops-project-form .field--name-field-project-progress {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 0 18px !important;
+  padding: 14px !important;
+  box-sizing: border-box !important;
+  background: #f7f9f8 !important;
+  border: 1px solid #dce5e3 !important;
+  border-radius: 8px !important;
+}
+
+/* Labels */
+
+#node-ops-project-form label {
+  display: block !important;
+  margin: 0 0 6px !important;
+  color: #243c41 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+/* Controls */
+
+#node-ops-project-form select,
+#node-ops-project-form input,
+#node-ops-project-form textarea {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#node-ops-project-form .field--name-field-project-owner select,
+#node-ops-project-form .field--name-field-project-status select,
+#node-ops-project-form .field--name-field-project-priority select,
+#node-ops-project-form .field--name-field-project-start-date input,
+#node-ops-project-form .field--name-field-project-target-date input,
+#node-ops-project-form .field--name-field-project-progress input {
+  width: 100% !important;
+  min-height: 40px !important;
+  padding: 8px 10px !important;
+  box-sizing: border-box !important;
+  border: 1px solid #c8d4d2 !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+}
+
+/* Helper text */
+
+#node-ops-project-form .description {
+  margin-top: 5px !important;
+  color: #718083 !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+/* Administrative sections */
+
+#node-ops-project-form .layout-region-node-secondary details {
+  margin: 0 0 12px !important;
+  border: 1px solid #dce5e3 !important;
+  border-radius: 7px !important;
+  background: #ffffff !important;
+}
+
+/* Footer actions */
+
+#node-ops-project-form .layout-region-node-footer {
+  float: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+  clear: both !important;
+}
+
+#node-ops-project-form .form-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 24px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid #dce5e3 !important;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  #node-ops-project-form .layout-region-node-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  #node-ops-project-form .layout-region-node-main > * {
+    grid-column: 1 / -1 !important;
+  }
+}

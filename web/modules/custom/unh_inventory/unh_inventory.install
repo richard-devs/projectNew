@@ -1,0 +1,153 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function unh_inventory_schema() {
+  $schema['unh_ops_activity'] = [
+    'description' => 'Stores ICTS Ops Management activity and change history.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'entity_type' => [
+        'description' => 'Entity type.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ],
+      'entity_id' => [
+        'description' => 'Entity ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'User who performed the action.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'description' => 'Unix timestamp when the activity occurred.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'action' => [
+        'description' => 'Activity action.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'field_name' => [
+        'description' => 'Machine name of the changed field.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'old_value' => [
+        'description' => 'Previous value.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'new_value' => [
+        'description' => 'New value.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'entity' => ['entity_type', 'entity_id'],
+      'created' => ['created'],
+      'uid' => ['uid'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Creates the ICTS Ops activity log table.
+ */
+function unh_inventory_update_11001() {
+  $schema = \Drupal::database()->schema();
+
+  if (!$schema->tableExists('unh_ops_activity')) {
+    $schema->createTable('unh_ops_activity', [
+      'description' => 'Stores ICTS Ops Management activity and change history.',
+      'fields' => [
+        'id' => [
+          'description' => 'Primary key.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'entity_type' => [
+          'description' => 'Entity type.',
+          'type' => 'varchar',
+          'length' => 32,
+          'not null' => TRUE,
+        ],
+        'entity_id' => [
+          'description' => 'Entity ID.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'uid' => [
+          'description' => 'User who performed the action.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'created' => [
+          'description' => 'Unix timestamp when the activity occurred.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'action' => [
+          'description' => 'Activity action.',
+          'type' => 'varchar',
+          'length' => 64,
+          'not null' => TRUE,
+        ],
+        'field_name' => [
+          'description' => 'Machine name of the changed field.',
+          'type' => 'varchar',
+          'length' => 128,
+          'not null' => FALSE,
+        ],
+        'old_value' => [
+          'description' => 'Previous value.',
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+        'new_value' => [
+          'description' => 'New value.',
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+      ],
+      'primary key' => ['id'],
+      'indexes' => [
+        'entity' => ['entity_type', 'entity_id'],
+        'created' => ['created'],
+        'uid' => ['uid'],
+      ],
+    ]);
+
+    return 'Created the ICTS Ops activity log table.';
+  }
+
+  return 'The ICTS Ops activity log table already exists.';
+}
