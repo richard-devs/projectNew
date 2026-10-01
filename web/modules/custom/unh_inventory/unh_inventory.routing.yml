@@ -39,3 +39,134 @@ unh_inventory.ops_activity:
     parameters:
       node:
         type: entity:node
+
+unh_inventory.activity:
+  path: '/inventory/activity'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\InventoryActivityController::listing'
+    _title: 'Inventory Activity Logs'
+  requirements:
+    _permission: 'access inventory'
+
+unh_inventory.devices:
+  path: '/inventory/devices'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\InventoryDevicesController::listing'
+    _title: 'ICTS Devices'
+  requirements:
+    _permission: 'access inventory'
+
+unh_inventory.users:
+  path: '/inventory/users'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\InventoryUsersController::listing'
+    _title: 'ICTS Inventory Users'
+  requirements:
+    _permission: 'access inventory'
+
+unh_inventory.reports:
+  path: '/inventory/reports'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\InventoryReportsController::dashboard'
+    _title: 'ICTS Inventory Reports'
+  requirements:
+    _permission: 'access inventory'
+
+unh_inventory.assignment_add:
+  path: '/inventory/assignments/add'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryAssignmentForm'
+    _title: 'Assign ICTS Device'
+  requirements:
+    _permission: 'access inventory'
+
+unh_inventory.assignment_transfer:
+  path: '/inventory/assignments/{assignment_id}/transfer'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryTransferForm'
+    _title: 'Transfer ICTS Device'
+  requirements:
+    _permission: 'access inventory'
+    assignment_id: '\d+'
+
+
+unh_inventory.device_assignment:
+  path: '/inventory/devices/{node}/assign'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryTransferForm'
+    _title: 'Assign / Reassign ICTS Device'
+  requirements:
+    _permission: 'access inventory'
+    node: '\d+'
+
+unh_inventory.device_status:
+  path: '/inventory/devices/{node}/status'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryDeviceStatusForm'
+    _title: 'Manage Device Status'
+  requirements:
+    _permission: 'access inventory'
+    node: '\d+'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+unh_inventory.handover_document:
+  path: '/inventory/devices/{node}/handover-document'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryHandoverDocumentForm'
+    _title: 'Device Handover Document'
+  requirements:
+    _permission: 'access inventory'
+    node: '\d+'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+unh_inventory.ownership_document:
+  path: '/inventory/devices/{node}/ownership-document'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryOwnershipDocumentForm'
+    _title: 'Signed Ownership Document'
+  requirements:
+    _permission: 'access inventory'
+    node: '\d+'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+unh_inventory.device_activity:
+  path: '/inventory/devices/{node}/activity'
+  defaults:
+    _controller: '\Drupal\unh_inventory\Controller\InventoryDeviceActivityController::listing'
+    _title: 'Device Activity'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+unh_inventory.device_delete:
+  path: '/inventory/devices/{node}/delete'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryDeviceDeleteForm'
+    _title: 'Delete ICTS Device'
+  requirements:
+    _permission: 'access inventory'
+    node: '\d+'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+unh_inventory.import:
+  path: '/inventory/import'
+  defaults:
+    _form: '\Drupal\unh_inventory\Form\InventoryImportForm'
+    _title: 'Import Inventory Devices'
+  requirements:
+    _permission: 'access inventory'

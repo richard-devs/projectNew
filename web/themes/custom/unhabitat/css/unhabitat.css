@@ -766,3 +766,59 @@ body.path-user .unh-content .field--label-above .field__item {
   line-height: 1.2 !important;
   margin: 0 0 12px !important;
 }
+
+/* =========================================================
+   ICTS ASSET CREATION PAGE
+   ========================================================= */
+
+body:has(form.node-icts-asset-form) .unh-main,
+body:has(form.node-icts-asset-form) .unh-content {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(35, 127, 158, 0.12), transparent 260px),
+    radial-gradient(circle at 8% 85%, rgba(22, 91, 120, 0.08), transparent 300px),
+    #eef7fa !important;
+}
+
+body:has(form.node-icts-asset-form) .unh-content-layout {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+body:has(form.node-icts-asset-form) form.node-icts-asset-form {
+  background: #ffffff;
+  border: 1px solid #d4e5ec;
+  border-radius: 18px;
+  padding: 38px 44px 44px;
+  box-shadow: 0 12px 35px rgba(24, 69, 88, 0.10);
+}
+
+
+/* =========================================================
+   INVENTORY ACTIVITY — FINAL VISUAL OVERRIDE
+   Loaded after style.css
+   ========================================================= */
+
+/* BACK TO INVENTORY */
+.unh-main .unh-inventory-back-row {
+  margin: 0 0 20px !important;
+}
+
+
+/* =========================================================
+   INVENTORY ACTIVITY — FINAL VISUAL DESIGN
+   ========================================================= */
+
+/* Back to Inventory */
+.unh-inventory-back-row {
+  margin: 0 0 20px !important;
+}
+
+
+/* Remove duplicate pseudo Print icons across Inventory pages.
+   Keep the real printer icon from the button markup. */
+.unh-inventory-print-button::before,
+.unh-inventory-print-button::after {
+  content: none !important;
+  display: none !important;
+}
+

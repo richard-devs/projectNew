@@ -2,6 +2,33 @@
 <?php
 
 /**
+ * Add a dedicated body class to the ICTS asset creation page.
+ */
+function unh_inventory_preprocess_page(array &$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  if ($route_name === 'node.add' && \Drupal::routeMatch()->getParameter('node_type') === 'icts_asset') {
+    $variables['attributes']['class'][] = 'page-icts-asset-create';
+  }
+}
+
+
+/**
+ * Returns the controlled ICTS Department / Division options.
+ */
+function unh_inventory_department_options() {
+  return [
+    'Global Solutions Division (GSD)' => 'Global Solutions Division (GSD)',
+    'Global Knowledge & Advocacy Division (GKAD)' => 'Global Knowledge & Advocacy Division (GKAD)',
+    'Regional Programmes Division (RPD)' => 'Regional Programmes Division (RPD)',
+    'Corporate Management Division (CMD)' => 'Corporate Management Division (CMD)',
+    'Office of the Executive Director (OED)' => 'Office of the Executive Director (OED)',
+    'Unspecified' => 'Unspecified',
+  ];
+}
+
+
+/**
  * Adds navigation to ICTS Ops task and project detail pages.
  */
 function unh_inventory_node_view(array &$build, \Drupal\node\NodeInterface $node, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
@@ -56,9 +83,87 @@ function unh_inventory_node_view(array &$build, \Drupal\node\NodeInterface $node
 
 
 /**
- * Automatically records assignments and every changed editable field.
+ * Automatically records only fields actually changed through
+ * the ICTS asset edit form.
  */
 function unh_inventory_node_presave(\Drupal\node\NodeInterface $node) {
+
+
+
+
+
+
+
+  /*
+   * ICTS Inventory device change logging.
+   */
+  if ($node->bundle() === 'icts_asset' && !$node->isNew()) {
+    $original = $node->getOriginal();
+
+    if ($original) {
+      foreach ($node->getFieldDefinitions() as $field_name => $definition) {
+        /*
+         * Track the Drupal title because it is the Device Name / Hostname.
+         * Also track the custom ICTS Inventory fields.
+         */
+        if ($field_name !== 'title' && strpos($field_name, 'field_asset_') !== 0) {
+          continue;
+        }
+
+        /*
+         * Assignment and status have their own dedicated activity
+         * logging and must not be duplicated here.
+         */
+        if (in_array($field_name, [
+          'field_asset_status',
+          'field_asset_assigned_to',
+          'field_asset_notes',
+        ], TRUE)) {
+          continue;
+        }
+
+        if (!$original->hasField($field_name)) {
+          continue;
+        }
+
+        $old_value = $field_name === 'title'
+          ? trim(strip_tags((string) $original->label()))
+          : unh_inventory_get_device_history_value($original, $field_name);
+
+        $new_value = $field_name === 'title'
+          ? trim(strip_tags((string) $node->label()))
+          : unh_inventory_get_device_history_value($node, $field_name);
+
+        /*
+         * Only record a real value change.
+         * This also captures intentional clearing of a field.
+         */
+        if ($old_value === $new_value) {
+          continue;
+        }
+
+        $logged_new_value = $new_value;
+
+        $field_label = $field_name === 'title'
+          ? 'Device Name / Hostname'
+          : (string) $definition->getLabel();
+
+        unh_inventory_log_inventory_activity(
+          'changed',
+          'inventory_device',
+          $node->id(),
+          $node->label(),
+          $field_name,
+          $field_label,
+          $old_value,
+          $logged_new_value
+        );
+      }
+    }
+
+    return;
+  }
+
   if (!in_array($node->bundle(), ['ops_project', 'ops_task'], TRUE)) {
     return;
   }
@@ -147,6 +252,42 @@ function unh_inventory_node_presave(\Drupal\node\NodeInterface $node) {
  * Logs creation of ICTS Ops projects and tasks.
  */
 function unh_inventory_node_insert(\Drupal\node\NodeInterface $node) {
+  if ($node->bundle() === 'icts_asset') {
+    $device_type = unh_inventory_get_device_history_value(
+      $node,
+      'field_asset_device_type'
+    );
+
+    $asset_tag = unh_inventory_get_device_history_value(
+      $node,
+      'field_asset_tag'
+    );
+
+    $details = $asset_tag ? 'Asset ID: ' . $asset_tag : '—';
+
+    $notes = '';
+    if ($node->hasField('field_asset_notes') && !$node->get('field_asset_notes')->isEmpty()) {
+      $notes = trim(strip_tags((string) $node->get('field_asset_notes')->value));
+    }
+
+    if ($notes !== '') {
+      $details .= ' | Reason: ' . $notes;
+    }
+
+    unh_inventory_log_inventory_activity(
+      'device_added',
+      'inventory_device',
+      $node->id(),
+      $node->label(),
+      'field_asset_device_type',
+      $device_type ?: 'Unknown device type',
+      NULL,
+      $details
+    );
+
+    return;
+  }
+
   if (!in_array($node->bundle(), ['ops_project', 'ops_task'], TRUE)) {
     return;
   }
@@ -157,6 +298,22 @@ function unh_inventory_node_insert(\Drupal\node\NodeInterface $node) {
     NULL,
     NULL,
     NULL
+  );
+}
+
+/**
+ * Logs deletion of an ICTS Inventory device.
+ */
+function unh_inventory_node_delete(\Drupal\node\NodeInterface $node) {
+  if ($node->bundle() !== 'icts_asset') {
+    return;
+  }
+
+  unh_inventory_log_inventory_activity(
+    'device_deleted',
+    'inventory_device',
+    $node->id(),
+    $node->label()
   );
 }
 
@@ -257,4 +414,414 @@ function unh_inventory_log_activity(
  * Changes only the View action on the ICTS Ops Tasks view.
  */
 
+
+
+/**
+ * Returns a readable value for an Inventory device field.
+ */
+function unh_inventory_get_device_history_value(\Drupal\node\NodeInterface $node, string $field_name): ?string {
+  if (!$node->hasField($field_name) || $node->get($field_name)->isEmpty()) {
+    return NULL;
+  }
+
+  $field = $node->get($field_name);
+  $definition = $field->getFieldDefinition();
+  $type = $definition->getType();
+
+  if ($type === 'list_string') {
+    $value = $field->value;
+    $allowed = $definition->getSetting('allowed_values') ?: [];
+
+    return isset($allowed[$value]) ? (string) $allowed[$value] : (string) $value;
+  }
+
+  if ($type === 'entity_reference') {
+    return $field->entity ? $field->entity->label() : NULL;
+  }
+
+  $value = $field->value;
+
+  if ($value === NULL || $value === '') {
+    return NULL;
+  }
+
+  return trim(strip_tags((string) $value));
+}
+
+/**
+ * Writes one Inventory activity record.
+ */
+function unh_inventory_log_inventory_activity(
+  string $action,
+  string $entity_type,
+  ?int $entity_id = NULL,
+  ?string $entity_label = NULL,
+  ?string $field_name = NULL,
+  ?string $field_label = NULL,
+  ?string $old_value = NULL,
+  ?string $new_value = NULL,
+  string $result = 'successful',
+  ?string $staff_index_number = NULL
+): void {
+  \Drupal::database()->insert('unh_inventory_activity')
+    ->fields([
+      'action' => $action,
+      'entity_type' => $entity_type,
+      'entity_id' => $entity_id,
+      'entity_label' => $entity_label,
+      'staff_index_number' => $staff_index_number,
+      'field_name' => $field_name,
+      'field_label' => $field_label,
+      'old_value' => $old_value,
+      'new_value' => $new_value,
+      'uid' => \Drupal::currentUser()->id(),
+      'created' => \Drupal::time()->getRequestTime(),
+      'result' => $result,
+    ])
+    ->execute();
+}
+
+
+
+/**
+ * Logs deleted Inventory devices.
+ */
+function unh_inventory_entity_delete(\Drupal\node\NodeInterface $node) {
+  if ($node->bundle() !== 'icts_asset') {
+    return;
+  }
+
+  unh_inventory_log_inventory_activity(
+    'device_deleted',
+    'inventory_device',
+    $node->id(),
+    $node->label(),
+    NULL,
+    NULL,
+    NULL,
+    NULL
+  );
+}
+
+
+
+/**
+ * Captures only ICTS asset fields whose submitted value differs
+ * from the value stored on the original entity.
+ */
+function unh_inventory_capture_changed_fields(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  /*
+   * Record only Inventory fields that were actually submitted by the
+   * Inventory edit form. The presave handler then compares the saved
+   * entity values against the original entity, so unchanged fields are
+   * ignored.
+   */
+  $values = $form_state->getValues();
+
+  if (!is_array($values)) {
+    $GLOBALS['unh_inventory_changed_fields'] = [];
+    return;
+  }
+
+  $changed = [];
+
+  foreach ($values as $field_name => $value) {
+    if (strpos((string) $field_name, 'field_asset_') !== 0) {
+      continue;
+    }
+
+    if (is_array($value) || $value !== NULL) {
+      $changed[] = (string) $field_name;
+    }
+  }
+
+  $GLOBALS['unh_inventory_changed_fields'] = array_values(
+    array_unique($changed)
+  );
+}
+
+function unh_inventory_get_captured_changed_fields(): array {
+  $changed = $GLOBALS['unh_inventory_changed_fields'] ?? [];
+
+  if (!is_array($changed)) {
+    return [];
+  }
+
+  return array_values(array_unique(array_filter(
+    array_map('strval', $changed)
+  )));
+}
+
+/**
+ * Alters the ICTS asset node form.
+ *
+ * Department / Division uses the controlled list.
+ * Section remains optional free text.
+ */
+/**
+ * Alters the ICTS asset add form.
+ *
+ * Uses the existing node title field as Device Name / Hostname.
+ * The CSV importer continues using the same title field.
+ */
+function unh_inventory_form_node_icts_asset_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  /*
+   * Use the existing node title as Device Name / Hostname.
+   * The CSV importer continues using the same title field.
+   */
+  if (isset($form['title'])) {
+    $form['title']['widget'][0]['value']['#title'] = t('Device Name / Hostname');
+  }
+
+  /*
+   * Use the same controlled Department / Division list as the edit form.
+   */
+  if (isset($form['field_asset_department'])) {
+    $form['field_asset_department']['#title'] = t('Department / Division');
+  }
+
+  if (isset($form['field_asset_department']['widget'][0]['value'])) {
+    $form['field_asset_department']['widget'][0]['value']['#type'] = 'select';
+    $form['field_asset_department']['widget'][0]['value']['#options'] = unh_inventory_department_options();
+    $form['field_asset_department']['widget'][0]['value']['#empty_option'] = t('Select Department / Division');
+    $form['field_asset_department']['widget'][0]['value']['#required'] = TRUE;
+    $form['field_asset_department']['widget'][0]['value']['#size'] = 1;
+  }
+}
+
+function unh_inventory_form_node_icts_asset_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  /*
+   * Store the values currently displayed by the edit form.
+   * The submit handler compares these with the processed submitted
+   * values, so only an actual user change is recorded.
+   */
+  $form['#unh_inventory_original_values'] = [];
+
+  foreach ($form as $field_name => $element) {
+    if (strpos($field_name, 'field_asset_') !== 0 || !is_array($element)) {
+      continue;
+    }
+
+    if (isset($element['widget'][0]['value']) &&
+        array_key_exists('#default_value', $element['widget'][0]['value'])) {
+      $form['#unh_inventory_original_values'][$field_name] =
+        $element['widget'][0]['value']['#default_value'];
+    }
+    elseif (isset($element['widget'][0]['target_id']) &&
+            array_key_exists('#default_value', $element['widget'][0]['target_id'])) {
+      $form['#unh_inventory_original_values'][$field_name] =
+        $element['widget'][0]['target_id']['#default_value'];
+    }
+  }
+
+  $form['#attributes']['class'][] = 'icts-asset-creation-form';
+  $form['#attached']['library'][] = 'unhabitat/inventory-change-tracking';
+
+  /*
+   * Capture changed fields before Drupal's normal node submit handler
+   * saves the node.
+   */
+  $form['icts_changed_fields'] = [
+    '#type' => 'hidden',
+    '#attributes' => [
+      'id' => 'icts-changed-fields',
+    ],
+    '#value' => '',
+  ];
+
+  $form['#submit'] = $form['#submit'] ?? [];
+  array_unshift($form['#submit'], 'unh_inventory_capture_changed_fields');
+
+  // Purchase Date is no longer used on the ICTS asset form.
+  unset($form['field_asset_purchase_date']);
+
+  if (isset($form['field_asset_department'])) {
+    $form['field_asset_department']['#title'] = t('Department / Division');
+  }
+
+  if (isset($form['field_asset_department']['widget'][0]['value'])) {
+    $form['field_asset_department']['widget'][0]['value']['#type'] = 'select';
+    $form['field_asset_department']['widget'][0]['value']['#options'] = unh_inventory_department_options();
+    $form['field_asset_department']['widget'][0]['value']['#empty_option'] = t('Select Department / Division');
+    $form['field_asset_department']['widget'][0]['value']['#required'] = TRUE;
+    $form['field_asset_department']['widget'][0]['value']['#size'] = 1;
+  }
+
+  if (isset($form['field_asset_section'])) {
+    $form['field_asset_section']['#title'] = t('Section');
+  }
+
+  if (isset($form['field_asset_section']['widget'][0]['value'])) {
+    $form['field_asset_section']['widget'][0]['value']['#placeholder'] = t('Enter section (optional)');
+    $form['field_asset_section']['widget'][0]['value']['#required'] = FALSE;
+  }
+}
+
+
+
+
+/**
+ * Use the normal node Save request for documentation attachments.
+ */
+
+/**
+ * Provides reliable document upload handling for ICTS Documentation.
+ *
+ * The standard managed_file widget is not being used on this form because
+ * its AJAX/rebuild cycle is leaving uploaded files temporary and unattached.
+ */
+
+/**
+ * Documentation edit form.
+ */
+function unh_inventory_form_node_ops_documentation_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (!isset($form['field_doc_file'])) {
+    return;
+  }
+
+  $node = $form_state->getFormObject()->getEntity();
+  $weight = $form['field_doc_file']['#weight'] ?? 30;
+
+  // Hide the broken managed_file widget.
+  $form['field_doc_file']['#access'] = FALSE;
+
+  // Show the current document when one exists.
+  if (
+    $node instanceof \Drupal\node\NodeInterface &&
+    $node->hasField('field_doc_file') &&
+    !$node->get('field_doc_file')->isEmpty()
+  ) {
+    $fid = (int) $node->get('field_doc_file')->target_id;
+    $file = $fid ? \Drupal\file\Entity\File::load($fid) : NULL;
+
+    if ($file) {
+      $url = \Drupal::service('file_url_generator')
+        ->generateAbsoluteString($file->getFileUri());
+
+      $form['documentation_current_file'] = [
+        '#type' => 'item',
+        '#title' => t('Current Document'),
+        '#markup' =>
+          '<a href="' . \Drupal\Component\Utility\Html::escape($url) .
+          '" target="_blank" rel="noopener">' .
+          \Drupal\Component\Utility\Html::escape($file->getFilename()) .
+          '</a>',
+        '#weight' => $weight - 1,
+      ];
+    }
+  }
+
+  // Normal file input.
+  $form['documentation_file_upload'] = [
+    '#type' => 'file',
+    '#title' => t('Document'),
+    '#description' => t('Select a document to add or replace the current document.'),
+    '#weight' => $weight,
+    '#parents' => ['documentation_file_upload'],
+    '#attributes' => [
+      'accept' => '.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx',
+    ],
+  ];
+
+  if (!isset($form['actions']['submit']['#submit'])) {
+    $form['actions']['submit']['#submit'] = [];
+  }
+
+  $handlers = $form['actions']['submit']['#submit'];
+
+  // Remove any previous documentation upload handlers.
+  $handlers = array_values(array_filter(
+    $handlers,
+    function ($handler) {
+      return !in_array($handler, [
+        'unh_inventory_ops_documentation_save_upload',
+        'unh_inventory_ops_documentation_process_upload',
+        'unh_inventory_ops_documentation_attach_file_on_submit',
+        'unh_inventory_ops_documentation_capture_file',
+        'unh_inventory_ops_documentation_attach_upload',
+      ], TRUE);
+    }
+  ));
+
+  $handler = 'unh_inventory_ops_documentation_attach_upload';
+
+  // Insert after Drupal has built the entity, but before ::save.
+  $submit_index = NULL;
+
+  foreach ($handlers as $index => $existing) {
+    if ($existing === '::submitForm') {
+      $submit_index = $index;
+      break;
+    }
+  }
+
+  if ($submit_index === NULL) {
+    throw new \RuntimeException('Drupal node submit handler not found.');
+  }
+
+  array_splice($handlers, $submit_index + 1, 0, [$handler]);
+
+  $form['actions']['submit']['#submit'] = $handlers;
+}
+
+/**
+ * Uploads and attaches the documentation file before the node is saved.
+ */
+function unh_inventory_ops_documentation_attach_upload(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $node = $form_state->getFormObject()->getEntity();
+
+  if (
+    !$node instanceof \Drupal\node\NodeInterface ||
+    $node->bundle() !== 'ops_documentation'
+  ) {
+    return;
+  }
+
+  $request_files = \Drupal::request()->files->get('files', []);
+
+  if (empty($request_files['documentation_file_upload'])) {
+    return;
+  }
+
+  $files = file_save_upload(
+    'documentation_file_upload',
+    [
+      'FileExtension' => [
+        'extensions' => 'pdf doc docx xls xlsx ppt pptx',
+      ],
+      'FileSizeLimit' => [
+        'fileLimit' => 104857600,
+      ],
+    ],
+    'public://' . date('Y-m')
+  );
+
+  if (!is_array($files) || !$files) {
+    $form_state->setErrorByName(
+      'documentation_file_upload',
+      t('The documentation file could not be uploaded.')
+    );
+    return;
+  }
+
+  $file = reset($files);
+
+  if (!$file instanceof \Drupal\file\FileInterface) {
+    $form_state->setErrorByName(
+      'documentation_file_upload',
+      t('The documentation file could not be uploaded.')
+    );
+    return;
+  }
+
+  $file->setPermanent();
+  $file->save();
+
+  // This is the same entity operation already proven to work.
+  $node->set('field_doc_file', [
+    [
+      'target_id' => $file->id(),
+    ],
+  ]);
+}
 

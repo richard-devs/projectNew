@@ -1,0 +1,132 @@
+/**
+ * @file
+ * UN-Habitat global utilities.
+ */
+
+(function (Drupal) {
+  'use strict';
+
+  Drupal.behaviors.unhabitatPrint = {
+    attach: function (context) {
+      var buttons = context.querySelectorAll
+        ? context.querySelectorAll('a.unh-inventory-print-button, .ops-dashboard-print')
+        : [];
+
+      buttons.forEach(function (button) {
+        if (button.dataset.unhPrintBound === '1') {
+          return;
+        }
+
+        button.dataset.unhPrintBound = '1';
+
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          window.print();
+        });
+      });
+    }
+  };
+
+})(Drupal);
+
+
+/* ICTS OPS PRINT BUTTON */
+(function () {
+  function addOpsPrintButton() {
+    const path = window.location.pathname;
+
+    if (path !== '/ops/projects' && path !== '/ops/tasks' && path !== '/ops/activity' && path !== '/ops/activity/') {
+      return;
+    }
+
+    if (document.querySelector('.ops-direct-print-header')) {
+      return;
+    }
+
+    const main = document.querySelector('main');
+    if (!main) {
+      return;
+    }
+
+    const header = document.createElement('div');
+    header.className = 'unh-inventory-page-header ops-direct-print-header';
+
+    const title = path === '/ops/projects' ? 'ICTS Projects' : path === '/ops/tasks' ? 'ICTS Tasks' : 'ICTS Operations Activity';
+    const description = path === '/ops/projects'
+      ? 'View and manage ICT projects, status, priorities and target completion dates.'
+      : path === '/ops/tasks'
+        ? 'View and manage operational tasks, priorities, assignments and due dates.'
+        : 'Review recent ICTS operational activity, updates and changes.';
+
+    header.innerHTML =
+      '<div>' +
+        '<span class="unh-inventory-page-kicker">UN-HABITAT</span>' +
+        '<h1>' + title + '</h1>' +
+        '<p>' + description + '</p>' +
+      '</div>' +
+      '<a href="#" class="unh-inventory-print-button ops-dashboard-print" onclick="window.print(); return false;">' +
+        '<span class="unh-print-icon">🖨</span><span>Print</span>' +
+      '</a>';
+
+    const view = main.querySelector('.view-icts-ops-projects, .view-icts-ops-tasks, .view-icts-ops-activity');
+
+    if (view) {
+      view.parentNode.insertBefore(header, view);
+    } else {
+      main.insertBefore(header, main.firstChild);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addOpsPrintButton);
+  } else {
+    addOpsPrintButton();
+  }
+})();
+
+/* ICTS OPS ACTIVITY BUTTON */
+(function () {
+  function addOpsActivityButtons() {
+    const path = window.location.pathname;
+
+    if (path !== '/ops/tasks' && path !== '/ops/projects') {
+      return;
+    }
+
+    document.querySelectorAll('main .views-row').forEach(function (row) {
+      if (row.querySelector('.ops-view-activity-direct')) {
+        return;
+      }
+
+      const editLink = row.querySelector('a[href*="/node/"][href*="/edit"]');
+      if (!editLink) {
+        return;
+      }
+
+      const match = editLink.getAttribute('href').match(/\/node\/(\d+)\/edit/);
+      if (!match) {
+        return;
+      }
+
+      const nid = match[1];
+
+      const activityWrap = document.createElement('div');
+      activityWrap.className = 'ops-view-activity-wrap';
+
+      const activityLink = document.createElement('a');
+      activityLink.href = '/ops/activity/' + nid;
+      activityLink.className = 'ops-view-activity-direct';
+      activityLink.textContent = 'View Activity';
+
+      activityWrap.appendChild(activityLink);
+      row.appendChild(activityWrap);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addOpsActivityButtons);
+  } else {
+    addOpsActivityButtons();
+  }
+})();

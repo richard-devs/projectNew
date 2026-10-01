@@ -151,3 +151,155 @@ function unh_inventory_update_11001() {
 
   return 'The ICTS Ops activity log table already exists.';
 }
+
+/**
+ * Creates the ICTS Inventory activity log table.
+ */
+function unh_inventory_update_11002() {
+  $schema = \Drupal::database()->schema();
+
+  if ($schema->tableExists('unh_inventory_activity')) {
+    return 'The ICTS Inventory activity log table already exists.';
+  }
+
+  $schema->createTable('unh_inventory_activity', [
+    'description' => 'Stores ICTS Inventory activity and audit history.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'action' => [
+        'description' => 'Activity action.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'entity_type' => [
+        'description' => 'Entity type involved.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'entity_id' => [
+        'description' => 'Entity ID involved.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'entity_label' => [
+        'description' => 'Human readable device or record name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'field_name' => [
+        'description' => 'Changed field machine name.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'field_label' => [
+        'description' => 'Human readable changed field.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'old_value' => [
+        'description' => 'Previous value.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'new_value' => [
+        'description' => 'New value.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+      ],
+      'uid' => [
+        'description' => 'User who performed the activity.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'description' => 'Unix timestamp of the activity.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'result' => [
+        'description' => 'Result of the activity.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => 'successful',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'entity' => ['entity_type', 'entity_id'],
+      'created' => ['created'],
+      'uid' => ['uid'],
+      'action' => ['action'],
+    ],
+  ]);
+
+  return 'Created the ICTS Inventory activity log table.';
+}
+
+
+/**
+ * Adds Temporary Assigned and the device handover document field.
+ */
+function unh_inventory_update_11003() {
+  $storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'field_asset_status');
+
+  if ($storage) {
+    $settings = $storage->getSettings();
+    $settings['allowed_values']['temporary_assigned'] = 'Temporary Assigned';
+    $storage->set('settings', $settings);
+    $storage->save();
+  }
+
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::loadByName(
+    'node',
+    'field_asset_handover_document'
+  );
+
+  if (!$field_storage) {
+    $field_storage = \Drupal\field\Entity\FieldStorageConfig::create([
+      'field_name' => 'field_asset_handover_document',
+      'entity_type' => 'node',
+      'type' => 'file',
+      'cardinality' => 1,
+      'settings' => [
+        'display_field' => FALSE,
+        'display_default' => FALSE,
+        'uri_scheme' => 'public',
+        'target_type' => 'file',
+      ],
+    ]);
+    $field_storage->save();
+  }
+
+  $field = \Drupal\field\Entity\FieldConfig::loadByName(
+    'node',
+    'icts_asset',
+    'field_asset_handover_document'
+  );
+
+  if (!$field) {
+    $field = \Drupal\field\Entity\FieldConfig::create([
+      'field_name' => 'field_asset_handover_document',
+      'entity_type' => 'node',
+      'bundle' => 'icts_asset',
+      'label' => 'Signed Handover / Receipt',
+      'settings' => [],
+    ]);
+    $field->save();
+  }
+}

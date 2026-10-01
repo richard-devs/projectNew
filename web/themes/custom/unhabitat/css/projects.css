@@ -1,0 +1,1365 @@
+
+/* =========================================================
+   ICTS PROJECTS | VISUAL PROJECT CARDS
+   ========================================================= */
+
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops {
+    background:
+      radial-gradient(circle at 4% 3%, rgba(0,168,232,.38), transparent 30%),
+      radial-gradient(circle at 96% 5%, rgba(0,119,182,.28), transparent 29%),
+      radial-gradient(circle at 92% 94%, rgba(0,168,150,.30), transparent 32%),
+      radial-gradient(circle at 6% 92%, rgba(111,66,193,.16), transparent 28%),
+      linear-gradient(135deg,#d7edf7 0%,#edf7f8 50%,#e2f2ec 100%) !important;
+  }
+
+  body.page-view-icts-ops-projects.path-ops main.unh-main {
+    background: transparent !important;
+  }
+
+  /* Project list */
+  .view-icts-ops-projects .view-content {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* -------------------------------------------------------
+     PROJECT CARD
+     ------------------------------------------------------- */
+  .view-icts-ops-projects .icts-ops-project.views-row {
+    position: relative !important;
+    overflow: hidden !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #c7dbe2 !important;
+    border-radius: 20px !important;
+
+    box-shadow:
+      0 14px 32px rgba(16,61,78,.13),
+      0 2px 5px rgba(16,61,78,.06) !important;
+
+    transition: transform .2s ease, box-shadow .2s ease !important;
+  }
+
+  .view-icts-ops-projects .icts-ops-project.views-row:hover {
+    transform: translateY(-4px) !important;
+    box-shadow:
+      0 22px 42px rgba(16,61,78,.18),
+      0 4px 9px rgba(16,61,78,.08) !important;
+  }
+
+  /* -------------------------------------------------------
+     PROJECT HEADER
+     ------------------------------------------------------- */
+  .ops-project-card-head {
+    position: relative !important;
+    padding: 24px 28px 22px !important;
+
+    background:
+      linear-gradient(
+        125deg,
+        #004f73 0%,
+        #0077b6 52%,
+        #008f80 100%
+      ) !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.22) !important;
+  }
+
+  .ops-project-card-head::after {
+    content: "ICT PROJECT" !important;
+    position: absolute !important;
+    top: 22px !important;
+    right: 26px !important;
+
+    padding: 6px 10px !important;
+
+    background: rgba(255,255,255,.16) !important;
+    border: 1px solid rgba(255,255,255,.28) !important;
+    border-radius: 8px !important;
+
+    color: #ffffff !important;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+  }
+
+  .ops-project-card-head .views-field-title {
+    margin: 0 !important;
+    padding-right: 130px !important;
+  }
+
+  .ops-project-card-head .views-field-title h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 25px !important;
+    font-weight: 750 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -.3px !important;
+  }
+
+  .ops-project-card-head .views-field-title h2::after {
+    content: "" !important;
+    display: block !important;
+
+    width: 46px !important;
+    height: 4px !important;
+    margin-top: 11px !important;
+
+    background: #65d7ea !important;
+    border-radius: 99px !important;
+  }
+
+  /* -------------------------------------------------------
+     INFORMATION GRID
+     ------------------------------------------------------- */
+  .ops-project-info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4,minmax(0,1fr)) !important;
+    gap: 14px !important;
+
+    padding: 22px 28px !important;
+    background:
+      linear-gradient(180deg,#f7fbfc 0%,#f1f7f7 100%) !important;
+  }
+
+  .ops-project-info-grid > .views-field {
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 16px !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #d5e3e8 !important;
+    border-radius: 13px !important;
+
+    box-shadow: 0 4px 10px rgba(20,61,75,.05) !important;
+  }
+
+  /* labels */
+  .ops-project-info-grid .views-label {
+    display: block !important;
+    margin-bottom: 9px !important;
+
+    color: #718790 !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 850 !important;
+    letter-spacing: .75px !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  .ops-project-info-grid .field-content {
+    color: #183f50 !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+
+  /* -------------------------------------------------------
+     STATUS
+     ------------------------------------------------------- */
+  .ops-project-info-grid .views-field-field-project-status {
+    border-top: 4px solid #00a896 !important;
+  }
+
+  .ops-project-info-grid
+  .views-field-field-project-status .field-content {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    padding: 7px 12px !important;
+
+    background: #dff6f0 !important;
+    color: #087467 !important;
+
+    border: 1px solid #8bd3c4 !important;
+    border-radius: 999px !important;
+
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+  }
+
+  /* -------------------------------------------------------
+     PRIORITY
+     ------------------------------------------------------- */
+  .ops-project-info-grid .views-field-field-project-priority {
+    border-top: 4px solid #7952b3 !important;
+  }
+
+  .ops-project-info-grid
+  .views-field-field-project-priority .field-content {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    padding: 7px 12px !important;
+
+    background: #eee7fb !important;
+    color: #613d9e !important;
+
+    border: 1px solid #c2ace0 !important;
+    border-radius: 999px !important;
+
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Critical priority */
+  .project-priority-critical
+  .views-field-field-project-priority .field-content {
+    background: #ffe6e6 !important;
+    color: #b12626 !important;
+    border-color: #eea6a6 !important;
+  }
+
+  /* High priority */
+  .project-priority-high
+  .views-field-field-project-priority .field-content {
+    background: #fff0d7 !important;
+    color: #9a6100 !important;
+    border-color: #e8bd71 !important;
+  }
+
+  /* -------------------------------------------------------
+     PROGRESS
+     ------------------------------------------------------- */
+  .ops-project-info-grid .views-field-field-project-progress {
+    border-top: 4px solid #0077b6 !important;
+  }
+
+  .ops-project-info-grid
+  .views-field-field-project-progress .field-content {
+    display: block !important;
+  }
+
+  .ops-project-progress-number {
+    display: block !important;
+
+    margin-bottom: 9px !important;
+
+    color: #006d99 !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  .ops-project-progress-track {
+    display: block !important;
+
+    width: 100% !important;
+    height: 9px !important;
+
+    overflow: hidden !important;
+
+    background: #dce8ec !important;
+    border-radius: 999px !important;
+  }
+
+  .ops-project-progress-fill {
+    display: block !important;
+    height: 100% !important;
+
+    background:
+      linear-gradient(90deg,#0077b6,#00a896) !important;
+
+    border-radius: inherit !important;
+  }
+
+  /* -------------------------------------------------------
+     TARGET DATE
+     ------------------------------------------------------- */
+  .ops-project-info-grid .views-field-field-project-target-date {
+    border-top: 4px solid #f0a202 !important;
+  }
+
+  .ops-project-info-grid
+  .views-field-field-project-target-date .field-content {
+    color: #234b5c !important;
+    font-size: 13px !important;
+    font-weight: 750 !important;
+  }
+
+  /* -------------------------------------------------------
+     ACTION AREA
+     ------------------------------------------------------- */
+  .ops-project-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    flex-wrap: wrap !important;
+
+    padding: 15px 28px 19px !important;
+
+    background: #f4f8f9 !important;
+    border-top: 1px solid #dbe6e9 !important;
+  }
+
+  .ops-project-actions .views-field {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .ops-project-actions a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 37px !important;
+    padding: 0 14px !important;
+
+    border-radius: 9px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 850 !important;
+    text-decoration: none !important;
+  }
+
+  .ops-project-actions .views-field-edit-node a {
+    background: #eaf1f4 !important;
+    color: #315766 !important;
+    border: 1px solid #c9d8dd !important;
+  }
+
+  .ops-project-actions .views-field-delete-node a {
+    background: #fff0f0 !important;
+    color: #a43b3b !important;
+    border: 1px solid #e7baba !important;
+  }
+
+  .ops-project-actions .views-field-nothing a {
+    background: linear-gradient(135deg,#111b19,#356657) !important;
+    color: #ffffff !important;
+    border: 1px solid #223e35 !important;
+    box-shadow: 0 4px 9px rgba(0,0,0,.14) !important;
+  }
+
+  .ops-project-actions a:hover {
+    transform: translateY(-2px) !important;
+  }
+
+  @media (max-width: 900px) {
+    .ops-project-info-grid {
+      grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ops-project-info-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .ops-project-card-head .views-field-title {
+      padding-right: 0 !important;
+    }
+
+    .ops-project-card-head::after {
+      display: none !important;
+    }
+  }
+}
+
+/* Keep print content intact */
+@media print {
+  .ops-project-card-head,
+  .ops-project-info-grid,
+  .ops-project-actions {
+    display: contents !important;
+  }
+}
+
+/* =========================================================
+   ICTS PROJECTS | PROGRESS VISIBILITY FIX
+   ========================================================= */
+@media screen {
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-progress {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 88px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    padding: 15px 17px !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-progress
+  .views-label {
+    display: block !important;
+    width: auto !important;
+    margin: 0 0 8px !important;
+    color: #657d87 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-progress
+  .field-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    color: #006d99 !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-progress-number {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 0 9px !important;
+    padding: 0 !important;
+    color: #006d99 !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-progress-track {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 9px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #dce8ec !important;
+    border-radius: 999px !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-progress-fill {
+    display: block !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: linear-gradient(90deg,#0077b6,#00a896) !important;
+    border-radius: 999px !important;
+  }
+
+}
+
+
+/* Move Target completion slightly lower */
+@media screen {
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-target-date {
+    margin-top: 10px !important;
+    padding-top: 20px !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-target-date .views-label {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+}
+
+
+@media screen {
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-target-date {
+    margin-top: 22px !important;
+    padding-top: 20px !important;
+  }
+}
+
+
+@media screen {
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-target-date {
+    position: relative !important;
+    margin-top: 38px !important;
+    transform: translateY(12px) !important;
+    z-index: 3 !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-target-date::before {
+    transform: translateY(12px) !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | REMOVE DECORATIVE BLUE OVAL
+   ========================================================= */
+@media screen {
+
+  .view-icts-ops-projects
+  .views-field-field-project-target-date::before,
+  .view-icts-ops-projects
+  .views-field-field-project-target-date::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .view-icts-ops-projects
+  .icts-ops-project.views-row::before {
+    content: none !important;
+    display: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | REMOVE LARGE BACKGROUND OVALS
+   ========================================================= */
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops {
+    background:
+      linear-gradient(
+        135deg,
+        #dfeff5 0%,
+        #edf5f6 48%,
+        #e4f1eb 100%
+      ) !important;
+    background-image:
+      linear-gradient(
+        135deg,
+        #dfeff5 0%,
+        #edf5f6 48%,
+        #e4f1eb 100%
+      ) !important;
+    background-attachment: fixed !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | REMOVE LARGE BACKGROUND OVALS
+   ========================================================= */
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops {
+    background:
+      linear-gradient(
+        135deg,
+        #dfeff5 0%,
+        #edf5f6 48%,
+        #e4f1eb 100%
+      ) !important;
+    background-image:
+      linear-gradient(
+        135deg,
+        #dfeff5 0%,
+        #edf5f6 48%,
+        #e4f1eb 100%
+      ) !important;
+    background-attachment: fixed !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | REMOVE PROGRESS OVAL / GRAPHIC
+   ========================================================= */
+@media screen {
+
+  .view-icts-ops-projects .ops-project-progress-track,
+  .view-icts-ops-projects .ops-project-progress-fill {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-field-project-progress .field-content {
+    display: block !important;
+    overflow: visible !important;
+    color: #006d99 !important;
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    line-height: 1.3 !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | REMOVE ALL DECORATIVE OVAL / SHAPE ELEMENTS
+   ========================================================= */
+@media screen {
+
+  .view-icts-ops-projects .icts-ops-project.views-row::before,
+  .view-icts-ops-projects .icts-ops-project.views-row::after,
+  .view-icts-ops-projects .views-field-title h2::before,
+  .view-icts-ops-projects .views-field-title h2::after,
+  .view-icts-ops-projects .views-label::before,
+  .view-icts-ops-projects .views-label::after,
+  .view-icts-ops-projects .views-field-field-project-target-date::before,
+  .view-icts-ops-projects .views-field-field-project-target-date::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .view-icts-ops-projects .views-field-field-project-target-date {
+    background-image: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | SHARP STATUS + PRIORITY
+   ========================================================= */
+@media screen {
+
+  /* STATUS AREA */
+  .view-icts-ops-projects
+  .views-field-field-project-status {
+    background: #eefaf7 !important;
+    border: 1px solid #a8ddd2 !important;
+    border-left: 5px solid #00a896 !important;
+    border-radius: 12px !important;
+    padding: 14px 17px !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-field-project-status .views-label {
+    display: block !important;
+    margin-bottom: 8px !important;
+    color: #4d6872 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: .8px !important;
+    text-transform: uppercase !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-field-project-status .field-content {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 7px 14px !important;
+    background: #00a896 !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    letter-spacing: .35px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0,168,150,.22) !important;
+  }
+
+  /* PRIORITY AREA */
+  .view-icts-ops-projects
+  .views-field-field-project-priority {
+    background: #f4effb !important;
+    border: 1px solid #d0bee7 !important;
+    border-left: 5px solid #6f42c1 !important;
+    border-radius: 12px !important;
+    padding: 14px 17px !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-field-project-priority .views-label {
+    display: block !important;
+    margin-bottom: 8px !important;
+    color: #5d6771 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: .8px !important;
+    text-transform: uppercase !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-field-project-priority .field-content {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 7px 14px !important;
+    background: #6f42c1 !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    letter-spacing: .35px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(111,66,193,.22) !important;
+  }
+
+  /* CRITICAL */
+  .view-icts-ops-projects
+  .project-priority-critical
+  .views-field-field-project-priority .field-content {
+    background: #d62828 !important;
+    color: #ffffff !important;
+    box-shadow: 0 3px 9px rgba(214,40,40,.25) !important;
+  }
+
+  /* HIGH */
+  .view-icts-ops-projects
+  .project-priority-high
+  .views-field-field-project-priority .field-content {
+    background: #e08a00 !important;
+    color: #ffffff !important;
+    box-shadow: 0 3px 9px rgba(224,138,0,.25) !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | EXTRA SHARP STATUS + PRIORITY
+   ========================================================= */
+@media screen {
+
+  /* STATUS LABEL */
+  .view-icts-ops-projects
+  .views-field-field-project-status .views-label {
+    color: #173b4b !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* STATUS VALUE */
+  .view-icts-ops-projects
+  .views-field-field-project-status .field-content {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 115px !important;
+    min-height: 34px !important;
+    padding: 7px 16px !important;
+
+    background: #008f80 !important;
+    color: #ffffff !important;
+
+    border: 2px solid #006f63 !important;
+    border-radius: 7px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: .55px !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+
+    box-shadow:
+      0 3px 0 #00584f,
+      0 6px 12px rgba(0,80,70,.20) !important;
+
+    text-shadow: 0 1px 1px rgba(0,0,0,.18) !important;
+  }
+
+  /* PRIORITY LABEL */
+  .view-icts-ops-projects
+  .views-field-field-project-priority .views-label {
+    color: #263b49 !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* PRIORITY VALUE */
+  .view-icts-ops-projects
+  .views-field-field-project-priority .field-content {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 105px !important;
+    min-height: 34px !important;
+    padding: 7px 16px !important;
+
+    background: #6f42c1 !important;
+    color: #ffffff !important;
+
+    border: 2px solid #55309b !important;
+    border-radius: 7px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: .55px !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+
+    box-shadow:
+      0 3px 0 #43237d,
+      0 6px 12px rgba(70,35,130,.20) !important;
+
+    text-shadow: 0 1px 1px rgba(0,0,0,.18) !important;
+  }
+
+  /* CRITICAL */
+  .view-icts-ops-projects
+  .project-priority-critical
+  .views-field-field-project-priority .field-content {
+    background: #d62828 !important;
+    border-color: #a91f1f !important;
+
+    box-shadow:
+      0 3px 0 #811616,
+      0 6px 13px rgba(150,20,20,.22) !important;
+  }
+
+  /* HIGH */
+  .view-icts-ops-projects
+  .project-priority-high
+  .views-field-field-project-priority .field-content {
+    background: #d97706 !important;
+    border-color: #a95d00 !important;
+
+    box-shadow:
+      0 3px 0 #7e4500,
+      0 6px 13px rgba(160,90,0,.22) !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | DENSER STATUS + PRIORITY COLOURS
+   ========================================================= */
+@media screen {
+
+  /* IN PROGRESS */
+  .view-icts-ops-projects
+  .views-field-field-project-status .field-content {
+    background: #007a6d !important;
+    color: #ffffff !important;
+    border-color: #00594f !important;
+    box-shadow:
+      0 3px 0 #00483f,
+      0 7px 14px rgba(0,90,78,.30) !important;
+  }
+
+  /* CRITICAL */
+  .view-icts-ops-projects
+  .project-priority-critical
+  .views-field-field-project-priority .field-content {
+    background: #c91818 !important;
+    color: #ffffff !important;
+    border-color: #920f0f !important;
+    box-shadow:
+      0 3px 0 #700b0b,
+      0 7px 14px rgba(145,15,15,.30) !important;
+  }
+
+  /* HIGH */
+  .view-icts-ops-projects
+  .project-priority-high
+  .views-field-field-project-priority .field-content {
+    background: #c96f00 !important;
+    color: #ffffff !important;
+    border-color: #8f4d00 !important;
+    box-shadow:
+      0 3px 0 #713c00,
+      0 7px 14px rgba(145,77,0,.30) !important;
+  }
+
+  /* Label contrast */
+  .view-icts-ops-projects
+  .views-field-field-project-status .views-label,
+  .view-icts-ops-projects
+  .views-field-field-project-priority .views-label {
+    color: #173b4b !important;
+    font-weight: 900 !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | VIEW ACTIVITY BUTTON
+   ========================================================= */
+@media screen {
+
+  .view-icts-ops-projects
+  .views-field-nothing a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 125px !important;
+    min-height: 40px !important;
+    padding: 0 17px !important;
+
+    background: linear-gradient(135deg, #111414 0%, #414847 100%) !important;
+    background-image: linear-gradient(135deg, #111414 0%, #414847 100%) !important;
+
+    color: #ffffff !important;
+    border: 2px solid #252d2b !important;
+    border-radius: 8px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: .25px !important;
+    text-decoration: none !important;
+
+    box-shadow:
+      0 4px 0 #090b0b,
+      0 8px 15px rgba(0,0,0,.22) !important;
+
+    text-shadow: none !important;
+    transition: all .16s ease !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-nothing a::before {
+    content: "↗" !important;
+    margin-right: 8px !important;
+    color: #d7e1df !important;
+    font-size: 14px !important;
+    font-weight: 900 !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-nothing a:hover {
+    background: linear-gradient(135deg, #050606 0%, #5a6461 100%) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+      0 6px 0 #080909,
+      0 11px 20px rgba(0,0,0,.28) !important;
+  }
+
+  .view-icts-ops-projects
+  .views-field-nothing a:active {
+    transform: translateY(2px) !important;
+    box-shadow:
+      0 2px 0 #080909,
+      0 5px 10px rgba(0,0,0,.18) !important;
+  }
+
+}
+
+
+/* =========================================================
+   ICTS PROJECTS | VIEW ACTIVITY
+   ========================================================= */
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops
+  .ops-view-activity-wrap {
+    display: block !important;
+    margin-top: 14px !important;
+    padding: 0 !important;
+  }
+
+  body.page-view-icts-ops-projects.path-ops
+  .ops-view-activity-direct {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 135px !important;
+    min-height: 42px !important;
+    padding: 0 18px !important;
+
+    background: linear-gradient(
+      135deg,
+      #111111 0%,
+      #343b3a 55%,
+      #59635f 100%
+    ) !important;
+
+    color: #ffffff !important;
+
+    border: 2px solid #202625 !important;
+    border-radius: 9px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: .35px !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+
+    box-shadow:
+      0 4px 0 #0a0c0c,
+      0 8px 16px rgba(0,0,0,.22) !important;
+
+    transition:
+      transform .15s ease,
+      box-shadow .15s ease,
+      background .15s ease !important;
+  }
+
+  .ops-view-activity-direct::before {
+    content: "↗" !important;
+    margin-right: 8px !important;
+    color: #d9e2df !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+  }
+
+  .ops-view-activity-direct:hover {
+    background: linear-gradient(
+      135deg,
+      #000000 0%,
+      #46514d 55%,
+      #69756f 100%
+    ) !important;
+
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+      0 6px 0 #080909,
+      0 11px 21px rgba(0,0,0,.28) !important;
+  }
+
+  .ops-view-activity-direct:active {
+    transform: translateY(2px) !important;
+
+    box-shadow:
+      0 2px 0 #080909,
+      0 5px 10px rgba(0,0,0,.18) !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | SOFTER PROJECT NAME AREA
+   ========================================================= */
+@media screen {
+
+  .view-icts-ops-projects
+  .ops-project-card-head {
+    background: linear-gradient(
+      135deg,
+      #e8f6fb 0%,
+      #f1f8fa 55%,
+      #e7f5f0 100%
+    ) !important;
+
+    border-bottom: 1px solid #d3e5e9 !important;
+    border-left: 5px solid #0077b6 !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-card-head .views-field-title h2 {
+    color: #123f53 !important;
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 750 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -.25px !important;
+    text-shadow: none !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-card-head .views-field-title h2::after {
+    background: linear-gradient(
+      90deg,
+      #0077b6,
+      #00a896
+    ) !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-card-head::after {
+    background: #d9eef5 !important;
+    border-color: #b9dbe5 !important;
+    color: #17617f !important;
+  }
+
+}
+
+
+/* =========================================================
+   ICTS PROJECTS | COLOURED PROJECT BODY
+   ========================================================= */
+@media screen {
+
+  /* Main project card */
+  .view-icts-ops-projects
+  .icts-ops-project.views-row {
+    background:
+      linear-gradient(
+        145deg,
+        #e5f3f8 0%,
+        #eef7f7 48%,
+        #e4f3ed 100%
+      ) !important;
+
+    border-color: #bdd6de !important;
+  }
+
+  /* Keep the information area transparent so the parent
+     colour is actually visible */
+  .view-icts-ops-projects
+  .ops-project-info-grid {
+    background: transparent !important;
+  }
+
+  /* Information boxes */
+  .view-icts-ops-projects
+  .ops-project-info-grid > .views-field {
+    background: rgba(255,255,255,.72) !important;
+    border-color: rgba(72,116,128,.18) !important;
+    box-shadow: 0 4px 10px rgba(32,78,91,.06) !important;
+  }
+
+  /* Actions area */
+  .view-icts-ops-projects
+  .ops-project-actions {
+    background: rgba(213,232,231,.72) !important;
+    border-top-color: rgba(62,104,111,.18) !important;
+  }
+
+  /* Slightly stronger colour separation */
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-status {
+    background: rgba(232,249,245,.88) !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-priority {
+    background: rgba(242,237,250,.88) !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-progress {
+    background: rgba(235,247,252,.88) !important;
+  }
+
+  .view-icts-ops-projects
+  .ops-project-info-grid
+  .views-field-field-project-target-date {
+    background: rgba(247,245,232,.88) !important;
+  }
+
+}
+
+
+/* PROJECTS | BACK TO ICTS DASHBOARD */
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops
+  .ops-projects-back-button {
+    background: linear-gradient(135deg, #080909 0%, #343a38 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #111514 !important;
+    box-shadow:
+      0 4px 0 #050606,
+      0 8px 16px rgba(0,0,0,.22) !important;
+  }
+
+  body.page-view-icts-ops-projects.path-ops
+  .ops-projects-back-button:hover {
+    background: linear-gradient(135deg, #000000 0%, #4b5551 100%) !important;
+    color: #ffffff !important;
+    transform: translateX(-2px) !important;
+  }
+
+}
+
+
+/* PROJECTS | BACK TO ICTS DASHBOARD */
+@media screen {
+
+  .ops-projects-dashboard-link {
+    margin-bottom: 18px !important;
+  }
+
+  .ops-projects-dashboard-link a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 40px !important;
+    padding: 0 16px !important;
+
+    background: linear-gradient(135deg, #080909 0%, #3f4744 100%) !important;
+    color: #ffffff !important;
+
+    border: 1px solid #111514 !important;
+    border-radius: 9px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 850 !important;
+    text-decoration: none !important;
+
+    box-shadow:
+      0 4px 0 #050606,
+      0 8px 16px rgba(0,0,0,.22) !important;
+
+    transition: .18s ease !important;
+  }
+
+  .ops-projects-dashboard-link a:hover {
+    background: linear-gradient(135deg, #000000 0%, #56605c 100%) !important;
+    color: #ffffff !important;
+    transform: translateX(-2px) !important;
+    box-shadow:
+      0 5px 0 #050606,
+      0 10px 20px rgba(0,0,0,.28) !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | BACK TO ICTS DASHBOARD | FINAL BLACK
+   ========================================================= */
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops
+  .ops-projects-dashboard-link a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 42px !important;
+    padding: 0 18px !important;
+
+    background: #111111 !important;
+    background-image: none !important;
+
+    color: #ffffff !important;
+
+    border: 2px solid #111111 !important;
+    border-radius: 8px !important;
+
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+
+    box-shadow:
+      0 4px 0 #000000,
+      0 8px 16px rgba(0,0,0,.22) !important;
+  }
+
+  body.page-view-icts-ops-projects.path-ops
+  .ops-projects-dashboard-link a:hover {
+    background: #000000 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+      0 6px 0 #000000,
+      0 11px 20px rgba(0,0,0,.28) !important;
+  }
+
+}
+
+
+/* =========================================================
+   PROJECTS | HEADER | GREY + BLUE + GREEN
+   ========================================================= */
+@media screen {
+
+  body.page-view-icts-ops-projects.path-ops
+  .view-icts-ops-projects .view-header {
+    background:
+      linear-gradient(
+        120deg,
+        #4b5d64 0%,
+        #3f7187 45%,
+        #397d72 100%
+      ) !important;
+
+    border: 1px solid rgba(255,255,255,.20) !important;
+    border-radius: 18px !important;
+    box-shadow:
+      0 14px 30px rgba(28,62,72,.20) !important;
+  }
+
+  body.page-view-icts-ops-projects.path-ops
+  .view-icts-ops-projects .view-header h1,
+  body.page-view-icts-ops-projects.path-ops
+  .view-icts-ops-projects .view-header h2,
+  body.page-view-icts-ops-projects.path-ops
+  .view-icts-ops-projects .view-header p {
+    color: #ffffff !important;
+  }
+
+}
+
+
+
+@media screen {
+  body.page-view-icts-ops-projects.path-ops
+  .unh-inventory-page-header.ops-direct-print-header {
+    background:
+      linear-gradient(
+        120deg,
+        #596166 0%,
+        #426f86 48%,
+        #3d806f 100%
+      ) !important;
+    background-image:
+      linear-gradient(
+        120deg,
+        #596166 0%,
+        #426f86 48%,
+        #3d806f 100%
+      ) !important;
+  }
+}

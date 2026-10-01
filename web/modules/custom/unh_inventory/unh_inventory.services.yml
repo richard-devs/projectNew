@@ -1,0 +1,6 @@
+services:
+  unh_inventory.lenovo_warranty:
+    class: Drupal\unh_inventory\Service\LenovoWarrantyService
+    arguments:
+      - '@http_client'
+      - '@config.factory'

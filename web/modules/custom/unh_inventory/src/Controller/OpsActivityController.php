@@ -27,7 +27,7 @@ class OpsActivityController extends ControllerBase {
       ->execute()
       ->fetchAll();
 
-    $groups = [];
+    $items = [];
 
     foreach ($rows as $row) {
       $account = $this->entityTypeManager()
@@ -36,166 +36,111 @@ class OpsActivityController extends ControllerBase {
 
       $actor = $account ? $account->getDisplayName() : 'Unknown user';
 
-      $group_key = $row->created . '|' . $row->uid;
+      $field_label = $row->field_name
+        ? $this->getFieldLabel($node, $row->field_name)
+        : 'Activity';
 
-      if (!isset($groups[$group_key])) {
-        $groups[$group_key] = [
-          'created' => $row->created,
-          'actor' => $actor,
-          'changes' => [],
-        ];
+      $old_value = $row->old_value !== NULL && $row->old_value !== ''
+        ? $row->old_value
+        : 'Empty';
+
+      $new_value = $row->new_value !== NULL && $row->new_value !== ''
+        ? $row->new_value
+        : 'Empty';
+
+      if (in_array($row->field_name, [
+        'field_task_description',
+        'field_project_description',
+      ], TRUE)) {
+        $old_value = trim(strip_tags($old_value));
+        $new_value = trim(strip_tags($new_value));
       }
 
-      if ($row->field_name) {
-        $old_value = $row->old_value !== NULL && $row->old_value !== ''
-          ? $row->old_value
-          : 'Unassigned';
+      $day = \Drupal::service('date.formatter')
+        ->format($row->created, 'custom', 'l');
 
-        $new_value = $row->new_value !== NULL && $row->new_value !== ''
-          ? $row->new_value
-          : 'Empty';
-
-        if ($row->field_name === 'field_task_description' || $row->field_name === 'field_project_description') {
-          $old_value = trim(strip_tags($old_value));
-          $new_value = trim(strip_tags($new_value));
-        }
-
-        $groups[$group_key]['changes'][] = [
-          'label' => $this->getFieldLabel($node, $row->field_name),
-          'old' => $old_value,
-          'new' => $new_value,
-          'assignment' => in_array($row->field_name, [
-            'field_task_assignee',
-            'field_project_owner',
-          ], TRUE),
-        ];
-      }
-    }
-
-    $items = [];
-
-    foreach ($groups as $group) {
       $date = \Drupal::service('date.formatter')
-        ->format($group['created'], 'custom', 'd M Y, H:i');
+        ->format($row->created, 'custom', 'd M Y');
 
-      $changes = [];
-
-      foreach ($group['changes'] as $change) {
-        $changes[] = [
-          '#type' => 'container',
-          '#attributes' => [
-            'class' => ['ops-activity-change'],
-          ],
-          'message' => [
-            '#markup' => '<div class="ops-activity-message">' .
-              htmlspecialchars($change['label']) .
-              ' changed</div>',
-          ],
-          'values' => [
-            '#markup' => '<div class="ops-activity-change-values">' .
-              '<div><strong>From:</strong> ' .
-              htmlspecialchars($change['old']) .
-              '</div>' .
-              '<div><strong>To:</strong> ' .
-              htmlspecialchars($change['new']) .
-              '</div>' .
-              ($change['assignment']
-                ? '<div class="ops-activity-assigned-by"><strong>Assigned by:</strong> ' .
-                  htmlspecialchars($group['actor']) .
-                  '</div>'
-                : '') .
-              '</div>',
-          ],
-        ];
-      }
+      $time = \Drupal::service('date.formatter')
+        ->format($row->created, 'custom', 'H:i');
 
       $items[] = [
         '#type' => 'container',
         '#attributes' => [
           'class' => ['ops-activity-item'],
         ],
-        'header' => [
-          '#type' => 'container',
-          '#attributes' => [
-            'class' => ['ops-activity-header'],
-          ],
-          'date' => [
-            '#markup' => '<div class="ops-activity-date">' .
-              htmlspecialchars($date) .
-              '</div>',
-          ],
-          'actor' => [
-            '#markup' => '<div class="ops-activity-actor"><strong>Changed by:</strong> ' .
-              htmlspecialchars($group['actor']) .
-              '</div>',
-          ],
+        'field' => [
+          '#markup' => '<div class="ops-activity-message">' .
+            htmlspecialchars($field_label) .
+            ' changed</div>',
         ],
-        'changes' => $changes,
+        'values' => [
+          '#markup' => '<div class="ops-activity-change-values">' .
+            '<div><strong>From:</strong> ' .
+            htmlspecialchars($old_value) .
+            '</div>' .
+            '<div><strong>To:</strong> ' .
+            htmlspecialchars($new_value) .
+            '</div>' .
+            '<div><strong>Changed by:</strong> ' .
+            htmlspecialchars($actor) .
+            '</div>' .
+            '</div>',
+        ],
+        'date' => [
+          '#markup' => '<div class="ops-activity-date-details">' .
+            '<span><strong>Day:</strong> ' .
+            htmlspecialchars($day) .
+            '</span>' .
+            '<span><strong>Date:</strong> ' .
+            htmlspecialchars($date) .
+            '</span>' .
+            '<span><strong>Time:</strong> ' .
+            htmlspecialchars($time) .
+            '</span>' .
+            '</div>',
+        ],
       ];
     }
-
-    $overview_url = Url::fromRoute('entity.node.canonical', [
-      'node' => $node->id(),
-    ]);
 
     $back_url = $node->bundle() === 'ops_task'
       ? Url::fromUserInput('/ops/tasks')
       : Url::fromUserInput('/ops/projects');
 
+    $back_title = $node->bundle() === 'ops_task'
+      ? '← Back to Tasks'
+      : '← Back to Projects';
+
     return [
-      'tabs' => [
-        '#type' => 'container',
-        '#attributes' => [
-          'class' => ['ops-detail-tabs'],
-        ],
-        'overview' => [
-          '#type' => 'link',
-          '#title' => 'Overview',
-          '#url' => $overview_url,
-          '#attributes' => [
-            'class' => ['ops-detail-tab'],
-          ],
-        ],
-        'activity' => [
-          '#type' => 'link',
-          '#title' => 'Activity / History',
-          '#url' => Url::fromRoute('unh_inventory.ops_activity', [
-            'node' => $node->id(),
-          ]),
-          '#attributes' => [
-            'class' => ['ops-detail-tab', 'is-active'],
-          ],
-        ],
+      'page_header' => [
+        '#markup' => '<div class="unh-inventory-page-header ops-activity-page-header">
+          <div>
+            <span class="unh-inventory-page-kicker">UN-HABITAT</span>
+            <h1>ICTS Activity History</h1>
+            <p>Review the operational activity and change history for ' .
+              htmlspecialchars($node->label()) .
+              '.</p>
+          </div>
+          <a href="#" class="unh-inventory-print-button ops-activity-print" onclick="window.print(); return false;">
+            <span class="unh-print-icon">🖨</span><span>Print</span>
+          </a>
+        </div>',
       ],
-      'print' => [
-        '#type' => 'container',
-        '#attributes' => [
-          'class' => ['ops-activity-print-top'],
-        ],
-        'button' => [
-          '#type' => 'html_tag',
-          '#tag' => 'button',
-          '#value' => 'Print',
-          '#attributes' => [
-            'type' => 'button',
-            'class' => ['ops-activity-print'],
-            'onclick' => 'window.print();',
-          ],
-        ],
-      ],
+
       'title' => [
-        '#markup' => '<h1 class="ops-activity-title">' .
+        '#markup' => '<h2 class="ops-activity-title">' .
           htmlspecialchars($node->label()) .
-          '</h1>',
+          '</h2>',
       ],
-      'activity' => $items ?: [
+
+      'history' => $items ?: [
         '#markup' => '<div class="ops-activity-empty">No activity has been recorded yet.</div>',
       ],
+
       'back' => [
         '#type' => 'link',
-        '#title' => $node->bundle() === 'ops_task'
-          ? '← Back to Tasks'
-          : '← Back to Projects',
+        '#title' => $back_title,
         '#url' => $back_url,
         '#attributes' => [
           'class' => ['ops-activity-back'],

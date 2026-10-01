@@ -1,0 +1,20 @@
+
+activity_visual:
+  css:
+    theme:
+      css/inventory-activity.css: {}
+
+devices_visual:
+  css:
+    theme:
+      css/inventory-devices.css: {}
+
+users_visual:
+  css:
+    theme:
+      css/inventory-users.css: {}
+
+reports_visual:
+  css:
+    theme:
+      css/inventory-reports.css: {}

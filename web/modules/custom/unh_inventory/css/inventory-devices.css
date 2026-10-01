@@ -1,0 +1,1690 @@
+
+/* =========================================================
+   ICTS DEVICES
+   Visual redesign only
+   ========================================================= */
+
+.unh-inventory-page-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 28px !important;
+  margin: 0 0 22px 0 !important;
+  padding: 24px 28px !important;
+  background: linear-gradient(135deg, #006f86 0%, #009edb 100%) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(0,55,75,.12) !important;
+}
+
+.unh-inventory-page-header > div:first-child {
+  min-width: 0 !important;
+}
+
+.unh-inventory-page-kicker {
+  display: block !important;
+  margin-bottom: 6px !important;
+  color: rgba(255,255,255,.78) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+}
+
+.unh-inventory-page-header h1 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+}
+
+.unh-inventory-page-header p {
+  margin: 8px 0 0 !important;
+  color: rgba(255,255,255,.94) !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Back button */
+.unh-inventory-back-row {
+  margin: 0 0 16px !important;
+}
+
+.unh-inventory-back-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 9px 15px !important;
+  background: #ffffff !important;
+  color: #244052 !important;
+  border: 1px solid #d5e0e7 !important;
+  border-radius: 7px !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.05) !important;
+}
+
+.unh-inventory-back-button:hover,
+.unh-inventory-back-button:focus {
+  background: #f1f8fb !important;
+  color: #006f86 !important;
+  border-color: #8fcbdc !important;
+  text-decoration: none !important;
+}
+
+/* Print control */
+.unh-inventory-page-header .unh-inventory-print-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  min-width: 118px !important;
+  min-height: 50px !important;
+  padding: 9px 16px !important;
+  background: rgba(255,255,255,.14) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,.65) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12) !important;
+}
+
+.unh-inventory-page-header .unh-inventory-print-button:hover,
+.unh-inventory-page-header .unh-inventory-print-button:focus,
+.unh-inventory-page-header .unh-inventory-print-button:active {
+  background: rgba(255,255,255,.24) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Action area */
+.unh-inventory-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 0 18px !important;
+  padding: 14px 16px !important;
+  background: #ffffff !important;
+  border: 1px solid #dce6ec !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 12px rgba(20,55,70,.05) !important;
+}
+
+.unh-inventory-actions a.button,
+.unh-inventory-actions .button {
+  margin: 0 !important;
+  border-radius: 7px !important;
+  padding: 10px 16px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+/* Main device table */
+.unh-inventory-table {
+  width: 100% !important;
+  background: #ffffff !important;
+  border: 1px solid #d8e2e8 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(20,55,70,.07) !important;
+}
+
+.unh-inventory-table thead th {
+  padding: 12px 11px !important;
+  background: #17324d !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table tbody td {
+  padding: 11px 11px !important;
+  background: #ffffff !important;
+  color: #2b3b47 !important;
+  border-top: 1px solid #e7edf1 !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table tbody tr:nth-child(even) td {
+  background: #f7fafc !important;
+}
+
+.unh-inventory-table tbody tr:hover td {
+  background: #edf7fb !important;
+}
+
+/* Keep long device fields readable */
+.unh-inventory-table tbody td:nth-child(1),
+.unh-inventory-table tbody td:nth-child(2),
+.unh-inventory-table tbody td:nth-child(4),
+.unh-inventory-table tbody td:nth-child(5) {
+  font-weight: 650 !important;
+}
+
+/* Status cell */
+.unh-inventory-table tbody td:nth-child(6) {
+  font-weight: 750 !important;
+}
+
+/* Action links */
+.unh-inventory-table tbody td:last-child {
+  min-width: 210px !important;
+  white-space: normal !important;
+}
+
+.unh-inventory-table tbody td:last-child a {
+  display: inline-block !important;
+  margin: 2px 4px 2px 0 !important;
+  padding: 5px 8px !important;
+  background: #f1f6f9 !important;
+  color: #24536b !important;
+  border: 1px solid #d5e2e9 !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:hover,
+.unh-inventory-table tbody td:last-child a:focus {
+  background: #e3f2f7 !important;
+  color: #006f86 !important;
+  border-color: #9bcbd8 !important;
+  text-decoration: none !important;
+}
+
+/* Page background */
+.unh-main {
+  background: #f4f7fa !important;
+}
+
+/* Small screens */
+@media (max-width: 1000px) {
+  .unh-inventory-page-header {
+    align-items: flex-start !important;
+  }
+
+  .unh-inventory-page-header .unh-inventory-print-button {
+    flex: 0 0 auto !important;
+  }
+
+  .unh-inventory-table {
+    font-size: 11px !important;
+  }
+}
+
+/* =========================================================
+   DEVICES ACTIONS
+   Vertical, button-style action layout
+   ========================================================= */
+
+.unh-inventory-table tbody td:last-child {
+  width: 160px !important;
+  min-width: 160px !important;
+  padding: 10px !important;
+  vertical-align: top !important;
+}
+
+.unh-inventory-table tbody td:last-child a {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 6px 0 !important;
+  padding: 7px 10px !important;
+  border-radius: 6px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-size: 11px !important;
+  font-weight: 750 !important;
+  line-height: 1.25 !important;
+  border: 1px solid transparent !important;
+  transition: all .15s ease !important;
+}
+
+.unh-inventory-table tbody td:last-child a:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 1. Edit Device */
+.unh-inventory-table tbody td:last-child a:nth-child(1) {
+  background: #e8f3fb !important;
+  color: #17628a !important;
+  border-color: #b9d9ea !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(1):hover {
+  background: #d7ebf7 !important;
+  color: #0d4e70 !important;
+}
+
+/* 2. Manage Status */
+.unh-inventory-table tbody td:last-child a:nth-child(2) {
+  background: #fff4dc !important;
+  color: #8a5b00 !important;
+  border-color: #efd399 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(2):hover {
+  background: #ffebbd !important;
+  color: #704900 !important;
+}
+
+/* 3. Delete Device */
+.unh-inventory-table tbody td:last-child a:nth-child(3) {
+  background: #fde9e9 !important;
+  color: #a52d2d !important;
+  border-color: #efb7b7 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(3):hover {
+  background: #fbd6d6 !important;
+  color: #861f1f !important;
+}
+
+/* 4. Reassign Device */
+.unh-inventory-table tbody td:last-child a:nth-child(4) {
+  background: #f0eafb !important;
+  color: #68449a !important;
+  border-color: #d1c0eb !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(4):hover {
+  background: #e4d9f6 !important;
+  color: #533681 !important;
+}
+
+/* 5. View Activity */
+.unh-inventory-table tbody td:last-child a:nth-child(5) {
+  background: #e5f5f3 !important;
+  color: #16756f !important;
+  border-color: #b7ddd8 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(5):hover {
+  background: #d4eeeb !important;
+  color: #0f5b56 !important;
+}
+
+
+/* FORCE DEVICES ACTIONS INTO A VERTICAL STACK */
+
+.unh-inventory-table tbody td:last-child {
+  width: 175px !important;
+  min-width: 175px !important;
+  max-width: 175px !important;
+  white-space: normal !important;
+  vertical-align: top !important;
+  text-align: center !important;
+}
+
+.unh-inventory-table tbody td:last-child a {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 175px !important;
+  min-height: 32px !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: both !important;
+  margin: 0 0 6px 0 !important;
+  padding: 7px 9px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: normal !important;
+  border-radius: 6px !important;
+}
+
+.unh-inventory-table tbody td:last-child a:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+/* FORCE EVERY ACTION INTO ONE VERTICAL COLUMN */
+
+.unh-inventory-table tbody td:last-child {
+  display: table-cell !important;
+  width: 180px !important;
+  min-width: 180px !important;
+  max-width: 180px !important;
+  vertical-align: top !important;
+  white-space: normal !important;
+}
+
+.unh-inventory-table tbody td:last-child > *,
+.unh-inventory-table tbody td:last-child > * > * {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  clear: both !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  white-space: normal !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.unh-inventory-table tbody td:last-child a {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 0 6px 0 !important;
+  float: none !important;
+  clear: both !important;
+  white-space: normal !important;
+  text-align: center !important;
+}
+
+.unh-inventory-table tbody td:last-child a:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE FINAL VISUAL POLISH
+   ========================================================= */
+
+.unh-inventory-table {
+  width: 100% !important;
+  border: 1px solid #cfdbe3 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  box-shadow: 0 8px 24px rgba(23,50,77,.08) !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Header */
+.unh-inventory-table thead th {
+  background: #17324d !important;
+  color: #ffffff !important;
+  padding: 13px 12px !important;
+  border-right: 1px solid rgba(255,255,255,.14) !important;
+  border-bottom: 3px solid #009edb !important;
+  font-size: 12px !important;
+  font-weight: 750 !important;
+  line-height: 1.3 !important;
+  letter-spacing: .15px !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table thead th:last-child {
+  border-right: 0 !important;
+  text-align: center !important;
+}
+
+/* Body */
+.unh-inventory-table tbody td {
+  padding: 13px 12px !important;
+  background: #ffffff !important;
+  color: #263b4a !important;
+  border-right: 1px solid #e4ebef !important;
+  border-bottom: 1px solid #e4ebef !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table tbody td:last-child {
+  border-right: 0 !important;
+}
+
+/* Alternating rows */
+.unh-inventory-table tbody tr:nth-child(even) td {
+  background: #f5f9fb !important;
+}
+
+.unh-inventory-table tbody tr:nth-child(odd) td {
+  background: #ffffff !important;
+}
+
+/* Hover */
+.unh-inventory-table tbody tr:hover td {
+  background: #eaf5f9 !important;
+}
+
+/* Main identifying fields */
+.unh-inventory-table tbody td:nth-child(1),
+.unh-inventory-table tbody td:nth-child(2),
+.unh-inventory-table tbody td:nth-child(4),
+.unh-inventory-table tbody td:nth-child(5) {
+  color: #173b55 !important;
+  font-weight: 700 !important;
+}
+
+/* Staff / User */
+.unh-inventory-table tbody td:nth-child(8) {
+  color: #24556e !important;
+  font-weight: 650 !important;
+}
+
+/* Status */
+.unh-inventory-table tbody td:nth-child(6) {
+  font-weight: 750 !important;
+}
+
+/* Give the data more breathing room */
+.unh-inventory-table tbody tr {
+  height: 58px !important;
+}
+
+/* Keep action column visually distinct */
+.unh-inventory-table tbody td:last-child {
+  background: #f8fbfc !important;
+  border-left: 2px solid #d9e7ed !important;
+  padding: 10px !important;
+}
+
+/* Make table content easier to scan */
+.unh-inventory-table tbody td a {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Rounded outer corners */
+.unh-inventory-table thead tr:first-child th:first-child {
+  border-top-left-radius: 11px !important;
+}
+
+.unh-inventory-table thead tr:first-child th:last-child {
+  border-top-right-radius: 11px !important;
+}
+
+.unh-inventory-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 11px !important;
+}
+
+.unh-inventory-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 11px !important;
+}
+
+/* Make long text readable without looking cramped */
+.unh-inventory-table td {
+  overflow-wrap: anywhere !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE - CLEAR MODERN GRID
+   ========================================================= */
+
+.unh-inventory-table {
+  border: 1px solid #b9cbd5 !important;
+}
+
+/* Larger, clearer header */
+.unh-inventory-table thead th {
+  padding: 15px 12px !important;
+  background: #17324d !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  letter-spacing: .15px !important;
+  border-right: 1px solid #496174 !important;
+  border-bottom: 3px solid #009edb !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table thead th:last-child {
+  border-right: 0 !important;
+  text-align: center !important;
+}
+
+/* Strong visible column separation */
+.unh-inventory-table tbody td {
+  padding: 14px 12px !important;
+  border-right: 1px solid #cbd9e1 !important;
+  border-bottom: 1px solid #cbd9e1 !important;
+  color: #243b4a !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table tbody td:last-child {
+  border-right: 0 !important;
+}
+
+/* Stronger row separation */
+.unh-inventory-table tbody tr {
+  border-bottom: 1px solid #bfcfd8 !important;
+}
+
+.unh-inventory-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+/* Alternating rows */
+.unh-inventory-table tbody tr:nth-child(odd) td {
+  background: #ffffff !important;
+}
+
+.unh-inventory-table tbody tr:nth-child(even) td {
+  background: #f3f7fa !important;
+}
+
+/* Clear hover state */
+.unh-inventory-table tbody tr:hover td {
+  background: #e5f3f8 !important;
+  border-right-color: #b7d2dc !important;
+}
+
+/* Stronger first two identifying columns */
+.unh-inventory-table tbody td:nth-child(1),
+.unh-inventory-table tbody td:nth-child(2) {
+  color: #123e58 !important;
+  font-weight: 750 !important;
+}
+
+/* Status */
+.unh-inventory-table tbody td:nth-child(6) {
+  font-weight: 800 !important;
+}
+
+/* Action column remains visually separate */
+.unh-inventory-table tbody td:last-child {
+  background: #f8fbfc !important;
+  border-left: 2px solid #b9cbd5 !important;
+  border-right: 0 !important;
+}
+
+/* Give each header a little breathing room */
+.unh-inventory-table thead th + th {
+  padding-left: 13px !important;
+}
+
+/* Make the entire grid crisp */
+.unh-inventory-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE - CONTINUOUS VERTICAL COLUMN DIVIDERS
+   ========================================================= */
+
+.unh-inventory-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+/* Header vertical dividers */
+.unh-inventory-table thead th {
+  box-shadow: inset -1px 0 0 #607485 !important;
+}
+
+.unh-inventory-table thead th:last-child {
+  box-shadow: none !important;
+}
+
+/* Body vertical dividers, continuous from header down */
+.unh-inventory-table tbody td {
+  box-shadow: inset -1px 0 0 #c3d0d8 !important;
+}
+
+.unh-inventory-table tbody td:last-child {
+  box-shadow:
+    inset 1px 0 0 #aebfc9 !important;
+}
+
+/* Make the dividers stronger on hover without losing them */
+.unh-inventory-table tbody tr:hover td {
+  box-shadow: inset -1px 0 0 #a8c2cd !important;
+}
+
+.unh-inventory-table tbody tr:hover td:last-child {
+  box-shadow: inset 1px 0 0 #91b1bf !important;
+}
+
+/* Keep horizontal separation visible too */
+.unh-inventory-table tbody td {
+  border-bottom: 1px solid #cbd8df !important;
+}
+
+
+/* =========================================================
+   DEVICES ACTION BUTTONS - STRONG MODERN COLOURS
+   ========================================================= */
+
+.unh-inventory-table tbody td:last-child {
+  background: #f1f5f8 !important;
+  border-left: 2px solid #b8cbd5 !important;
+  padding: 10px !important;
+}
+
+/* Base button */
+.unh-inventory-table tbody td:last-child a {
+  display: block !important;
+  width: 100% !important;
+  max-width: 180px !important;
+  box-sizing: border-box !important;
+  margin: 0 0 7px 0 !important;
+  padding: 8px 10px !important;
+  border-radius: 6px !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  text-decoration: none !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 5px rgba(20,50,65,.10) !important;
+}
+
+.unh-inventory-table tbody td:last-child a:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* EDIT DEVICE - BLUE */
+.unh-inventory-table tbody td:last-child a:nth-child(1) {
+  background: #087ea4 !important;
+  color: #ffffff !important;
+  border-color: #066b8c !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(1):hover {
+  background: #056b8c !important;
+  color: #ffffff !important;
+}
+
+/* MANAGE STATUS - AMBER */
+.unh-inventory-table tbody td:last-child a:nth-child(2) {
+  background: #d99500 !important;
+  color: #ffffff !important;
+  border-color: #b77d00 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(2):hover {
+  background: #b97d00 !important;
+  color: #ffffff !important;
+}
+
+/* DELETE DEVICE - RED */
+.unh-inventory-table tbody td:last-child a:nth-child(3) {
+  background: #c93636 !important;
+  color: #ffffff !important;
+  border-color: #a92b2b !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(3):hover {
+  background: #a92b2b !important;
+  color: #ffffff !important;
+}
+
+/* REASSIGN DEVICE - PURPLE */
+.unh-inventory-table tbody td:last-child a:nth-child(4) {
+  background: #7047a2 !important;
+  color: #ffffff !important;
+  border-color: #5d3989 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(4):hover {
+  background: #5d3989 !important;
+  color: #ffffff !important;
+}
+
+/* VIEW ACTIVITY - GREEN */
+.unh-inventory-table tbody td:last-child a:nth-child(5) {
+  background: #168277 !important;
+  color: #ffffff !important;
+  border-color: #116b62 !important;
+}
+
+.unh-inventory-table tbody td:last-child a:nth-child(5):hover {
+  background: #116b62 !important;
+  color: #ffffff !important;
+}
+
+/* Keep buttons visually crisp */
+.unh-inventory-table tbody td:last-child a:focus {
+  color: #ffffff !important;
+  outline: 2px solid rgba(0,158,219,.35) !important;
+  outline-offset: 1px !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE - CLEAR NON-OVERLAPPING HEADERS
+   ========================================================= */
+
+.unh-inventory-table {
+  table-layout: auto !important;
+  width: max-content !important;
+  min-width: 100% !important;
+}
+
+/* Header cells */
+.unh-inventory-table thead th {
+  position: static !important;
+  height: auto !important;
+  min-height: 62px !important;
+  padding: 14px 11px !important;
+
+  background: #17324d !important;
+  color: #ffffff !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  letter-spacing: .2px !important;
+
+  text-align: left !important;
+  vertical-align: middle !important;
+
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Specific column breathing room */
+.unh-inventory-table thead th:nth-child(1)  { min-width: 145px !important; }
+.unh-inventory-table thead th:nth-child(2)  { min-width: 135px !important; }
+.unh-inventory-table thead th:nth-child(3)  { min-width: 105px !important; }
+.unh-inventory-table thead th:nth-child(4)  { min-width: 105px !important; }
+.unh-inventory-table thead th:nth-child(5)  { min-width: 125px !important; }
+.unh-inventory-table thead th:nth-child(6)  { min-width: 95px !important; }
+.unh-inventory-table thead th:nth-child(7)  { min-width: 125px !important; }
+.unh-inventory-table thead th:nth-child(8)  { min-width: 90px !important; }
+.unh-inventory-table thead th:nth-child(9)  { min-width: 155px !important; }
+.unh-inventory-table thead th:nth-child(10) { min-width: 190px !important; }
+.unh-inventory-table thead th:nth-child(11) { min-width: 100px !important; }
+.unh-inventory-table thead th:nth-child(12) { min-width: 125px !important; }
+.unh-inventory-table thead th:nth-child(13) { min-width: 125px !important; }
+.unh-inventory-table thead th:nth-child(14) { min-width: 190px !important; }
+.unh-inventory-table thead th:nth-child(15) { min-width: 180px !important; }
+
+/* Keep body aligned to the wider columns */
+.unh-inventory-table tbody td {
+  vertical-align: middle !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+/* Stronger header separation */
+.unh-inventory-table thead th {
+  border-right: 1px solid #5b7181 !important;
+  border-bottom: 4px solid #009edb !important;
+}
+
+.unh-inventory-table thead th:last-child {
+  border-right: 0 !important;
+}
+
+/* Make long headers especially readable */
+.unh-inventory-table thead th:nth-child(1),
+.unh-inventory-table thead th:nth-child(2),
+.unh-inventory-table thead th:nth-child(7),
+.unh-inventory-table thead th:nth-child(9),
+.unh-inventory-table thead th:nth-child(10),
+.unh-inventory-table thead th:nth-child(13),
+.unh-inventory-table thead th:nth-child(14) {
+  line-height: 1.25 !important;
+}
+
+
+/* =========================================================
+   DEVICES HEADERS - FORCE LONG WORD WRAPPING
+   ========================================================= */
+
+.unh-inventory-table thead th {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+  height: auto !important;
+  min-height: 68px !important;
+  line-height: 1.3 !important;
+  vertical-align: middle !important;
+}
+
+/* Give long-title columns enough width */
+.unh-inventory-table thead th:nth-child(9) {
+  min-width: 155px !important;
+}
+
+.unh-inventory-table thead th:nth-child(10) {
+  min-width: 190px !important;
+}
+
+.unh-inventory-table thead th:nth-child(12) {
+  min-width: 135px !important;
+}
+
+.unh-inventory-table thead th:nth-child(13) {
+  min-width: 135px !important;
+}
+
+.unh-inventory-table thead th:nth-child(14) {
+  min-width: 190px !important;
+}
+
+.unh-inventory-table thead th:nth-child(15) {
+  min-width: 180px !important;
+}
+
+/* Force the header text itself to stay inside its cell */
+.unh-inventory-table thead th {
+  white-space: normal !important;
+}
+
+.unh-inventory-table thead th *,
+.unh-inventory-table thead th span {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE HEADERS
+   Force every header into its own compact, wrapped column.
+   ========================================================= */
+
+.unh-inventory-table {
+  table-layout: fixed !important;
+  width: 100% !important;
+}
+
+/* Every header must wrap inside its own column */
+.unh-inventory-table thead th {
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  hyphens: none !important;
+
+  padding: 13px 9px !important;
+  min-width: 0 !important;
+  max-width: none !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+}
+
+/* Controlled widths so long headings wrap */
+.unh-inventory-table thead th:nth-child(1)  { width: 9% !important; }
+.unh-inventory-table thead th:nth-child(2)  { width: 8% !important; }
+.unh-inventory-table thead th:nth-child(3)  { width: 6% !important; }
+.unh-inventory-table thead th:nth-child(4)  { width: 6% !important; }
+.unh-inventory-table thead th:nth-child(5)  { width: 7% !important; }
+.unh-inventory-table thead th:nth-child(6)  { width: 6% !important; }
+.unh-inventory-table thead th:nth-child(7)  { width: 7% !important; }
+.unh-inventory-table thead th:nth-child(8)  { width: 6% !important; }
+.unh-inventory-table thead th:nth-child(9)  { width: 8% !important; }
+.unh-inventory-table thead th:nth-child(10) { width: 9% !important; }
+.unh-inventory-table thead th:nth-child(11) { width: 6% !important; }
+.unh-inventory-table thead th:nth-child(12) { width: 7% !important; }
+.unh-inventory-table thead th:nth-child(13) { width: 7% !important; }
+.unh-inventory-table thead th:nth-child(14) { width: 8% !important; }
+.unh-inventory-table thead th:nth-child(15) { width: 8% !important; }
+
+/* Force the body to follow the same column geometry */
+.unh-inventory-table tbody td {
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  vertical-align: middle !important;
+}
+
+/* Make the header tall enough for wrapped titles */
+.unh-inventory-table thead tr {
+  min-height: 74px !important;
+}
+
+.unh-inventory-table thead th {
+  height: 74px !important;
+}
+
+/* Keep header divider clearly visible */
+.unh-inventory-table thead th {
+  border-right: 1px solid #607485 !important;
+  border-bottom: 4px solid #009edb !important;
+}
+
+.unh-inventory-table thead th:last-child {
+  border-right: 0 !important;
+}
+
+
+/* Device table header line breaks */
+.unh-inventory-table thead th {
+  white-space: pre-line !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  line-height: 1.3 !important;
+}
+
+/* FINAL DEVICES HEADER WRAPPING */
+.unh-inventory-table {
+  table-layout: auto !important;
+  width: 100% !important;
+}
+
+.unh-inventory-table thead th {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 14px 10px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  vertical-align: middle !important;
+}
+
+.unh-inventory-table thead th br {
+  display: block !important;
+  content: "" !important;
+}
+
+.unh-inventory-table thead th:nth-child(1)  { min-width: 120px !important; }
+.unh-inventory-table thead th:nth-child(2)  { min-width: 110px !important; }
+.unh-inventory-table thead th:nth-child(3)  { min-width: 85px !important; }
+.unh-inventory-table thead th:nth-child(4)  { min-width: 70px !important; }
+.unh-inventory-table thead th:nth-child(5)  { min-width: 90px !important; }
+.unh-inventory-table thead th:nth-child(6)  { min-width: 75px !important; }
+.unh-inventory-table thead th:nth-child(7)  { min-width: 95px !important; }
+.unh-inventory-table thead th:nth-child(8)  { min-width: 80px !important; }
+.unh-inventory-table thead th:nth-child(9)  { min-width: 130px !important; }
+.unh-inventory-table thead th:nth-child(10) { min-width: 140px !important; }
+.unh-inventory-table thead th:nth-child(11) { min-width: 70px !important; }
+.unh-inventory-table thead th:nth-child(12) { min-width: 100px !important; }
+.unh-inventory-table thead th:nth-child(13) { min-width: 95px !important; }
+.unh-inventory-table thead th:nth-child(14) { min-width: 90px !important; }
+.unh-inventory-table thead th:nth-child(15) { min-width: 150px !important; }
+
+/* Smaller Devices table header text */
+.unh-inventory-table thead th {
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+  padding: 11px 8px !important;
+}
+
+
+/* Reduce ONLY the Devices table header font */
+.unh-inventory-table thead th {
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+
+/* =========================================================
+   FINAL DEVICES HEADER LAYOUT
+   ========================================================= */
+
+.unh-inventory-table {
+  width: max-content !important;
+  min-width: 1650px !important;
+  max-width: none !important;
+  table-layout: fixed !important;
+}
+
+/* Header cells stay inside their own columns */
+.unh-inventory-table thead th {
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  vertical-align: middle !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  padding: 10px 8px !important;
+  height: 58px !important;
+  text-align: left !important;
+}
+
+/* Controlled column widths */
+.unh-inventory-table thead th:nth-child(1)  { width: 145px !important; }
+.unh-inventory-table thead th:nth-child(2)  { width: 135px !important; }
+.unh-inventory-table thead th:nth-child(3)  { width: 95px !important; }
+.unh-inventory-table thead th:nth-child(4)  { width: 80px !important; }
+.unh-inventory-table thead th:nth-child(5)  { width: 105px !important; }
+.unh-inventory-table thead th:nth-child(6)  { width: 85px !important; }
+.unh-inventory-table thead th:nth-child(7)  { width: 110px !important; }
+.unh-inventory-table thead th:nth-child(8)  { width: 95px !important; }
+.unh-inventory-table thead th:nth-child(9)  { width: 145px !important; }
+.unh-inventory-table thead th:nth-child(10) { width: 145px !important; }
+.unh-inventory-table thead th:nth-child(11) { width: 75px !important; }
+.unh-inventory-table thead th:nth-child(12) { width: 105px !important; }
+.unh-inventory-table thead th:nth-child(13) { width: 105px !important; }
+.unh-inventory-table thead th:nth-child(14) { width: 110px !important; }
+.unh-inventory-table thead th:nth-child(15) { width: 175px !important; }
+
+/* Every deliberate <br> becomes a real new line */
+.unh-inventory-table thead th br {
+  display: block !important;
+}
+
+/* Keep body aligned with the header */
+.unh-inventory-table tbody td {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  vertical-align: middle !important;
+}
+
+/* =========================================================
+   DEVICES PAGE - FINAL TABLE / BORDER BEAUTIFICATION
+   ========================================================= */
+
+/* Softer page canvas */
+.unh-main {
+  background:
+    linear-gradient(180deg, #f7fafc 0%, #eef4f7 100%) !important;
+}
+
+/* Give the device table a proper modern frame */
+.unh-inventory-table {
+  margin-top: 18px !important;
+  border: 1px solid #c7d6df !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  box-shadow:
+    0 8px 24px rgba(24, 55, 72, .09),
+    0 1px 2px rgba(24, 55, 72, .05) !important;
+  overflow: hidden !important;
+}
+
+/* Strong clean header frame */
+.unh-inventory-table thead th {
+  background: #17324d !important;
+  color: #ffffff !important;
+  border-top: 0 !important;
+  border-bottom: 3px solid #009edb !important;
+  border-right: 1px solid #526979 !important;
+}
+
+/* Clean vertical separators */
+.unh-inventory-table tbody td {
+  border-right: 1px solid #d5e1e7 !important;
+  border-bottom: 1px solid #d5e1e7 !important;
+}
+
+/* Remove final vertical line */
+.unh-inventory-table tbody td:last-child {
+  border-right: 0 !important;
+}
+
+/* More visible alternating rows */
+.unh-inventory-table tbody tr:nth-child(odd) td {
+  background: #ffffff !important;
+}
+
+.unh-inventory-table tbody tr:nth-child(even) td {
+  background: #f4f8fa !important;
+}
+
+/* Modern row hover */
+.unh-inventory-table tbody tr:hover td {
+  background: #e8f4f8 !important;
+  border-bottom-color: #b8d4df !important;
+}
+
+/* Slight emphasis on the first identifying column */
+.unh-inventory-table tbody td:first-child {
+  color: #173b55 !important;
+  font-weight: 750 !important;
+}
+
+/* Keep actions visually separated from data */
+.unh-inventory-table tbody td:last-child {
+  background: #f1f5f7 !important;
+  border-left: 2px solid #c2d3dc !important;
+}
+
+/* Bottom edge */
+.unh-inventory-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+/* Header corner finishing */
+.unh-inventory-table thead tr:first-child th:first-child {
+  border-top-left-radius: 13px !important;
+}
+
+.unh-inventory-table thead tr:first-child th:last-child {
+  border-top-right-radius: 13px !important;
+}
+
+/* Give the actions area a little more separation from the table */
+.unh-inventory-actions {
+  margin-bottom: 18px !important;
+}
+
+/* Better spacing around the whole content area */
+.unh-inventory-page-header + .unh-inventory-actions {
+  margin-top: 4px !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE - MODERN RIBBON FRAME
+   ========================================================= */
+
+/* Elegant ribbon-style outer frame */
+.unh-inventory-table {
+  position: relative !important;
+  border: 1px solid #c5d6df !important;
+  border-top: 5px solid transparent !important;
+  border-image: linear-gradient(
+    90deg,
+    #007f86 0%,
+    #009edb 50%,
+    #35b7c8 100%
+  ) 1 !important;
+
+  border-radius: 12px !important;
+  background: #ffffff !important;
+
+  box-shadow:
+    0 10px 28px rgba(24,55,72,.10),
+    0 2px 5px rgba(24,55,72,.05),
+    inset 4px 0 0 #009edb !important;
+}
+
+/* Strong modern header */
+.unh-inventory-table thead th {
+  background: linear-gradient(
+    180deg,
+    #1d3b54 0%,
+    #17324d 100%
+  ) !important;
+
+  color: #ffffff !important;
+
+  border-right: 1px solid #526b7b !important;
+  border-bottom: 2px solid #009edb !important;
+
+  box-shadow:
+    inset 0 -1px 0 rgba(255,255,255,.10) !important;
+}
+
+/* Slightly brighter first header cell */
+.unh-inventory-table thead th:first-child {
+  box-shadow:
+    inset 4px 0 0 #35b7c8,
+    inset 0 -1px 0 rgba(255,255,255,.10) !important;
+}
+
+/* Clean vertical ribbons between important columns */
+.unh-inventory-table tbody td {
+  border-right: 1px solid #d2dfe5 !important;
+}
+
+/* Give the Actions column its own accent edge */
+.unh-inventory-table tbody td:last-child {
+  border-left: 3px solid #009edb !important;
+  border-right: 0 !important;
+  background: linear-gradient(
+    90deg,
+    #edf6f9 0%,
+    #f7fafb 100%
+  ) !important;
+}
+
+/* Stronger alternating rows */
+.unh-inventory-table tbody tr:nth-child(even) td {
+  background: #f3f8fa !important;
+}
+
+.unh-inventory-table tbody tr:nth-child(odd) td {
+  background: #ffffff !important;
+}
+
+/* Modern row hover */
+.unh-inventory-table tbody tr:hover td {
+  background: #e5f4f8 !important;
+  box-shadow: inset 0 1px 0 rgba(0,158,219,.08) !important;
+}
+
+/* Keep the Actions ribbon visible on hover */
+.unh-inventory-table tbody tr:hover td:last-child {
+  background: #e7f4f8 !important;
+  border-left-color: #007f86 !important;
+}
+
+/* Slightly stronger outer corners */
+.unh-inventory-table thead tr:first-child th:first-child {
+  border-top-left-radius: 8px !important;
+}
+
+.unh-inventory-table thead tr:first-child th:last-child {
+  border-top-right-radius: 8px !important;
+}
+
+/* Clean bottom edge */
+.unh-inventory-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+
+/* Distinct right-side ribbon */
+.unh-inventory-table {
+  border-right: 5px solid #68449a !important;
+}
+
+/* Purple accent for the Actions edge */
+.unh-inventory-table tbody td:last-child {
+  border-right: 3px solid #68449a !important;
+}
+
+/* Matching top-right header accent */
+.unh-inventory-table thead th:last-child {
+  box-shadow: inset -3px 0 0 #8a63b5 !important;
+}
+
+
+/* Devices header - distinct UN teal/green */
+.unh-inventory-page-header {
+  background: linear-gradient(
+    135deg,
+    #007f73 0%,
+    #009b78 52%,
+    #18a889 100%
+  ) !important;
+
+  border-left: 6px solid #005f56 !important;
+  border-right: 6px solid #35c4a0 !important;
+  box-shadow:
+    0 9px 24px rgba(0,95,86,.18),
+    inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+
+
+/* Devices header - purple/violet */
+.unh-inventory-page-header {
+  background: linear-gradient(
+    135deg,
+    #49306f 0%,
+    #68449a 55%,
+    #8060b0 100%
+  ) !important;
+
+  border-left: 6px solid #392456 !important;
+  border-right: 6px solid #a083c7 !important;
+
+  box-shadow:
+    0 9px 24px rgba(73,48,111,.20),
+    inset 0 1px 0 rgba(255,255,255,.14) !important;
+}
+
+
+/* Devices header - official UN Blue */
+.unh-inventory-page-header {
+  background: #009edb !important;
+  border-left: 6px solid #005b8f !important;
+  border-right: 6px solid #6fc7e8 !important;
+  box-shadow: 0 9px 24px rgba(0,85,130,.18) !important;
+}
+
+
+/* Devices Print button - high contrast against UN Blue header */
+.unh-inventory-page-header .unh-inventory-print-button {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #17324d !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 8px !important;
+  min-width: 125px !important;
+  min-height: 52px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.18) !important;
+  font-weight: 800 !important;
+}
+
+.unh-inventory-page-header .unh-inventory-print-button:hover,
+.unh-inventory-page-header .unh-inventory-print-button:focus,
+.unh-inventory-page-header .unh-inventory-print-button:active {
+  background: #f1f7fa !important;
+  background-color: #f1f7fa !important;
+  color: #005b8f !important;
+  border-color: #ffffff !important;
+}
+
+.unh-inventory-page-header .unh-inventory-print-button .unh-print-icon {
+  background: #17324d !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+}
+
+
+/* Devices Print button - loud high-contrast accent */
+.unh-inventory-page-header .unh-inventory-print-button,
+.unh-inventory-page-header .unh-inventory-print-button:hover,
+.unh-inventory-page-header .unh-inventory-print-button:focus,
+.unh-inventory-page-header .unh-inventory-print-button:active {
+  background: #00d4e8 !important;
+  background-color: #00d4e8 !important;
+  background-image: none !important;
+  color: #08354a !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 9px !important;
+  min-width: 135px !important;
+  min-height: 56px !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  box-shadow:
+    0 5px 16px rgba(0,0,0,.22),
+    0 0 0 2px rgba(255,255,255,.20) !important;
+}
+
+.unh-inventory-page-header .unh-inventory-print-button .unh-print-icon {
+  background: #08354a !important;
+  color: #ffffff !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 7px !important;
+  font-size: 20px !important;
+}
+
+
+/* Print button - one unified colour */
+.unh-inventory-page-header .unh-inventory-print-button,
+.unh-inventory-page-header .unh-inventory-print-button:hover,
+.unh-inventory-page-header .unh-inventory-print-button:focus,
+.unh-inventory-page-header .unh-inventory-print-button:active {
+  background: #00d4e8 !important;
+  background-color: #00d4e8 !important;
+  background-image: none !important;
+  color: #08354a !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 9px !important;
+  min-width: 135px !important;
+  min-height: 56px !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 5px 16px rgba(0,0,0,.20) !important;
+}
+
+.unh-inventory-page-header .unh-inventory-print-button .unh-print-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #08354a !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  font-size: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* Print button - strong, always-visible contrast */
+.unh-inventory-page-header .unh-inventory-print-button,
+.unh-inventory-page-header .unh-inventory-print-button:hover,
+.unh-inventory-page-header .unh-inventory-print-button:focus,
+.unh-inventory-page-header .unh-inventory-print-button:active {
+  background: #e85d4a !important;
+  background-color: #e85d4a !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 9px !important;
+  min-width: 140px !important;
+  min-height: 56px !important;
+  padding: 10px 18px !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+  box-shadow:
+    0 5px 16px rgba(0,0,0,.24),
+    0 0 0 2px rgba(232,93,74,.25) !important;
+}
+
+.unh-inventory-page-header .unh-inventory-print-button .unh-print-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  font-size: 21px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* Devices Print button - keep the same colour in every state */
+html body .unh-inventory-page-header .unh-inventory-print-button,
+html body .unh-inventory-page-header .unh-inventory-print-button:hover,
+html body .unh-inventory-page-header .unh-inventory-print-button:focus,
+html body .unh-inventory-page-header .unh-inventory-print-button:active,
+html body .unh-inventory-page-header .unh-inventory-print-button:visited {
+  background: #e85d4a !important;
+  background-color: #e85d4a !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow:
+    0 5px 16px rgba(0,0,0,.24),
+    0 0 0 2px rgba(232,93,74,.25) !important;
+}
+
+html body .unh-inventory-page-header .unh-inventory-print-button .unh-print-icon,
+html body .unh-inventory-page-header .unh-inventory-print-button:hover .unh-print-icon,
+html body .unh-inventory-page-header .unh-inventory-print-button:focus .unh-print-icon,
+html body .unh-inventory-page-header .unh-inventory-print-button:active .unh-print-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DEVICES TABLE - SHARP / HIGH VISIBILITY
+   ========================================================= */
+
+.unh-inventory-table {
+  border: 2px solid #9fb5c2 !important;
+  background: #ffffff !important;
+  box-shadow:
+    0 8px 22px rgba(23,50,77,.12),
+    0 1px 3px rgba(23,50,77,.10) !important;
+}
+
+/* Strong header */
+.unh-inventory-table thead th {
+  background: #17324d !important;
+  color: #ffffff !important;
+  border-right: 2px solid #607889 !important;
+  border-bottom: 4px solid #009edb !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  padding: 12px 9px !important;
+  text-shadow: 0 1px 1px rgba(0,0,0,.25) !important;
+}
+
+.unh-inventory-table thead th:last-child {
+  border-right: 0 !important;
+}
+
+/* Strong vertical and horizontal body grid */
+.unh-inventory-table tbody td {
+  border-right: 2px solid #ccd9e0 !important;
+  border-bottom: 2px solid #ccd9e0 !important;
+  color: #1f3442 !important;
+  font-size: 12px !important;
+  font-weight: 550 !important;
+  line-height: 1.4 !important;
+  padding: 12px 10px !important;
+  background: #ffffff !important;
+}
+
+.unh-inventory-table tbody td:last-child {
+  border-right: 0 !important;
+}
+
+/* Strong alternating rows */
+.unh-inventory-table tbody tr:nth-child(even) td {
+  background: #eef4f7 !important;
+}
+
+.unh-inventory-table tbody tr:nth-child(odd) td {
+  background: #ffffff !important;
+}
+
+/* Sharp hover */
+.unh-inventory-table tbody tr:hover td {
+  background: #dceff5 !important;
+  border-bottom-color: #9fc5d2 !important;
+  border-right-color: #9fc5d2 !important;
+}
+
+/* Make the first identifying fields stand out */
+.unh-inventory-table tbody td:nth-child(1),
+.unh-inventory-table tbody td:nth-child(2) {
+  color: #123e58 !important;
+  font-weight: 800 !important;
+}
+
+/* Status stands out */
+.unh-inventory-table tbody td:nth-child(6) {
+  font-weight: 800 !important;
+}
+
+/* Actions remain clearly separated */
+.unh-inventory-table tbody td:last-child {
+  background: #eaf1f4 !important;
+  border-left: 3px solid #68449a !important;
+}
+
+/* Final row */
+.unh-inventory-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+
+/* Keep all table distinction lines visible during hover */
+.unh-inventory-table tbody tr:hover td {
+  background: #dceff5 !important;
+  border-top: 0 !important;
+  border-right: 2px solid #9fb5c2 !important;
+  border-bottom: 2px solid #9fb5c2 !important;
+}
+
+/* Keep the Actions divider strong during hover */
+.unh-inventory-table tbody tr:hover td:last-child {
+  background: #e4edf1 !important;
+  border-left: 3px solid #68449a !important;
+  border-right: 0 !important;
+}
+
+/* Continuous vertical distinction */
+.unh-inventory-table tbody tr:hover td:not(:last-child) {
+  box-shadow: inset -1px 0 0 #9fb5c2 !important;
+}
+
+
+/* Stronger, sharper Devices table hover */
+.unh-inventory-table tbody tr:hover td {
+  background: #b8e1ed !important;
+  border-right: 2px solid #7f9eac !important;
+  border-bottom: 2px solid #7f9eac !important;
+  color: #132d3c !important;
+}
+
+.unh-inventory-table tbody tr:hover td:last-child {
+  background: #c7d8e0 !important;
+  border-left: 3px solid #68449a !important;
+  border-right: 0 !important;
+}
+
+
+/* Devices Print button - strong green */
+html body .unh-inventory-page-header .unh-inventory-print-button,
+html body .unh-inventory-page-header .unh-inventory-print-button:hover,
+html body .unh-inventory-page-header .unh-inventory-print-button:focus,
+html body .unh-inventory-page-header .unh-inventory-print-button:active,
+html body .unh-inventory-page-header .unh-inventory-print-button:visited {
+  background: #169c68 !important;
+  background-color: #169c68 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: 0 5px 16px rgba(0,0,0,.24) !important;
+}
+
+html body .unh-inventory-page-header .unh-inventory-print-button .unh-print-icon,
+html body .unh-inventory-page-header .unh-inventory-print-button:hover .unh-print-icon {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+
+/* Devices header - sharp, high-contrast typography */
+html body .unh-inventory-page-header .unh-inventory-page-kicker {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.6px !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25) !important;
+}
+
+html body .unh-inventory-page-header h1 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 3px rgba(0,0,0,.25) !important;
+}
+
+html body .unh-inventory-page-header p {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.22) !important;
+}
+
+
+/* Devices: Back to Inventory - UN black */
+html body .unh-inventory-back-button,
+html body .unh-inventory-back-button:hover,
+html body .unh-inventory-back-button:focus,
+html body .unh-inventory-back-button:active,
+html body .unh-inventory-back-button:visited {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.18) !important;
+}
+

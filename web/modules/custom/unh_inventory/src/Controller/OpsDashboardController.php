@@ -85,8 +85,9 @@ class OpsDashboardController extends ControllerBase {
       'header' => [
         '#markup' => '
           <div class="icts-ops-dashboard-header">
-            <h1>ICTS Ops Management</h1>
-            <p>Monitor and manage ICT projects, operational tasks and issues.</p>
+            <span class="unh-inventory-page-kicker">UN-HABITAT</span>
+<h1>ICTS Ops Management</h1>
+            <p><span class="icts-ops-dashboard-subtitle">Monitor and manage ICT projects, operational tasks and issues.</span></p>
           </div>
         ',
       ],
@@ -105,6 +106,9 @@ class OpsDashboardController extends ControllerBase {
             </a>
             <a href="/ops/tasks" class="ops-dashboard-action">
               View Tasks
+            </a>
+            <a href="#" class="unh-inventory-print-button ops-dashboard-print" onclick="window.print(); return false;">
+              <span class="unh-print-icon">🖨</span><span>Print</span>
             </a>
           </div>
         ',
@@ -183,18 +187,6 @@ class OpsDashboardController extends ControllerBase {
 
       'deadlines' => [
         '#markup' => $this->buildUpcomingTasks(),
-      ],
-
-      'activity' => [
-        '#markup' => '
-          <div class="icts-ops-dashboard-section icts-ops-dashboard-activity">
-            <div class="icts-ops-dashboard-section-heading">
-              <h2>Operations Activity</h2>
-              <a href="/ops/activity/">View Activity</a>
-            </div>
-            <p>Review recent project and task changes, assignments and operational updates.</p>
-          </div>
-        ',
       ],
 
       '#cache' => [

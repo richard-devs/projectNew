@@ -1,0 +1,60 @@
+/* INVENTORY ACTIVITY PAGE ONLY */
+
+/* Back button */
+.unh-inventory-back-row {
+  margin: 0 0 18px 0;
+}
+
+.unh-inventory-back-row .unh-inventory-back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  background: #5b3b7a !important;
+  color: #fff !important;
+  border-radius: 7px;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+
+/* Activity header */
+.unh-inventory-page-header {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #007f86, #009edb) !important;
+  border-radius: 12px;
+}
+
+/* Print */
+.unh-inventory-page-header .unh-inventory-print-button {
+  background: #009edb !important;
+  background-color: #009edb !important;
+  background-image: none !important;
+  color: #fff !important;
+}
+
+/* Activity table */
+.unh-inventory-activity-table {
+  width: 100%;
+  background: #fff;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.unh-inventory-activity-table thead th {
+  background: #007f86 !important;
+  color: #fff !important;
+  padding: 13px 12px;
+}
+
+.unh-inventory-activity-table tbody td {
+  background: #fff;
+  padding: 12px;
+}
+
+.unh-inventory-activity-table tbody tr:nth-child(even) td {
+  background: #f5fafb;
+}
