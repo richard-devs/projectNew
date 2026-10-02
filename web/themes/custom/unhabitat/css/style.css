@@ -4916,7 +4916,7 @@ body.path-ops .view-icts-ops-projects .views-field-delete-node a:hover {
 
 .unh-grafana-live {
   position: absolute;
-  top: 450px;
+  top: 335px;
   right: 34px;
   width: 580px;
   max-width: calc(100% - 68px);
@@ -28496,5 +28496,397 @@ body.path-frontpage #views-exposed-form-icts-knowledge-base-block-1 .form-item-t
   .unh-footer-bottom #block-unhabitat-powered::before {
     animation: none;
   }
+}
+
+
+/* =========================================================
+   HOMEPAGE EQUIPMENT OPERATIONS MONITORING
+   ========================================================= */
+
+/* =========================================================
+   HOMEPAGE EQUIPMENT OPERATIONS MONITORING
+   ========================================================= */
+
+.unh-grafana-equipment {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.unh-grafana-equipment-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.unh-grafana-equipment-heading span {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.unh-grafana-equipment-heading small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+}
+
+.unh-grafana-equipment-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+.unh-grafana-equipment-stat {
+  text-align: center;
+  padding: 8px 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.unh-grafana-equipment-stat:last-child {
+  border-right: 0;
+}
+
+.unh-grafana-equipment-stat strong {
+  display: block;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.unh-grafana-equipment-stat span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.unh-grafana-equipment-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+}
+
+.unh-grafana-equipment-status strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .unh-grafana-equipment-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .unh-grafana-equipment-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .unh-grafana-equipment-status {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* =========================================================
+   LIVE EQUIPMENT MONITORING EFFECT
+   ========================================================= */
+
+.unh-grafana-equipment-stat > strong,
+.unh-grafana-equipment-stat > span {
+  animation: icts-equipment-visible-rainbow 8s infinite;
+}
+
+.unh-grafana-equipment-heading > span {
+  color: #ffffff;
+  opacity: 1;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+  animation: icts-equipment-heading-blink 2.8s ease-in-out infinite;
+}
+
+@keyframes icts-equipment-heading-blink {
+  0%, 65%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.45),
+      0 0 10px rgba(255, 255, 255, 0.25);
+    transform: scale(1);
+  }
+
+  70% {
+    opacity: 0.05;
+    text-shadow: none;
+    transform: scale(0.97);
+  }
+
+  74% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px #ffffff,
+      0 0 18px rgba(255, 255, 255, 0.9);
+    transform: scale(1.04);
+  }
+
+  78% {
+    opacity: 0.05;
+    text-shadow: none;
+    transform: scale(0.97);
+  }
+
+  82% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px #ffffff,
+      0 0 20px rgba(255, 255, 255, 0.95);
+    transform: scale(1.04);
+  }
+
+  88% {
+    opacity: 0.75;
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 0.6);
+    transform: scale(1);
+  }
+}
+
+.unh-grafana-equipment-heading > span::before {
+  animation: icts-equipment-dot-rainbow 1.5s infinite;
+}
+
+@keyframes icts-equipment-visible-rainbow {
+  0%, 12.5% {
+    color: #808080;
+    opacity: 1;
+  }
+
+  13%, 15% {
+    color: #808080;
+    opacity: 0.55;
+  }
+
+  15.1%, 27.5% {
+    color: #0066ff;
+    opacity: 1;
+  }
+
+  28%, 30% {
+    color: #0066ff;
+    opacity: 0.15;
+  }
+
+  30.1%, 42.5% {
+    color: #00cc44;
+    opacity: 1;
+  }
+
+  43%, 45% {
+    color: #00cc44;
+    opacity: 0.15;
+  }
+
+  45.1%, 57.5% {
+    color: #ffcc00;
+    opacity: 1;
+  }
+
+  58%, 60% {
+    color: #ffcc00;
+    opacity: 0.15;
+  }
+
+  60.1%, 72.5% {
+    color: #ff00cc;
+    opacity: 1;
+  }
+
+  73%, 75% {
+    color: #ff00cc;
+    opacity: 0.15;
+  }
+
+  75.1%, 87.5% {
+    color: #00ccff;
+    opacity: 1;
+  }
+
+  88%, 90% {
+    color: #00ccff;
+    opacity: 0.15;
+  }
+
+  90.1%, 100% {
+    color: #ff6600;
+    opacity: 1;
+  }
+}
+
+@keyframes icts-equipment-dot-rainbow {
+  0%, 32% {
+    color: #ff0000;
+    opacity: 1;
+  }
+
+  33%, 49% {
+    color: #0066ff;
+    opacity: 0.15;
+  }
+
+  50%, 66% {
+    color: #00cc44;
+    opacity: 1;
+  }
+
+  67%, 82% {
+    color: #ff00cc;
+    opacity: 0.15;
+  }
+
+  83%, 100% {
+    color: #00ccff;
+    opacity: 1;
+  }
+}
+
+/* Keep animation active unless the browser explicitly requests reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .unh-grafana-equipment-heading > span,
+  .unh-grafana-equipment-heading > span::before,
+  .unh-grafana-equipment-stat > strong,
+  .unh-grafana-equipment-stat > span,
+  .unh-grafana-equipment-status,
+  .unh-grafana-equipment-status strong {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   EQUIPMENT STATUS LIVE POP EFFECT
+   ========================================================= */
+
+.unh-grafana-equipment-status,
+.unh-grafana-equipment-status strong {
+  animation: icts-equipment-status-pop 6s steps(1, end) infinite !important;
+  transform-origin: center left;
+}
+
+@keyframes icts-equipment-status-pop {
+  0%, 7% {
+    color: #808080;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  8%, 10% {
+    color: #808080;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  11%, 18% {
+    color: #9b00ff;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  19%, 21% {
+    color: #9b00ff;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  22%, 29% {
+    color: #00e5ff;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  30%, 32% {
+    color: #00e5ff;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  33%, 40% {
+    color: #00ff66;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  41%, 43% {
+    color: #00ff66;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  44%, 51% {
+    color: #ffea00;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  52%, 54% {
+    color: #ffea00;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  55%, 62% {
+    color: #ff00ff;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  63%, 65% {
+    color: #ff00ff;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  66%, 73% {
+    color: #ff6600;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  74%, 76% {
+    color: #ff6600;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  77%, 100% {
+    color: #808080;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Match LIVE OPERATIONS typography to Equipment Operations */
+.unh-grafana-live-heading strong {
+  font-size: 16px;
+}
+
+.unh-grafana-live-heading span {
+  font-size: 12px;
+}
+
+.unh-grafana-stat strong {
+  font-size: 22px;
+}
+
+.unh-grafana-stat span {
+  font-size: 11px;
 }
 
